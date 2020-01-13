@@ -1,5 +1,5 @@
 
---±âÁ¸ Å×ÀÌºí »èÁ¦
+--ê¸°ì¡´ í…Œì´ë¸” ì‚­ì œ 
 /*
 DROP TABLE USER_INFO;
 DROP TABLE TRAIN;
