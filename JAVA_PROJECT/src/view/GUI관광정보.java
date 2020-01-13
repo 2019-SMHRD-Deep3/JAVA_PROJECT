@@ -10,7 +10,7 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.JButton;
 
-public class GUI서울 {
+public class GUI관광정보 {
 
 	JFrame frame;
 
@@ -21,7 +21,7 @@ public class GUI서울 {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					GUI서울 window = new GUI서울();
+					GUI관광정보 window = new GUI관광정보();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -33,7 +33,7 @@ public class GUI서울 {
 	/**
 	 * Create the application.
 	 */
-	public GUI서울() {
+	public GUI관광정보() {
 		initialize();
 	}
 
