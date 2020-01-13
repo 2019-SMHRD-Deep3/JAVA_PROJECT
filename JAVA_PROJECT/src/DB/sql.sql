@@ -1,4 +1,4 @@
--- table »ı¼º 
+-- create table
 
 
 -- insert
