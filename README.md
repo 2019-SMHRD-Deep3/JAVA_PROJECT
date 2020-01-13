@@ -6,11 +6,11 @@
 기존여행패키지는 고정되어있어 여행자의 개인 성향에 맞출 수 없다. 
 가보자 시스템은 출발지와 목적지의 교통편예매와 선택지역의 관광정보를 제공하여 이용자들의 취향에 맞는 여행계획을 세울 수 있게 함. 
 
-##Development Environment
+Development Environment
 -----------------------
 
-##Implementation details
+Implementation details
 ----------------------
 
-##Reference
+Reference
 ---------
