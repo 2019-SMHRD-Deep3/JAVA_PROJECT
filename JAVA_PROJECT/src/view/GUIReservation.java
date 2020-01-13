@@ -99,8 +99,8 @@ public class GUIReservation {
 		edit.setBounds(12, 55, 97, 23);
 		panel_1.add(edit);
 		
-		JButton cancel = new JButton("\uC608\uB9E4\uCDE8\uC18C");
-		cancel.setBounds(185, 55, 97, 23);
-		panel_1.add(cancel);
+		JButton btnNewButton_1 = new JButton("\uC608\uB9E4\uCDE8\uC18C");
+		btnNewButton_1.setBounds(185, 55, 97, 23);
+		panel_1.add(btnNewButton_1);
 	}
 }
