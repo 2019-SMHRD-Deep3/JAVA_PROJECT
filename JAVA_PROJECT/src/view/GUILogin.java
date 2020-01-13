@@ -74,26 +74,30 @@ public class GUILogin {
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
-		textField_1.setColumns(10);
 		textField_1.setBounds(297, 339, 312, 61);
+		textField_1.setColumns(10);
 		frame.getContentPane().add(textField_1);
 		
 		JButton login = new JButton("\uB85C\uADF8\uC778");
+		login.setBounds(335, 466, 97, 28);
 		login.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		login.setBounds(335, 457, 114, 37);
 		frame.getContentPane().add(login);
 		
 		JLabel lblNewLabel = new JLabel("\uC544\uC774\uB514");
-		lblNewLabel.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 20));
 		lblNewLabel.setBounds(175, 217, 95, 46);
+		lblNewLabel.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 20));
 		frame.getContentPane().add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("\uBE44\uBC00\uBC88\uD638");
-		lblNewLabel_1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 20));
 		lblNewLabel_1.setBounds(175, 352, 165, 27);
+		lblNewLabel_1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 20));
 		frame.getContentPane().add(lblNewLabel_1);
+		
+		JButton btnNewButton = new JButton("\uD68C\uC6D0\uAC00\uC785");
+		btnNewButton.setBounds(472, 466, 97, 28);
+		frame.getContentPane().add(btnNewButton);
 	}
 }

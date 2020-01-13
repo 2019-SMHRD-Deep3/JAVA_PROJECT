@@ -96,11 +96,15 @@ public class GUIReservation {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		edit.setBounds(12, 55, 97, 23);
+		edit.setBounds(39, 43, 119, 47);
 		panel_1.add(edit);
 		
 		JButton btnNewButton_1 = new JButton("\uC608\uB9E4\uCDE8\uC18C");
-		btnNewButton_1.setBounds(185, 55, 97, 23);
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnNewButton_1.setBounds(185, 43, 119, 47);
 		panel_1.add(btnNewButton_1);
 	}
 }

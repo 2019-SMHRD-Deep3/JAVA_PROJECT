@@ -15,6 +15,7 @@ import java.awt.Graphics;
 
 import javax.swing.SwingConstants;
 import java.awt.Color;
+import javax.swing.border.LineBorder;
 
 public class GUIMenu {
 
@@ -52,13 +53,20 @@ public class GUIMenu {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
+
+
+		
+		
 		JPanel panel = new JPanel();
-		panel.setBackground(Color.WHITE);
+		panel.setBorder(new LineBorder(new Color(0, 0, 0)));
+		
 		panel.setBounds(389, 10, 383, 541);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
+		panel.setBackground(new Color(255,0,0,0));
 		
 		JButton my_reservation = new JButton("\uB098\uC758 \uC608\uB9E4\uC815\uBCF4");
+		my_reservation.setBorder(new LineBorder(new Color(0, 0, 0)));
 		my_reservation.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -70,6 +78,7 @@ public class GUIMenu {
 		panel.add(my_reservation);
 		
 		JButton tb_reservation = new JButton("\uC2B9\uCC28\uAD8C \uC608\uB9E4");
+		tb_reservation.setBorder(new LineBorder(new Color(0, 0, 0)));
 		tb_reservation.setBackground(Color.WHITE);
 		tb_reservation.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
 		tb_reservation.addActionListener(new ActionListener() {
@@ -96,5 +105,10 @@ public class GUIMenu {
 		
 		panel_1.setBounds(0, 0, 389, 561);
 		frame.getContentPane().add(panel_1);
+	}
+
+	private void setBackground(Color color) {
+		// TODO Auto-generated method stub
+		
 	}
 }
