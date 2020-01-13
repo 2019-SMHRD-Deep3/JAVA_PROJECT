@@ -64,7 +64,7 @@ public class GUI´ëÀü {
 		lblNewLabel_1.setBounds(12, 85, 57, 15);
 		frame.getContentPane().add(lblNewLabel_1);
 		
-		JLabel label = new JLabel("\uAD00\uAD11\uBA85\uC18C");
+		JLabel label = new JLabel("\uB9DB\uC9D1\uCD94\uCC9C");
 		label.setBounds(412, 85, 57, 15);
 		frame.getContentPane().add(label);
 		
