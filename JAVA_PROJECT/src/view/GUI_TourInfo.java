@@ -10,7 +10,7 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.JButton;
 
-public class GUI°ü±¤Á¤º¸ {
+public class GUI_TourInfo {
 
 	JFrame frame;
 
@@ -21,7 +21,7 @@ public class GUI°ü±¤Á¤º¸ {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					GUI°ü±¤Á¤º¸ window = new GUI°ü±¤Á¤º¸();
+					GUI_TourInfo window = new GUI_TourInfo();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -33,7 +33,7 @@ public class GUI°ü±¤Á¤º¸ {
 	/**
 	 * Create the application.
 	 */
-	public GUI°ü±¤Á¤º¸() {
+	public GUI_TourInfo() {
 		initialize();
 	}
 

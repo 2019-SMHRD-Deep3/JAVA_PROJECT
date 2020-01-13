@@ -13,7 +13,7 @@ import javax.swing.JList;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
-public class GUI예매 {
+public class GUI_Booking {
 
 	private JFrame frame;
 	private JTable table;
@@ -26,7 +26,7 @@ public class GUI예매 {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					GUI예매 window = new GUI예매();
+					GUI_Booking window = new GUI_Booking();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -38,7 +38,7 @@ public class GUI예매 {
 	/**
 	 * Create the application.
 	 */
-	public GUI예매() {
+	public GUI_Booking() {
 		initialize();
 	}
 

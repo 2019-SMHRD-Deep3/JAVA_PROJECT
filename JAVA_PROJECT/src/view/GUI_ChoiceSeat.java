@@ -4,7 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 
-public class GUI좌석선택 {
+public class GUI_ChoiceSeat {
 
 	private JFrame frame;
 
@@ -15,7 +15,7 @@ public class GUI좌석선택 {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					GUI좌석선택 window = new GUI좌석선택();
+					GUI_ChoiceSeat window = new GUI_ChoiceSeat();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -27,7 +27,7 @@ public class GUI좌석선택 {
 	/**
 	 * Create the application.
 	 */
-	public GUI좌석선택() {
+	public GUI_ChoiceSeat() {
 		initialize();
 	}
 

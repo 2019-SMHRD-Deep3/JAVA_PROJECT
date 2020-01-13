@@ -18,7 +18,7 @@ import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.SystemColor;
 
-public class GUILogin {
+public class GUI_Login {
 
 	private JFrame frame;
 	private JTextField textField;
@@ -31,7 +31,7 @@ public class GUILogin {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					GUILogin window = new GUILogin();
+					GUI_Login window = new GUI_Login();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,7 +43,7 @@ public class GUILogin {
 	/**
 	 * Create the application.
 	 */
-	public GUILogin() {
+	public GUI_Login() {
 		initialize();
 	}
 
@@ -97,6 +97,11 @@ public class GUILogin {
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		JButton btnNewButton = new JButton("\uD68C\uC6D0\uAC00\uC785");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				GUI_Join join = new GUI_Join();
+			}
+		});
 		btnNewButton.setBounds(472, 466, 97, 28);
 		frame.getContentPane().add(btnNewButton);
 	}

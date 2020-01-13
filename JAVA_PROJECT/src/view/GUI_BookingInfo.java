@@ -16,7 +16,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class GUIReservation {
+public class GUI_BookingInfo {
 
 	private JFrame frame;
 	private JTable table;
@@ -28,7 +28,7 @@ public class GUIReservation {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					GUIReservation window = new GUIReservation();
+					GUI_BookingInfo window = new GUI_BookingInfo();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -40,7 +40,7 @@ public class GUIReservation {
 	/**
 	 * Create the application.
 	 */
-	public GUIReservation() {
+	public GUI_BookingInfo() {
 		initialize();
 	}
 

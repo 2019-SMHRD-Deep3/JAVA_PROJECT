@@ -21,7 +21,7 @@ import javax.swing.border.CompoundBorder;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class GUISelection {
+public class GUI_Selection {
 
 	private JFrame frame;
 	private JTextField textField;
@@ -34,7 +34,7 @@ public class GUISelection {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					GUISelection window = new GUISelection();
+					GUI_Selection window = new GUI_Selection();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -46,7 +46,7 @@ public class GUISelection {
 	/**
 	 * Create the application.
 	 */
-	public GUISelection() {
+	public GUI_Selection() {
 		initialize();
 	}
 

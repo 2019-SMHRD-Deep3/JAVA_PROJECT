@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SpringLayout;
 
-public class GUIimage {
+public class GUI_Image {
 
 	private JFrame frame;
 	private JPanel panel;
@@ -20,7 +20,7 @@ public class GUIimage {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					GUIimage window = new GUIimage();
+					GUI_Image window = new GUI_Image();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -32,7 +32,7 @@ public class GUIimage {
 	/**
 	 * Create the application.
 	 */
-	public GUIimage() {
+	public GUI_Image() {
 		initialize();
 	}
 

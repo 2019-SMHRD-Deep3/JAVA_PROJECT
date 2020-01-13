@@ -17,7 +17,7 @@ import javax.swing.SwingConstants;
 import java.awt.Color;
 import javax.swing.border.LineBorder;
 
-public class GUIMenu {
+public class GUI_MainMenu {
 
 	private JFrame frame;
 
@@ -28,7 +28,7 @@ public class GUIMenu {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					GUIMenu window = new GUIMenu();
+					GUI_MainMenu window = new GUI_MainMenu();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -40,7 +40,7 @@ public class GUIMenu {
 	/**
 	 * Create the application.
 	 */
-	public GUIMenu() {
+	public GUI_MainMenu() {
 		initialize();
 	}
 
