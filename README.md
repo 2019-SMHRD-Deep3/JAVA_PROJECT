@@ -1,4 +1,4 @@
-# PROJECT
+# TITLE
 국내 여행 스마트 예매 시스템 - 가보자  
 
 # INFORMATION
