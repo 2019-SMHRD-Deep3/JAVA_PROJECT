@@ -10,7 +10,7 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.JButton;
 
-public class GUI부산 {
+public class GUI서울 {
 
 	JFrame frame;
 
@@ -21,7 +21,7 @@ public class GUI부산 {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					GUI부산 window = new GUI부산();
+					GUI서울 window = new GUI서울();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -33,7 +33,7 @@ public class GUI부산 {
 	/**
 	 * Create the application.
 	 */
-	public GUI부산() {
+	public GUI서울() {
 		initialize();
 	}
 
