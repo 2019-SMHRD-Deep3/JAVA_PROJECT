@@ -57,11 +57,11 @@ public class GUI_Booking {
 		panel.setLayout(new CardLayout(0, 0));
 		
 		JLabel lblNewLabel = new JLabel("\uAC00\uBCF4\uC790");
-		lblNewLabel.setFont(new Font("±¼¸²", Font.PLAIN, 20));
+		lblNewLabel.setFont(new Font("ï¿½ï¿½ï¿½ï¿½", Font.PLAIN, 20));
 		panel.add(lblNewLabel, "name_1458993286850100");
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(12, 67, 760, 484);
+		panel_1.setBounds(22, 67, 760, 484);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
 		
