@@ -16,6 +16,7 @@ public class MemberLogIn implements I_MemberLogIn {
 	public PreparedStatement psmt = null;
 	public ResultSet rs = null;
 	@Override
+	// 로그인 하는 기능
 	public Member meberlogin(Member m) {
 		// TODO Auto-generated method stub
 		Member loginUser = null;
