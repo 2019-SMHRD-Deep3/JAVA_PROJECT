@@ -93,7 +93,7 @@ public class GUI_Login {
 				Member loginUser = service.memberLogin(m);
 				if (loginUser == null) {
 					JOptionPane.showMessageDialog(frame, "로그인 실패");
-					frame.dispose(); // 화면 종료
+					frame.dispose(); 
 				} else {
 					JOptionPane.showMessageDialog(frame, "로그인 성공");
 					GUI_MainMenu main = new GUI_MainMenu();
