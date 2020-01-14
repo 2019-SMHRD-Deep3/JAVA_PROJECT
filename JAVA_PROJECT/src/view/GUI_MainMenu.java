@@ -88,7 +88,7 @@ public class GUI_MainMenu {
 		tb_reservation.setBounds(73, 335, 236, 59);
 		panel.add(tb_reservation);
 		
-	    String imgPath = this.getClass().getResource(".").getPath()+"..//..//img//aa.jpg";
+	    String imgPath = this.getClass().getResource(".").getPath()+"..//..//img//¿©Çà.png";
 	    System.out.println(imgPath);
 	      
 		ImageIcon icon = new ImageIcon(imgPath);
@@ -103,7 +103,7 @@ public class GUI_MainMenu {
 
 		
 		
-		panel_1.setBounds(0, 0, 389, 561);
+		panel_1.setBounds(0, 0, 784, 561);
 		frame.getContentPane().add(panel_1);
 	}
 
