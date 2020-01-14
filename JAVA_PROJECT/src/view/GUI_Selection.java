@@ -20,11 +20,11 @@ import javax.swing.JTextField;
 import javax.swing.border.CompoundBorder;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JComboBox;
 
 public class GUI_Selection {
 
 	private JFrame frame;
-	private JTextField textField;
 	private JTextField textField_1;
 
 	/**
@@ -66,7 +66,7 @@ public class GUI_Selection {
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("theMap");
+		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setBounds(396, 12, 384, 539);
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(lblNewLabel_1);
@@ -99,11 +99,6 @@ public class GUI_Selection {
 		panel_1.add(panel);
 		panel.setLayout(null);
 		
-		textField = new JTextField();
-		textField.setBounds(14, 62, 156, 24);
-		panel.add(textField);
-		textField.setColumns(10);
-		
 		JButton btnNewButton_1 = new JButton("\uC904\uBC1C\uC9C0\uC5ED");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -112,18 +107,46 @@ public class GUI_Selection {
 		btnNewButton_1.setBounds(39, 23, 105, 27);
 		panel.add(btnNewButton_1);
 		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(12, 68, 156, 21);
+		panel.add(comboBox);
+		
 		JPanel panel_2 = new JPanel();
 		panel_1.add(panel_2);
 		panel_2.setLayout(null);
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
-		textField_1.setBounds(14, 62, 156, 24);
+		textField_1.setBounds(16, 66, 156, 24);
 		panel_2.add(textField_1);
 		
 		JButton button = new JButton("\uB3C4\uCC29\uC9C0\uC5ED");
 		button.setBounds(39, 23, 105, 27);
 		panel_2.add(button);
+		
+		JButton btnNewButton_2 = new JButton("\uC11C\uC6B8");
+		btnNewButton_2.setBounds(461, 131, 97, 23);
+		frame.getContentPane().add(btnNewButton_2);
+		
+		JButton button_1 = new JButton("\uB300\uC804");
+		button_1.setBounds(618, 131, 97, 23);
+		frame.getContentPane().add(button_1);
+		
+		JButton button_2 = new JButton("\uC6B8\uC0B0");
+		button_2.setBounds(461, 279, 97, 23);
+		frame.getContentPane().add(button_2);
+		
+		JButton button_3 = new JButton("\uB300\uAD6C");
+		button_3.setBounds(618, 279, 97, 23);
+		frame.getContentPane().add(button_3);
+		
+		JButton button_4 = new JButton("\uAD11\uC8FC");
+		button_4.setBounds(461, 427, 97, 23);
+		frame.getContentPane().add(button_4);
+		
+		JButton button_5 = new JButton("\uBD80\uC0B0");
+		button_5.setBounds(618, 427, 97, 23);
+		frame.getContentPane().add(button_5);
 		frame.setAutoRequestFocus(false);
 		frame.setBounds(100, 100, 800, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -79,9 +79,5 @@ public class GUI_TourInfo {
 		JLabel lblNewLabel_2 = new JLabel("\uCD94\uCC9C\uCF54\uC2A4");
 		lblNewLabel_2.setBounds(12, 299, 57, 15);
 		frame.getContentPane().add(lblNewLabel_2);
-		
-		JButton btnNewButton = new JButton("\uC608\uB9E4\uD558\uAE30  ");
-		btnNewButton.setBounds(675, 48, 97, 23);
-		frame.getContentPane().add(btnNewButton);
 	}
 }
