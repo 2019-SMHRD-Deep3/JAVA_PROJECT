@@ -105,12 +105,18 @@ public class GUI_Login {
 												JButton login = new JButton("\uB85C\uADF8\uC778");
 												login.setBackground(new Color(255, 255, 255));
 												login.setBounds(272, 508, 97, 28);
+												login.setBorderPainted(false);
 												panel.add(login);
 												
 														JButton btnNewButton = new JButton("\uD68C\uC6D0\uAC00\uC785");
+														btnNewButton.addActionListener(new ActionListener() {
+															public void actionPerformed(ActionEvent e) {
+															}
+														});
 														btnNewButton.setForeground(new Color(0, 0, 0));
 														btnNewButton.setBackground(new Color(255, 255, 255));
 														btnNewButton.setBounds(415, 508, 97, 28);
+														btnNewButton.setBorderPainted(false);
 														panel.add(btnNewButton);
 														btnNewButton.addMouseListener(new MouseAdapter() {
 															@Override
