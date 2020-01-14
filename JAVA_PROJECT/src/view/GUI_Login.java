@@ -28,7 +28,7 @@ public class GUI_Login {
 	private MemberManagementService service = new MemberManagementService();
 	private JFrame frame;
 	private JTextField id;
-	private JTextField pw;
+	private JPasswordField passwordField;
 
 	/**
 	 * Launch the application.
@@ -64,14 +64,14 @@ public class GUI_Login {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		// �̹��� ����
-		
+
 		String imgPath = this.getClass().getResource(".").getPath() + "..//..//img//main.png";
 		System.out.println(imgPath);
 
 		ImageIcon icon = new ImageIcon(imgPath);
 		JPanel panel = new JPanel() {
 			protected void paintComponent(Graphics g) {
-				g.drawImage(icon.getImage(),0,0,785,565,null);
+				g.drawImage(icon.getImage(), 0, 0, 785, 565, null);
 				setOpaque(false);
 				super.paintComponent(g);
 			}
@@ -79,73 +79,72 @@ public class GUI_Login {
 		panel.setBounds(0, 0, 784, 561);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
-		
-				id = new JTextField();
-				id.setBounds(272, 406, 240, 35);
-				panel.add(id);
-				id.setColumns(10);
-				
-						pw = new JTextField();
-						pw.setBounds(272, 451, 240, 35);
-						panel.add(pw);
-						pw.setColumns(10);
-						
-								JLabel lblNewLabel_1 = new JLabel("\uBE44\uBC00\uBC88\uD638");
-								lblNewLabel_1.setForeground(new Color(255, 255, 255));
-								lblNewLabel_1.setBounds(189, 453, 85, 27);
-								panel.add(lblNewLabel_1);
-								lblNewLabel_1.setFont(new Font("���� ���", Font.PLAIN, 15));
-								
-										JLabel lblNewLabel = new JLabel("\uC544\uC774\uB514");
-										lblNewLabel.setForeground(new Color(255, 255, 255));
-										lblNewLabel.setBounds(189, 402, 75, 35);
-										panel.add(lblNewLabel);
-										lblNewLabel.setFont(new Font("���� ���", Font.PLAIN, 15));
-										
-												JButton login = new JButton("\uB85C\uADF8\uC778");
-												login.setBackground(new Color(255, 255, 255));
-												login.setBounds(272, 508, 97, 28);
-												login.setBorderPainted(false);
-												panel.add(login);
-												
-														JButton btnNewButton = new JButton("\uD68C\uC6D0\uAC00\uC785");
-														btnNewButton.addActionListener(new ActionListener() {
-															public void actionPerformed(ActionEvent e) {
-															}
-														});
-														btnNewButton.setForeground(new Color(0, 0, 0));
-														btnNewButton.setBackground(new Color(255, 255, 255));
-														btnNewButton.setBounds(415, 508, 97, 28);
-														btnNewButton.setBorderPainted(false);
-														panel.add(btnNewButton);
-														btnNewButton.addMouseListener(new MouseAdapter() {
-															@Override
-															public void mouseClicked(MouseEvent e) {
-																GUI_Join join = new GUI_Join();
-															}
-														});
-												login.addMouseListener(new MouseAdapter() {
-													@Override
-													public void mouseClicked(MouseEvent e) {
-														String infoId = id.getText();
-														String infoPw = pw.getText();
 
-														Member m = new Member(infoId, infoPw);
+		id = new JTextField();
+		id.setBounds(272, 406, 240, 35);
+		panel.add(id);
+		id.setColumns(10);
 
-														Member loginUser = service.memberLogin(m);
-														if (loginUser == null) {
-															JOptionPane.showMessageDialog(frame, "�α��� ����");
-															frame.dispose();
-														} else {
-															JOptionPane.showMessageDialog(frame, "�α��� ����");
-															GUI_MainMenu main = new GUI_MainMenu();
-															frame.dispose();
-														}
-													}
-												});
-												login.addActionListener(new ActionListener() {
-													public void actionPerformed(ActionEvent arg0) {
-													}
-												});
+		passwordField = new JPasswordField();
+		passwordField.setBounds(272, 449, 240, 35);
+		panel.add(passwordField);
+
+		JLabel lblNewLabel_1 = new JLabel("\uBE44\uBC00\uBC88\uD638");
+		lblNewLabel_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_1.setBounds(189, 453, 85, 27);
+		panel.add(lblNewLabel_1);
+		lblNewLabel_1.setFont(new Font("���� ���", Font.PLAIN, 15));
+
+		JLabel lblNewLabel = new JLabel("\uC544\uC774\uB514");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
+		lblNewLabel.setBounds(189, 402, 75, 35);
+		panel.add(lblNewLabel);
+		lblNewLabel.setFont(new Font("���� ���", Font.PLAIN, 15));
+
+		JButton login = new JButton("\uB85C\uADF8\uC778");
+		login.setBackground(new Color(255, 255, 255));
+		login.setBounds(272, 508, 97, 28);
+		login.setBorderPainted(false);
+		panel.add(login);
+
+		JButton btnNewButton = new JButton("\uD68C\uC6D0\uAC00\uC785");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnNewButton.setForeground(new Color(0, 0, 0));
+		btnNewButton.setBackground(new Color(255, 255, 255));
+		btnNewButton.setBounds(415, 508, 97, 28);
+		btnNewButton.setBorderPainted(false);
+		panel.add(btnNewButton);
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				GUI_Join join = new GUI_Join();
+			}
+		});
+		login.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				String infoId = id.getText();
+				String infoPw = passwordField.getText();
+
+				Member m = new Member(infoId, infoPw);
+
+				Member loginUser = service.memberLogin(m);
+				if (loginUser == null) {
+					JOptionPane.showMessageDialog(frame, "login fail�");
+					frame.dispose();
+				} else {
+					JOptionPane.showMessageDialog(frame, "login success");
+					GUI_MainMenu main = new GUI_MainMenu();
+					frame.dispose();
+				}
+			}
+		});
+		login.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 	}
 }
