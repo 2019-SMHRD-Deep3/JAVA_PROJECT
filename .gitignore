@@ -1,13 +1,12 @@
 ### Eclipse ###
-.metadata
-bin/
+
 tmp/
 *.tmp
 *.bak
 *.swp
 *~.nib
 local.properties
-.settings/
+
 .loadpath
 .recommenders
 
@@ -57,10 +56,9 @@ local.properties
 
 ### Eclipse Patch ###
 # Eclipse Core
-.project
+
 
 # JDT-specific (Eclipse Java Development Tools)
-.classpath
 
 # Annotation Processing
 .apt_generated
@@ -69,7 +67,6 @@ local.properties
 
 ### Java ###
 # Compiled class file
-*.class
 
 # Log file
 *.log
