@@ -6,15 +6,17 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class MemberInsert implements I_MemberInsert{
-	private String url = "jdbc:oracle:thin:@localhost:1521:xe";
-	private String user = "hr";
-	private String password = "hr";
-	private Connection conn = null;
-	private PreparedStatement psmt = null;
-	private ResultSet rs = null;
+import model.model_interface.I_MemberJoin;
+
+public class MemberJoin implements I_MemberJoin{
+	public String url = "jdbc:oracle:thin:@localhost:1521:xe";
+	public String user = "hr";
+	public String password = "hr";
+	public Connection conn = null;
+	public PreparedStatement psmt = null;
+	public ResultSet rs = null;
 	@Override
-	public int memberinsert(Member m) {
+	public int memberjoin(Member m) {
 		// TODO Auto-generated method stub
 		int rows = 0;
 		try {
