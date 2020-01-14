@@ -23,6 +23,7 @@ import controller.MemberManagementService;
 import model.Member;
 import javax.swing.JPasswordField;
 
+
 public class GUI_Login {
 
 	private MemberManagementService service = new MemberManagementService();
