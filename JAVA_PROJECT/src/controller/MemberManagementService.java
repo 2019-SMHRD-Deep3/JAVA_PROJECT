@@ -6,6 +6,11 @@ import model.MemberDAO;
 public class MemberManagementService {
 	
 	private MemberDAO dao = new MemberDAO();
+
+	public Member memberLogin(Member m) {
+		Member loginUser = dao.selectOne(m);
+		return loginUser;
+	}
 	
 	public boolean memberJoin(Member m) {
 		int rows = dao.insert(m);
@@ -13,11 +18,6 @@ public class MemberManagementService {
 			return false;
 		else
 			return true;
-	}
-
-	public Member memberLogin(Member m) {
-		Member loginUser = dao.selectOne(m);
-		return loginUser;
 	}
 
 }

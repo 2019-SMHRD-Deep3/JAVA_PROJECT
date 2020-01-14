@@ -13,41 +13,11 @@ public class MemberDAO {
 	private Connection conn = null;
 	private PreparedStatement psmt = null;
 	private ResultSet rs = null;
-
+	
+	
 	public int insert(Member m) {
-		int rows = 0;
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			conn = DriverManager.getConnection(url, user, password);
-			String sql = "INSERT INTO user_info VALUES(?,?,?,?,?,?)";
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, m.getId());
-			psmt.setString(2, m.getPw());
-			psmt.setString(3, m.getName());
-			psmt.setString(4, m.getBirth());
-			psmt.setString(5, m.getPhone());
-			psmt.setString(6, m.getEmail());
-			rows = psmt.executeUpdate();
-			if (rows == 0) {
-				System.out.println("SQL문을 확인하세요");
-			}
-
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally { // 연결을 끊어주는 작업
-			try {
-				if (psmt != null)
-					psmt.close();
-				if (conn != null)
-					conn.close();
-
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-
-		}
+		I_MemberInsert member = new MemberInsert();
+		int rows = member.memberinsert(m);
 		return rows;
 	}
 

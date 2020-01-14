@@ -61,7 +61,7 @@ public class GUI_Join {
 		panel_1.setLayout(new CardLayout(0, 0));
 
 		JLabel lblNewLabel = new JLabel("\uAC00\uBCF4\uC790");
-		lblNewLabel.setFont(new Font("±¼¸²", Font.PLAIN, 31));
+		lblNewLabel.setFont(new Font("ï¿½ï¿½ï¿½ï¿½", Font.PLAIN, 31));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(lblNewLabel, "name_1457830998951300");
 
@@ -136,13 +136,13 @@ public class GUI_Join {
 
 					boolean result = service.memberJoin(m);
 					if (result) {
-						JOptionPane.showMessageDialog(frame, "È¸¿ø°¡ÀÔ ¼º°ø");
-						frame.dispose(); // È­¸é Á¾·á
+						JOptionPane.showMessageDialog(frame, "íšŒì›ê°€ì… ì„±ê³µ");
+						frame.dispose(); // È­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 					} else {
-						JOptionPane.showMessageDialog(frame, "È¸¿ø°¡ÀÔ ½ÇÆĞ");
+						JOptionPane.showMessageDialog(frame, "íšŒì›ê°€ì… ì‹¤íŒ¨");
 					}
 				} else {
-					JOptionPane.showMessageDialog(frame, "ºñ¹Ğ¹øÈ£¸¦ ´Ù½Ã È®ÀÎÇÏ¼¼¿ä.");
+					JOptionPane.showMessageDialog(frame, "ï¿½ï¿½Ğ¹ï¿½È£ï¿½ï¿½ ï¿½Ù½ï¿½ È®ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½.");
 				}
 			}
 		});
