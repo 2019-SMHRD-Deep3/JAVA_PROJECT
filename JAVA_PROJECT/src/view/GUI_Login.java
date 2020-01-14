@@ -4,11 +4,13 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -19,6 +21,7 @@ import javax.swing.SwingConstants;
 
 import controller.MemberManagementService;
 import model.Member;
+import javax.swing.JPasswordField;
 
 public class GUI_Login {
 
@@ -56,81 +59,87 @@ public class GUI_Login {
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(255, 255, 255));
-		frame.getContentPane().setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 12));
+		frame.getContentPane().setFont(new Font("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½", Font.PLAIN, 12));
 		frame.setBounds(100, 100, 800, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		// ï¿½Ì¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		
+		String imgPath = this.getClass().getResource(".").getPath() + "..//..//img//main.png";
+		System.out.println(imgPath);
 
-		JPanel panel = new JPanel();
-		panel.setBounds(175, 0, 434, 99);
+		ImageIcon icon = new ImageIcon(imgPath);
+		JPanel panel = new JPanel() {
+			protected void paintComponent(Graphics g) {
+				g.drawImage(icon.getImage(),0,0,785,565,null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		panel.setBounds(0, 0, 784, 561);
 		frame.getContentPane().add(panel);
-		panel.setLayout(new CardLayout(0, 0));
+		panel.setLayout(null);
+		
+				id = new JTextField();
+				id.setBounds(272, 406, 240, 35);
+				panel.add(id);
+				id.setColumns(10);
+				
+						pw = new JTextField();
+						pw.setBounds(272, 451, 240, 35);
+						panel.add(pw);
+						pw.setColumns(10);
+						
+								JLabel lblNewLabel_1 = new JLabel("\uBE44\uBC00\uBC88\uD638");
+								lblNewLabel_1.setForeground(new Color(255, 255, 255));
+								lblNewLabel_1.setBounds(189, 453, 85, 27);
+								panel.add(lblNewLabel_1);
+								lblNewLabel_1.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½", Font.PLAIN, 15));
+								
+										JLabel lblNewLabel = new JLabel("\uC544\uC774\uB514");
+										lblNewLabel.setForeground(new Color(255, 255, 255));
+										lblNewLabel.setBounds(189, 402, 75, 35);
+										panel.add(lblNewLabel);
+										lblNewLabel.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½", Font.PLAIN, 15));
+										
+												JButton login = new JButton("\uB85C\uADF8\uC778");
+												login.setBackground(new Color(255, 255, 255));
+												login.setBounds(272, 508, 97, 28);
+												panel.add(login);
+												
+														JButton btnNewButton = new JButton("\uD68C\uC6D0\uAC00\uC785");
+														btnNewButton.setForeground(new Color(0, 0, 0));
+														btnNewButton.setBackground(new Color(255, 255, 255));
+														btnNewButton.setBounds(415, 508, 97, 28);
+														panel.add(btnNewButton);
+														btnNewButton.addMouseListener(new MouseAdapter() {
+															@Override
+															public void mouseClicked(MouseEvent e) {
+																GUI_Join join = new GUI_Join();
+															}
+														});
+												login.addMouseListener(new MouseAdapter() {
+													@Override
+													public void mouseClicked(MouseEvent e) {
+														String infoId = id.getText();
+														String infoPw = pw.getText();
 
-		JLabel label = new JLabel("\uAC00\uBCF4\uC790");
-		label.setFont(new Font("¹®Ã¼ºÎ ¾²±â Èê¸²Ã¼", Font.BOLD, 40));
-		label.setHorizontalAlignment(SwingConstants.CENTER);
-		panel.add(label, "name_1448421216090600");
+														Member m = new Member(infoId, infoPw);
 
-		id = new JTextField();
-		id.setBounds(297, 214, 312, 61);
-		frame.getContentPane().add(id);
-		id.setColumns(10);
-
-		pw = new JTextField();
-		pw.setBounds(297, 339, 312, 61);
-		pw.setColumns(10);
-		frame.getContentPane().add(pw);
-
-		JButton login = new JButton("\uB85C\uADF8\uC778");
-		login.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				String infoId = id.getText();
-				String infoPw = pw.getText();
-
-				Member m = new Member(infoId, infoPw);
-
-				Member loginUser = service.memberLogin(m);
-				if (loginUser == null) {
-					JOptionPane.showMessageDialog(frame, "·Î±×ÀÎ ½ÇÆÐ");
-					frame.dispose(); 
-				} else {
-					JOptionPane.showMessageDialog(frame, "·Î±×ÀÎ ¼º°ø");
-					GUI_MainMenu main = new GUI_MainMenu();
-					frame.dispose();
-				}
-			}
-		});
-		login.setBounds(335, 466, 97, 28);
-		login.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		frame.getContentPane().add(login);
-
-		JLabel lblNewLabel = new JLabel("\uC544\uC774\uB514");
-		lblNewLabel.setBounds(175, 217, 95, 46);
-		lblNewLabel.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 20));
-		frame.getContentPane().add(lblNewLabel);
-
-		JLabel lblNewLabel_1 = new JLabel("\uBE44\uBC00\uBC88\uD638");
-		lblNewLabel_1.setBounds(175, 352, 165, 27);
-		lblNewLabel_1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 20));
-		frame.getContentPane().add(lblNewLabel_1);
-
-		JButton btnNewButton = new JButton("\uD68C\uC6D0\uAC00\uC785");
-		btnNewButton.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				GUI_Join join = new GUI_Join();
-			}
-		});
-//		btnNewButton.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//				GUI_Join join = new GUI_Join();
-//			}
-//		});
-		btnNewButton.setBounds(472, 466, 97, 28);
-		frame.getContentPane().add(btnNewButton);
+														Member loginUser = service.memberLogin(m);
+														if (loginUser == null) {
+															JOptionPane.showMessageDialog(frame, "ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
+															frame.dispose();
+														} else {
+															JOptionPane.showMessageDialog(frame, "ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
+															GUI_MainMenu main = new GUI_MainMenu();
+															frame.dispose();
+														}
+													}
+												});
+												login.addActionListener(new ActionListener() {
+													public void actionPerformed(ActionEvent arg0) {
+													}
+												});
 	}
 }
