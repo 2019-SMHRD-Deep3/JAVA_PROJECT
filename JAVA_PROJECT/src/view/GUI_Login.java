@@ -82,11 +82,13 @@ public class GUI_Login {
 
 		id = new JTextField();
 		id.setBounds(272, 406, 240, 35);
+		id.setBorder(null);
 		panel.add(id);
 		id.setColumns(10);
 
 		passwordField = new JPasswordField();
 		passwordField.setBounds(272, 449, 240, 35);
+		passwordField.setBorder(null);
 		panel.add(passwordField);
 
 		JLabel lblNewLabel_1 = new JLabel("\uBE44\uBC00\uBC88\uD638");
@@ -133,7 +135,7 @@ public class GUI_Login {
 
 				Member loginUser = service.memberLogin(m);
 				if (loginUser == null) {
-					JOptionPane.showMessageDialog(frame, "login fail�");
+					JOptionPane.showMessageDialog(frame, "login fail");
 					frame.dispose();
 				} else {
 					JOptionPane.showMessageDialog(frame, "login success");
