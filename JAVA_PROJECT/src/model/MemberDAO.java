@@ -24,5 +24,36 @@ public class MemberDAO {
 		return loginuser;
 	}
 	
+	public void memberout() {
+		// TODO Auto-generated method stub
+		
+	}
+	public void memberinfoselect() {
+		// TODO Auto-generated method stub
+		
+	}
+	public void memberinfomodify() {
+		// TODO Auto-generated method stub
+		
+	}
+	public void bookingcancle() {
+		// TODO Auto-generated method stub
+		
+	}
+	public void bookingmodify() {
+		// TODO Auto-generated method stub
+		
+	}
+	public void booking() {
+		// TODO Auto-generated method stub
+		
+	}
+	public void bookingpayment() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	
 
 }

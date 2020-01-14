@@ -142,7 +142,7 @@ public class GUI_Join {
 						JOptionPane.showMessageDialog(frame, "회원가입 실패");
 					}
 				} else {
-					JOptionPane.showMessageDialog(frame, "��й�ȣ�� �ٽ� Ȯ���ϼ���.");
+					JOptionPane.showMessageDialog(frame, "비밀번호 확인");
 				}
 			}
 		});

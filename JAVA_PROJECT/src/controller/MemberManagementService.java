@@ -20,7 +20,38 @@ public class MemberManagementService {
 		return loginUser;
 	}
 	
+	public int memberOut() {
+		dao.memberout();
+		return 0;
+	}
 	
+	public boolean memberInfoSelect() {
+		dao.memberinfoselect();
+		return false;
+	}
 	
-
+	public int memberInfoModify() {
+		dao.memberinfomodify();
+		return 0;
+	}
+	
+	public int bookingCancle() {
+		dao.bookingcancle();
+		return 0;
+	}
+	
+	public int bookingModify() {
+		dao.bookingmodify();
+		return 0;
+	}
+	
+	public boolean booking() {
+		dao.booking();
+		return false;
+	}
+	
+	public int bookingPayment() {
+		dao.bookingpayment();
+		return 0;
+	}
 }
