@@ -98,7 +98,7 @@ public class GUI_Join {
 		panel_2.add(name);
 		name.setColumns(10);
 
-		JLabel lblNewLabel_5 = new JLabel("\uC0DD\uB144\uC6D4\uC77C(YYMMDD)");
+		JLabel lblNewLabel_5 = new JLabel("\uC0DD\uB144\uC6D4\uC77C(YYYY/MM/DD)");
 		panel_2.add(lblNewLabel_5);
 
 		birth = new JTextField();

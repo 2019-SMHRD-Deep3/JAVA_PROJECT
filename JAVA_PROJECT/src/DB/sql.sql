@@ -51,11 +51,17 @@ CREATE TABLE BOOK(
                 BOOK_DATE DATE,
                 CONSTRAINT book_userid_fk FOREIGN KEY ("USER_ID")
                 REFERENCES USER_INFO("USER_ID"),
-                CONSTRAINT BOOK_DEPLOCNUM_FK FOREIGN KEY ("BOOK_NUM")
-                REFERENCES LOCATION_INFO ("LOC_NUM"));
+                CONSTRAINT book_deplocbum_fk FOREIGN KEY ("DEP_LOC_NUM")
+                REFERENCES LOCATION_INFO ("LOC_NUM"),
+                CONSTRAINT book_arrlocnum_fk FOREIGN KEY ("ARR_LOC_NUM")
+                REFERENCES LOCATION_INFO ("LOC_NUM"),
+                CONSTRAINT book_busservnum_fk FOREIGN KEY ("SERV_NUM")
+                REFERENCES BUS ("BUS_SERV_NUM"),
+                CONSTRAINT book_trainservnum_fk FOREIGN KEY ("SERV_NUM")
+                REFERENCES TRAIN ("TRAIN_SERV_NUM"));
 
 -- insert
-/*
+
 -- 유저 테이블 더미 데이터 삽입 
 INSERT INTO USER_INFO
 VALUES('TEST1','1111','김철수','1995/04/17','010-1111-1111','TEST1@TEST.MAIL');
@@ -81,5 +87,29 @@ INSERT INTO LOCATION_INFO
 VALUES('L7','울산');
 
 -- 기차 운행 정보 테이블 
---INSERT INTO TRAIN
---VALUES('T1','광주','서울','2020/01/01 18:30:00','2020/01/01 21:30:00','ITX',1,1);
+-- 서울->부산
+INSERT INTO TRAIN
+VALUES('Ts1','t1','L1','L2',TO_DATE('2020/01/01 12:00:00', 'yyyy/mm/dd hh24:mi:ss'),
+                            TO_DATE('2020/01/01 15:30:00', 'yyyy/mm/dd hh24:mi:ss'),'ITX',1,1);
+-- 서울->대구
+INSERT INTO TRAIN
+VALUES('Ts2','t2','L1','L3',TO_DATE('2020/01/01 12:00:00', 'yyyy/mm/dd hh24:mi:ss'),
+                            TO_DATE('2020/01/01 13:30:00', 'yyyy/mm/dd hh24:mi:ss'),'ITX',1,1);
+-- 서울->광주
+INSERT INTO TRAIN
+VALUES('Ts3','t3','L1','L4',TO_DATE('2020/01/01 12:00:00', 'yyyy/mm/dd hh24:mi:ss'),
+                            TO_DATE('2020/01/01 15:30:00', 'yyyy/mm/dd hh24:mi:ss'),'ITX',1,1);
+                            
+-- 버스 운행 테이블
+-- 서울->광주
+INSERT INTO BUS
+VALUES('Bs1','B1','L1','L2',TO_DATE('2020/01/01 12:00:00', 'yyyy/mm/dd hh24:mi:ss'),
+                            TO_DATE('2020/01/01 15:30:00', 'yyyy/mm/dd hh24:mi:ss'),'ITX',1,1);
+-- 서울->대구
+INSERT INTO BUS
+VALUES('Bs2','B2','L1','L3',TO_DATE('2020/01/01 12:00:00', 'yyyy/mm/dd hh24:mi:ss'),
+                            TO_DATE('2020/01/01 13:30:00', 'yyyy/mm/dd hh24:mi:ss'),'ITX',1,1);
+-- 서울->광주
+INSERT INTO BUS
+VALUES('Bs3','B3','L1','L4',TO_DATE('2020/01/01 12:00:00', 'yyyy/mm/dd hh24:mi:ss'),
+                            TO_DATE('2020/01/01 15:30:00', 'yyyy/mm/dd hh24:mi:ss'),'ITX',1,1);
