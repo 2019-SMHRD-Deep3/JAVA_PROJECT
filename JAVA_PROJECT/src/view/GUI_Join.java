@@ -11,6 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
@@ -79,14 +80,14 @@ public class GUI_Join {
 		JLabel lblNewLabel_2 = new JLabel("\uBE44\uBC00\uBC88\uD638");
 		panel_2.add(lblNewLabel_2);
 
-		pw = new JTextField();
+		pw = new JPasswordField();
 		panel_2.add(pw);
 		pw.setColumns(10);
 
 		JLabel lblNewLabel_3 = new JLabel("\uBE44\uBC00\uBC88\uD638\uD655\uC778");
 		panel_2.add(lblNewLabel_3);
 
-		pw1 = new JTextField();
+		pw1 = new JPasswordField();
 		panel_2.add(pw1);
 		pw1.setColumns(10);
 
