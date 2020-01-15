@@ -12,12 +12,12 @@ import javax.swing.JButton;
 public class GUI_Pay {
 
 	private JFrame frame;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
+	private JTextField departure;
+	private JTextField arrival;
+	private JTextField serv_num;
+	private JTextField departime;
+	private JTextField arrivaltime;
+	private JTextField person;
 	private JTextField textField_6;
 	private JTextField textField_7;
 	private JTextField money;
@@ -58,51 +58,51 @@ public class GUI_Pay {
 		frame.getContentPane().add(panel, "name_1614660541439400");
 		panel.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("New label");
+		JLabel lblNewLabel = new JLabel("출발");
 		lblNewLabel.setBounds(55, 49, 57, 15);
 		panel.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
+		JLabel lblNewLabel_1 = new JLabel("도착");
 		lblNewLabel_1.setBounds(55, 93, 57, 15);
 		panel.add(lblNewLabel_1);
 		
-		textField = new JTextField();
-		textField.setBounds(185, 46, 116, 21);
-		panel.add(textField);
-		textField.setColumns(10);
+		departure = new JTextField();
+		departure.setBounds(185, 46, 116, 21);
+		panel.add(departure);
+		departure.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(185, 90, 116, 21);
-		panel.add(textField_1);
-		textField_1.setColumns(10);
+		arrival = new JTextField();
+		arrival.setBounds(185, 90, 116, 21);
+		panel.add(arrival);
+		arrival.setColumns(10);
 		
-		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setBounds(55, 175, 57, 15);
-		panel.add(lblNewLabel_2);
+		JLabel 교통수단 = new JLabel("New label");
+		교통수단.setBounds(55, 175, 57, 15);
+		panel.add(교통수단);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(185, 172, 116, 21);
-		panel.add(textField_2);
-		textField_2.setColumns(10);
+		serv_num = new JTextField();
+		serv_num.setBounds(185, 172, 116, 21);
+		panel.add(serv_num);
+		serv_num.setColumns(10);
 		
-		textField_3 = new JTextField();
-		textField_3.setBounds(414, 46, 116, 21);
-		panel.add(textField_3);
-		textField_3.setColumns(10);
+		departime = new JTextField();
+		departime.setBounds(414, 46, 116, 21);
+		panel.add(departime);
+		departime.setColumns(10);
 		
-		textField_4 = new JTextField();
-		textField_4.setBounds(414, 90, 116, 21);
-		panel.add(textField_4);
-		textField_4.setColumns(10);
+		arrivaltime = new JTextField();
+		arrivaltime.setBounds(414, 90, 116, 21);
+		panel.add(arrivaltime);
+		arrivaltime.setColumns(10);
 		
-		JLabel lblNewLabel_3 = new JLabel("New label");
-		lblNewLabel_3.setBounds(414, 175, 57, 15);
-		panel.add(lblNewLabel_3);
+		JLabel per = new JLabel("인원수");
+		per.setBounds(414, 175, 57, 15);
+		panel.add(per);
 		
-		textField_5 = new JTextField();
-		textField_5.setBounds(538, 172, 116, 21);
-		panel.add(textField_5);
-		textField_5.setColumns(10);
+		person = new JTextField();
+		person.setBounds(548, 172, 116, 21);
+		panel.add(person);
+		person.setColumns(10);
 		
 		JLabel lblNewLabel_4 = new JLabel("New label");
 		lblNewLabel_4.setBounds(414, 247, 57, 15);
@@ -122,7 +122,7 @@ public class GUI_Pay {
 		panel.add(textField_7);
 		textField_7.setColumns(10);
 		
-		JButton btnNewButton = new JButton("New button");
+		JButton btnNewButton = new JButton("결제하기");
 		btnNewButton.setBounds(631, 506, 97, 23);
 		panel.add(btnNewButton);
 		
