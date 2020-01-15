@@ -24,8 +24,6 @@ public class Book {
 		this.fare=fare;
 	}
 	
-	
-
 	public String getBooknum() {
 		return booknum;
 	}
@@ -89,9 +87,5 @@ public class Book {
 	public void setFare(String fare) {
 		this.fare = fare;
 	}
-	
-	
-
-	
 	
 }
