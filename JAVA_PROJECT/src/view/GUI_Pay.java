@@ -1,13 +1,16 @@
 package view;
 
+import java.awt.CardLayout;
 import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import java.awt.CardLayout;
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import model.Book;
+import model.MemberDAO;
 
 public class GUI_Pay {
 
@@ -17,11 +20,27 @@ public class GUI_Pay {
 	private JTextField serv_num;
 	private JTextField departime;
 	private JTextField arrivaltime;
-	private JTextField person;
+	private JTextField textField_5;
 	private JTextField textField_6;
 	private JTextField textField_7;
 	private JTextField money;
 
+// 객체생성
+	MemberDAO dao = new MemberDAO();
+// 객체생성
+	Book bookUser;
+	
+	
+	public GUI_Pay(Book bookUser) {
+		this.bookUser = bookUser;
+
+		initialize();
+		frame.setVisible(true);
+	}
+	
+	
+	
+	
 	/**
 	 * Launch the application.
 	 */
@@ -65,8 +84,9 @@ public class GUI_Pay {
 		JLabel lblNewLabel_1 = new JLabel("도착");
 		lblNewLabel_1.setBounds(55, 93, 57, 15);
 		panel.add(lblNewLabel_1);
+/////////////////////////////////////////////////////////////////////////////		
+		departure = new JTextField(bookUser.getArr());
 		
-		departure = new JTextField();
 		departure.setBounds(185, 46, 116, 21);
 		panel.add(departure);
 		departure.setColumns(10);
@@ -99,10 +119,10 @@ public class GUI_Pay {
 		per.setBounds(414, 175, 57, 15);
 		panel.add(per);
 		
-		person = new JTextField();
-		person.setBounds(548, 172, 116, 21);
-		panel.add(person);
-		person.setColumns(10);
+		textField_5 = new JTextField();
+		textField_5.setBounds(538, 172, 116, 21);
+		panel.add(textField_5);
+		textField_5.setColumns(10);
 		
 		JLabel lblNewLabel_4 = new JLabel("New label");
 		lblNewLabel_4.setBounds(414, 247, 57, 15);
@@ -122,7 +142,7 @@ public class GUI_Pay {
 		panel.add(textField_7);
 		textField_7.setColumns(10);
 		
-		JButton btnNewButton = new JButton("결제하기");
+		JButton btnNewButton = new JButton("New button");
 		btnNewButton.setBounds(631, 506, 97, 23);
 		panel.add(btnNewButton);
 		
