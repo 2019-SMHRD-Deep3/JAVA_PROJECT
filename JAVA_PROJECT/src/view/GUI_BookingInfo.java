@@ -146,6 +146,7 @@ public class GUI_BookingInfo {
 					JOptionPane.showMessageDialog(frame,
 					    "예매가 취소되었습니다.");
 					defaultTableModel.removeRow(i);
+					
 			}
 		});
 
@@ -161,6 +162,16 @@ public class GUI_BookingInfo {
 		label.setBounds(58, 35, 150, 15);
 		frame.getContentPane().add(label);
 		label.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
+		
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frame.dispose();
+			}
+		});
+		btnNewButton.setBounds(624, 353, 97, 23);
+		frame.getContentPane().add(btnNewButton);
 //		String[] petStrings = { "Bird", "Cat", "Dog", "Rabbit", "Pig" };
 //		//Create the combo box, select item at index 4.
 //		//Indices start at 0, so 4 specifies the pig.

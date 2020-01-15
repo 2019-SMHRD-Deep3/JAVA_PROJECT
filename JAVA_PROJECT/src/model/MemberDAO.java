@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import model.model_interface.I_BookingCancle;
+import model.model_interface.I_BookingModify;
 import model.model_interface.I_MemberInfoModify;
 import model.model_interface.I_MemberJoin;
 import model.model_interface.I_MemberLogIn;
@@ -36,15 +38,22 @@ public class MemberDAO {
 	public int memberinfomodify(Member m) {
 		I_MemberInfoModify member = new MemberInfoModify();
 		int rows = member.memberinfomodify(m);
+		
 		return rows;
 		
-	}
-	public void bookingcancle() {
-		// TODO Auto-generated method stub
 		
 	}
-	public void bookingmodify() {
-		// TODO Auto-generated method stub
+	public int bookingcancle(Member m) {
+		I_BookingCancle member = new BookingCancle();
+        int rows = member.bookingCancle();
+		return rows;
+
+		
+	}
+	public int bookingmodify(Member m) {
+		I_BookingModify member = new BookingModify();
+        int rows = member.bookingModify();
+		return rows;
 		
 	}
 	public void booking() {
@@ -55,6 +64,11 @@ public class MemberDAO {
 		// TODO Auto-generated method stub
 		
 	}
+	public void memberlookup() {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 
 

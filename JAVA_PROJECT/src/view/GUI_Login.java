@@ -133,8 +133,8 @@ public class GUI_Login {
 				String infoPw = passwordField.getText();
 
 				Member m = new Member(infoId, infoPw);
-
 				Member loginUser = service.memberLogin(m);
+				
 				if (loginUser == null) {
 					JOptionPane.showMessageDialog(frame, "login fail");
 					frame.dispose();
