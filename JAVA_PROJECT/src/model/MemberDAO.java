@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import model.model_interface.I_MemberInfoModify;
+import model.model_interface.I_MemberInfoSelect;
 import model.model_interface.I_MemberJoin;
 import model.model_interface.I_MemberLogIn;
 
@@ -28,9 +29,10 @@ public class MemberDAO {
 		// TODO Auto-generated method stub
 		
 	}
-	public void memberinfoselect() {
+	public Book memberinfoselect(Member loginuser) {
 		// TODO Auto-generated method stub
-		
+		I_MemberInfoSelect info = new MemberInfoSelect();
+		return info.memberInfoSelect(loginuser);
 	}
 	public int memberinfomodify(Member m) {
 		I_MemberInfoModify member = new MemberInfoModify();
