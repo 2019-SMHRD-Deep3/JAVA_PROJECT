@@ -45,6 +45,7 @@ CREATE TABLE BOOK(
                 DEP_TIME DATE,
                 ARR_TIME DATE,
                 BOOK_NOM NUMBER(20),
+                BOOK_FARE NUMBER(20),
                 BOOK_DATE DATE,
                 CONSTRAINT book_userid_fk FOREIGN KEY ("USER_ID")
                 REFERENCES USER_INFO("USER_ID"),
@@ -91,32 +92,32 @@ VALUES('Trans2','기차');
 -- 서울->부산
 INSERT INTO TRANS_INFO
 VALUES('Ts1','Trans2','t1','L1','L2',TO_DATE('2020/01/01 12:00:00', 'yyyy/mm/dd hh24:mi:ss'),
-                            TO_DATE('2020/01/01 15:30:00', 'yyyy/mm/dd hh24:mi:ss'),'ITX',1,1);
+                            TO_DATE('2020/01/01 15:30:00', 'yyyy/mm/dd hh24:mi:ss'),'ITX',10,1000);
 -- 서울->대구
 INSERT INTO TRANS_INFO
 VALUES('Ts2','Trans2','t2','L1','L3',TO_DATE('2020/01/01 12:00:00', 'yyyy/mm/dd hh24:mi:ss'),
-                            TO_DATE('2020/01/01 13:30:00', 'yyyy/mm/dd hh24:mi:ss'),'ITX',1,1);
+                            TO_DATE('2020/01/01 13:30:00', 'yyyy/mm/dd hh24:mi:ss'),'ITX',10,1000);
 -- 서울->광주
 INSERT INTO TRANS_INFO
 VALUES('Ts3','Trans2','t3','L1','L4',TO_DATE('2020/01/01 12:00:00', 'yyyy/mm/dd hh24:mi:ss'),
-                            TO_DATE('2020/01/01 15:30:00', 'yyyy/mm/dd hh24:mi:ss'),'ITX',1,1);
+                            TO_DATE('2020/01/01 15:30:00', 'yyyy/mm/dd hh24:mi:ss'),'ITX',10,1000);
                             
 -- 버스 운행 테이블
 -- 서울->광주
 INSERT INTO TRANS_INFO
 VALUES('Bs1','Trans1','B1','L1','L2',TO_DATE('2020/01/01 12:00:00', 'yyyy/mm/dd hh24:mi:ss'),
-                            TO_DATE('2020/01/01 15:30:00', 'yyyy/mm/dd hh24:mi:ss'),'ITX',1,1);
+                            TO_DATE('2020/01/01 15:30:00', 'yyyy/mm/dd hh24:mi:ss'),'ITX',10,1000);
 -- 서울->대구
 INSERT INTO TRANS_INFO
 VALUES('Bs2','Trans1','B2','L1','L3',TO_DATE('2020/01/01 12:00:00', 'yyyy/mm/dd hh24:mi:ss'),
-                            TO_DATE('2020/01/01 13:30:00', 'yyyy/mm/dd hh24:mi:ss'),'ITX',1,1);
+                            TO_DATE('2020/01/01 13:30:00', 'yyyy/mm/dd hh24:mi:ss'),'ITX',10,1000);
 -- 서울->광주
 INSERT INTO TRANS_INFO
 VALUES('Bs3','Trans1','B3','L1','L4',TO_DATE('2020/01/01 12:00:00', 'yyyy/mm/dd hh24:mi:ss'),
-                            TO_DATE('2020/01/01 15:30:00', 'yyyy/mm/dd hh24:mi:ss'),'ITX',1,1);
+                            TO_DATE('2020/01/01 15:30:00', 'yyyy/mm/dd hh24:mi:ss'),'ITX',10,1000);
 
 
 -- 예매 현황 데이터 삽입
 INSERT INTO BOOK
 VALUES('booking1','TEST1','L1','L2','Bs1',TO_DATE('2020/01/01 12:00:00', 'yyyy/mm/dd hh24:mi:ss'),
-                            TO_DATE('2020/01/01 15:30:00', 'yyyy/mm/dd hh24:mi:ss'),1,sysdate);
+                            TO_DATE('2020/01/01 15:30:00', 'yyyy/mm/dd hh24:mi:ss'),1,1000,sysdate);
