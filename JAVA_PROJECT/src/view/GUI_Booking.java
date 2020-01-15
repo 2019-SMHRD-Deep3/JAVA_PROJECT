@@ -14,6 +14,14 @@ import javax.swing.JList;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
+import model.Member;
+
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 public class GUI_Booking {
 
 	private JFrame frame;
@@ -23,30 +31,20 @@ public class GUI_Booking {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GUI_Booking window = new GUI_Booking();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the application.
 	 */
-	public GUI_Booking() {
-		initialize();
+	public GUI_Booking(Member loginuser) {
+		
+		initialize(loginuser);
+		frame.setVisible(true);
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize(Member loginuser) {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 800, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -95,5 +93,16 @@ public class GUI_Booking {
 		
 		table_1 = new JTable();
 		scrollPane_1.setViewportView(table_1);
+		
+		JButton btnNewButton = new JButton("결제하기");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				GUI_Pay pay = new GUI_Pay(loginuser);
+			}
+		});
+	
+		btnNewButton.setBounds(510, 66, 97, 23);
+		panel_1.add(btnNewButton);
 	}
 }

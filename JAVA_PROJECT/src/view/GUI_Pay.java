@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import model.Book;
+import model.Member;
 import model.MemberDAO;
 
 public class GUI_Pay {
@@ -31,43 +32,27 @@ public class GUI_Pay {
 	Book bookUser;
 	
 	
-	public GUI_Pay(Book bookUser) {
-		this.bookUser = bookUser;
 
-		initialize();
-		frame.setVisible(true);
-	}
-	
 	
 	
 	
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GUI_Pay window = new GUI_Pay();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the application.
 	 */
-	public GUI_Pay() {
-		initialize();
+	public GUI_Pay(Member loginUser) {
+	
+		initialize(loginUser);
+		frame.setVisible(true);
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize(Member loginUser) {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 800, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -85,7 +70,7 @@ public class GUI_Pay {
 		lblNewLabel_1.setBounds(55, 93, 57, 15);
 		panel.add(lblNewLabel_1);
 /////////////////////////////////////////////////////////////////////////////		
-		departure = new JTextField(bookUser.getArr());
+		departure = new JTextField();
 		
 		departure.setBounds(185, 46, 116, 21);
 		panel.add(departure);
@@ -142,7 +127,7 @@ public class GUI_Pay {
 		panel.add(textField_7);
 		textField_7.setColumns(10);
 		
-		JButton btnNewButton = new JButton("New button");
+		JButton btnNewButton = new JButton("결제하기");
 		btnNewButton.setBounds(631, 506, 97, 23);
 		panel.add(btnNewButton);
 		
