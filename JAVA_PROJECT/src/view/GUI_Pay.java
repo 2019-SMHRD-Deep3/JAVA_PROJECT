@@ -55,7 +55,7 @@ public class GUI_Pay {
 	private void initialize(Member loginUser) {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 800, 600);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(new CardLayout(0, 0));
 		
 		JPanel panel = new JPanel();
