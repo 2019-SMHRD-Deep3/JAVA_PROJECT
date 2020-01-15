@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import model.model_interface.I_BookingCancle;
 import model.model_interface.I_BookingModify;
@@ -74,9 +75,10 @@ public class MemberDAO {
 
 	}
 
-	public void transselect(String depart_date,String depart, String dest) {
+	public ArrayList<TransInfo> transselect(String depart_date,String depart, String dest) {
 		I_TransSelect list = new TransSelect();
-		list.transSelect(depart_date,depart,dest);
+		ArrayList<TransInfo> transSelect = list.transSelect(depart_date,depart,dest);
+		return transSelect;
 		// TODO Auto-generated method stub
 		
 	}

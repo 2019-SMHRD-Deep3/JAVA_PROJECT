@@ -1,8 +1,11 @@
 
 package controller;
 
+import java.util.ArrayList;
+
 import model.Member;
 import model.MemberDAO;
+import model.TransInfo;
 
 public class MemberManagementService {
 
@@ -62,10 +65,11 @@ public class MemberManagementService {
 		return 0;
 	}
 
-	public void transSelect(String depart_date,String depart, String dest) {
-		dao.transselect(depart_date,depart,dest);
+	public ArrayList<TransInfo> transSelect(String depart_date,String depart, String dest) {
+		ArrayList<TransInfo> rslist = null;
+		rslist = dao.transselect(depart_date,depart,dest);
 		// TODO Auto-generated method stub
-		
+		return rslist;
 	}
 }
 
