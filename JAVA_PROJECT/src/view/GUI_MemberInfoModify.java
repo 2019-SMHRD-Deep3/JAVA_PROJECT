@@ -70,8 +70,8 @@ public class GUI_MemberInfoModify {
 
 				if (infoPw.equals(infoPw1)) {
 					Member m = new Member(infoId, infoPw, infoName, infoBirth, infoPhone, infoEmail);
-
-					boolean result = service.memberInfoModify(loginUser);
+					
+					boolean result = service.memberInfoModify(m);
 					if (result) {
 						JOptionPane.showMessageDialog(frame, "성공");
 						frame.dispose();
@@ -93,6 +93,12 @@ public class GUI_MemberInfoModify {
 		panel_2.setLayout(new CardLayout(0, 0));
 
 		JButton cancel = new JButton("\uCDE8\uC18C");
+		cancel.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				GUI_MemberInfo info = new GUI_MemberInfo(loginUser);
+			}
+		});
 		panel_2.add(cancel, "name_1266578742455400");
 
 		JPanel panel_3 = new JPanel();

@@ -34,7 +34,7 @@ public class MemberInfoModify implements I_MemberInfoModify {
 			psmt.setString(6, m.getId());
 
 			rows = psmt.executeUpdate();
-			
+
 			if (rows == 0) {
 				System.out.println("SQL���� Ȯ���ϼ���");
 			}
