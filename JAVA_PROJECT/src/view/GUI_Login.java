@@ -137,7 +137,7 @@ public class GUI_Login {
 				Member loginUser = service.memberLogin(m);
 				if (loginUser == null) {
 					JOptionPane.showMessageDialog(frame, "login fail");
-					frame.dispose();
+					
 				} else {
 					JOptionPane.showMessageDialog(frame, "login success");
 					GUI_MainMenu main = new GUI_MainMenu(loginUser);
