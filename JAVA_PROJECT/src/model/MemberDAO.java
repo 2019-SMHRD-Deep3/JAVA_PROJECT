@@ -1,11 +1,5 @@
 package model;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
 import model.model_interface.I_MemberJoin;
 import model.model_interface.I_MemberLogIn;
 
@@ -48,8 +42,9 @@ public class MemberDAO {
 		// TODO Auto-generated method stub
 		
 	}
-	public void bookingpayment() {
-		// TODO Auto-generated method stub
+	public Book bookingpayment() {
+		BookingPayment bp = new BookingPayment();
+		return bp.bookingPayment();
 		
 	}
 
