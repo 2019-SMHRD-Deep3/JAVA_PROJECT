@@ -17,26 +17,33 @@ public class TransSelect implements I_TransSelect {
 	public Connection conn = null;
 	public PreparedStatement psmt = null;
 	public ResultSet rs = null;
-	ArrayList<Member> list = new ArrayList<>();
+	ArrayList<TransInfo> list = new ArrayList<>();
 
 	@Override
-	public ArrayList<Member> transSelect(String depart_date, String depart, String dest) {
+	public ArrayList<TransInfo> transSelect(String depart_date, String depart, String dest) {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(url, user, password);
-			String sql = "SELECT * FROM";
+			String sql = "SELECT TRANS_SERV_NUM, TRANS_TYPE, TRANS_NUM, TRANS_DEP_TIME,TRANS_ARR_TIME,TRANS_GRADE,TRANS_SEAT,TRANS_FARE"+
+					    " FROM TRANS_INFO"+ 
+					    " WHERE TRANS_DEP_TIME =? AND TRANS_DEP_LOC =? AND TRANS_DEST_LOC =?";
 			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, depart_date);
+			psmt.setString(2, depart);
+			psmt.setString(3, dest);
 			//psmt.setString();
 			rs = psmt.executeQuery();
 
 			if (rs.next()) {
-				String id = rs.getString("USER_ID");
-				String pw = rs.getString("USER_PW");
-				String name = rs.getString("USER_NAME");
-				String birth = rs.getString("USER_BIRTH");
-				String phone = rs.getString("USER_PHONE");
-				String email = rs.getString("USER_EMAIL");
-				Member m = new Member(id, pw, name, birth, phone, email);
+				String serv_num = rs.getString("TRANS_SERV_NUM");
+				String type = rs.getString("TRANS_TYPE");
+				String num = rs.getString("TRANS_NUM");
+				String dep_time = rs.getString("TRANS_DEP_TIME");
+				String arr_time = rs.getString("TRANS_ARR_TIME");
+				String grade = rs.getString("TRANS_GRADE");
+				String seat = rs.getString("TRANS_SEAT");
+				String fare = rs.getString("TRANS_FARE");
+				TransInfo m = new TransInfo(serv_num, type, num, dep_time, arr_time, grade,seat,fare);
 				list.add(m) ;
 			}
 		} catch (ClassNotFoundException e) {
