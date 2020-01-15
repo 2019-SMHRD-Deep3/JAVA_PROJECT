@@ -2,7 +2,6 @@ package controller;
 
 import model.Member;
 import model.MemberDAO;
-
 public class MemberManagementService {
 	
 	private MemberDAO dao = new MemberDAO();
