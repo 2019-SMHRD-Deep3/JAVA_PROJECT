@@ -1,6 +1,7 @@
 package model;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -29,7 +30,10 @@ public class MemberInfoModify implements I_MemberInfoModify {
 		         
 		         psmt.setString(1, m.getPw());
 		         psmt.setString(2, m.getName());
-		         psmt.setString(3, m.getBirth());
+		         String birth = m.getBirth();
+		         String[] dates = birth.split(" ")[0].split("-");
+		         Date date = new Date(Integer.parseInt(dates[0]), Integer.parseInt(dates[1]), Integer.parseInt(dates[2]));
+		         psmt.setDate(3, date);
 		         psmt.setString(4, m.getPhone());
 		         psmt.setString(5, m.getEmail());
 		         psmt.setString(6, m.getId());
