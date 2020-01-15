@@ -58,6 +58,12 @@ public class GUI_MemberInfo {
 		panel_2.setLayout(new CardLayout(0, 0));
 		
 		JButton btnNewButton_1 = new JButton("\uD68C\uC6D0 \uD0C8\uD1F4");
+		btnNewButton_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				
+			}
+		});
 		panel_2.add(btnNewButton_1, "name_1270942590180700");
 	}
 

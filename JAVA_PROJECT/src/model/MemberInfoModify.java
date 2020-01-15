@@ -1,13 +1,11 @@
 package model;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import model.model_interface.I_MemberInfoModify;
-
 
 public class MemberInfoModify implements I_MemberInfoModify {
 	public String url = "jdbc:oracle:thin:@localhost:1521:xe";
@@ -20,47 +18,44 @@ public class MemberInfoModify implements I_MemberInfoModify {
 	@Override
 	public int memberinfomodify(Member m) {
 
-		      int rows = 0;
-		      try {
-		         Class.forName("oracle.jdbc.driver.OracleDriver");
-		         conn = DriverManager.getConnection(url, user, password);
-		         String sql = "UPDATE user_info SET user_pw = ?, user_name = ?, user_birth = ?, user_phone=?, user_email=?"
-		               + " WHERE user_id = ?";
-		         psmt = conn.prepareStatement(sql);
-		         
-		         psmt.setString(1, m.getPw());
-		         psmt.setString(2, m.getName());
-		         String birth = m.getBirth();
-		         String[] dates = birth.split(" ")[0].split("-");
-		         Date date = new Date(Integer.parseInt(dates[0]), Integer.parseInt(dates[1]), Integer.parseInt(dates[2]));
-		         psmt.setDate(3, date);
-		         psmt.setString(4, m.getPhone());
-		         psmt.setString(5, m.getEmail());
-		         psmt.setString(6, m.getId());
-		         
-		         rows = psmt.executeUpdate();
-		         if (rows == 0) {
-		            System.out.println("SQL¹®À» È®ÀÎÇÏ¼¼¿ä");
-		         }
+		int rows = 0;
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			conn = DriverManager.getConnection(url, user, password);
+			String sql = "UPDATE user_info SET user_pw = ?, user_name = ?, user_birth = ?, user_phone=?, user_email=?"
+					+ " WHERE user_id = ?";
+			psmt = conn.prepareStatement(sql);
 
-		      } catch (ClassNotFoundException e) {
-		         e.printStackTrace();
-		      } catch (SQLException e) {
-		         e.printStackTrace();
-		      } finally {
-		         try {
-		            if (psmt != null)
-		               psmt.close();
-		            if (conn != null)
-		               conn.close();
-		         } catch (SQLException e) {
-		            e.printStackTrace();
-		         }
+			psmt.setString(1, m.getPw());
+			psmt.setString(2, m.getName());
+			psmt.setString(3, m.getBirth());
+			psmt.setString(4, m.getPhone());
+			psmt.setString(5, m.getEmail());
+			psmt.setString(6, m.getId());
 
-		      }
-		      return rows;
+			rows = psmt.executeUpdate();
+			
+			if (rows == 0) {
+				System.out.println("SQLï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½");
+			}
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (psmt != null)
+					psmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+		}
+		return rows;
 
 	}
-
 
 }

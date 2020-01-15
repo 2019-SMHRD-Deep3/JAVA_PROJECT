@@ -1,24 +1,20 @@
 package view;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JButton;
 import java.awt.CardLayout;
 import java.awt.GridLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import controller.MemberManagementService;
 import model.Member;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 public class GUI_MemberInfoModify {
 
@@ -77,13 +73,13 @@ public class GUI_MemberInfoModify {
 
 					boolean result = service.memberInfoModify(loginUser);
 					if (result) {
-						JOptionPane.showMessageDialog(frame, "È¸¿ø Á¤º¸ ¼öÁ¤ ¼º°ø");
+						JOptionPane.showMessageDialog(frame, "ì„±ê³µ");
 						frame.dispose();
 					} else {
-						JOptionPane.showMessageDialog(frame, "½ÇÆÐ");
+						JOptionPane.showMessageDialog(frame, "ì‹¤íŒ¨");
 					}
 				} else {
-					JOptionPane.showMessageDialog(frame, "ºñ¹Ð¹øÈ£ ´Ù½Ã È®ÀÎ");
+					JOptionPane.showMessageDialog(frame, "ï¿½ï¿½Ð¹ï¿½È£ ï¿½Ù½ï¿½ È®ï¿½ï¿½");
 				}
 			}
 
