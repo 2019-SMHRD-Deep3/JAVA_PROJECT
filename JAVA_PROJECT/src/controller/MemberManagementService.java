@@ -1,5 +1,6 @@
 package controller;
 
+import model.Book;
 import model.Member;
 import model.MemberDAO;
 public class MemberManagementService {
@@ -24,9 +25,8 @@ public class MemberManagementService {
 		return 0;
 	}
 	
-	public boolean memberInfoSelect() {
-		dao.memberinfoselect();
-		return false;
+	public Book memberInfoSelect(Member loginuser) {
+		return dao.memberinfoselect(loginuser);
 	}
 	
 	public boolean memberInfoModify(Member m) {
