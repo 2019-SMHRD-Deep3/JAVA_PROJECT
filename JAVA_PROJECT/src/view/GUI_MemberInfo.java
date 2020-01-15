@@ -1,3 +1,4 @@
+
 package view;
 
 import java.awt.EventQueue;
@@ -68,3 +69,5 @@ public class GUI_MemberInfo {
 	}
 
 }
+
+

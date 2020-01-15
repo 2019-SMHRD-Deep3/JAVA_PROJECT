@@ -6,6 +6,9 @@ import java.awt.GridLayout;
 import javax.swing.JPanel;
 import java.awt.Color;
 import javax.swing.border.LineBorder;
+
+import model.Member;
+
 import javax.swing.SpringLayout;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -21,6 +24,8 @@ import javax.swing.border.CompoundBorder;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class GUI_Selection {
 
@@ -30,37 +35,27 @@ public class GUI_Selection {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GUI_Selection window = new GUI_Selection();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the application.
 	 */
-	public GUI_Selection() {
-		initialize();
+	public GUI_Selection(Member loginUser) {
+		
+		initialize(loginUser);
+		frame.setVisible(true);
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize(Member loginUser) {
 		frame = new JFrame();
 		frame.setResizable(false);
 		frame.getContentPane().setEnabled(false);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("\uC5EC\uD589\uC9C0\uC5ED \uC120\uD0DD");
-		lblNewLabel.setFont(new Font("±¼¸²", Font.PLAIN, 20));
+		lblNewLabel.setFont(new Font("ï¿½ï¿½ï¿½ï¿½", Font.PLAIN, 20));
 		lblNewLabel.setBackground(Color.GRAY);
 		lblNewLabel.setBounds(14, 12, 372, 90);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -72,6 +67,13 @@ public class GUI_Selection {
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		JButton btnNewButton = new JButton("\uB2E4\uC74C\uC73C\uB85C(\uC608\uB9E4\uD558\uAE30)");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				GUI_Booking pay = new GUI_Booking(loginUser);
+			}
+		});
+		
 		btnNewButton.setBounds(19, 479, 170, 60);
 		frame.getContentPane().add(btnNewButton);
 		
@@ -86,12 +88,12 @@ public class GUI_Selection {
 		panel_1.setLayout(new GridLayout(2, 2, 2, 5));
 		
 		JLabel lblNewLabel_3 = new JLabel("\uCD9C\uBC1C\uC9C0\uC5ED");
-		lblNewLabel_3.setFont(new Font("±¼¸²", Font.PLAIN, 20));
+		lblNewLabel_3.setFont(new Font("ï¿½ï¿½ï¿½ï¿½", Font.PLAIN, 20));
 		panel_1.add(lblNewLabel_3);
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		JLabel lblNewLabel_2 = new JLabel("\uB3C4\uCC29\uC9C0\uC5ED");
-		lblNewLabel_2.setFont(new Font("±¼¸²", Font.PLAIN, 20));
+		lblNewLabel_2.setFont(new Font("ï¿½ï¿½ï¿½ï¿½", Font.PLAIN, 20));
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(lblNewLabel_2);
 		
@@ -149,6 +151,6 @@ public class GUI_Selection {
 		frame.getContentPane().add(button_5);
 		frame.setAutoRequestFocus(false);
 		frame.setBounds(100, 100, 800, 600);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 }
