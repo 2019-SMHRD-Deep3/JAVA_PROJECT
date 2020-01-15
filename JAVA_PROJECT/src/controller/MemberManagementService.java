@@ -60,4 +60,10 @@ public class MemberManagementService {
 		dao.bookingpayment();
 		return 0;
 	}
+
+	public void transSelect(String depart_date,String depart, String dest) {
+		dao.transselect(depart_date,depart,dest);
+		// TODO Auto-generated method stub
+		
+	}
 }

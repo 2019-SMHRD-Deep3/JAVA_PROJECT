@@ -10,6 +10,7 @@ import model.model_interface.I_MemberInfoModify;
 import model.model_interface.I_MemberJoin;
 import model.model_interface.I_MemberLogIn;
 import model.model_interface.I_MemberOut;
+import model.model_interface.I_TransSelect;
 
 public class MemberDAO {
 
@@ -62,6 +63,13 @@ public class MemberDAO {
 	public void bookingpayment() {
 		// TODO Auto-generated method stub
 
+	}
+
+	public void transselect(String depart_date,String depart, String dest) {
+		I_TransSelect list = new TransSelect();
+		list.transSelect(depart_date,depart,dest);
+		// TODO Auto-generated method stub
+		
 	}
 
 }

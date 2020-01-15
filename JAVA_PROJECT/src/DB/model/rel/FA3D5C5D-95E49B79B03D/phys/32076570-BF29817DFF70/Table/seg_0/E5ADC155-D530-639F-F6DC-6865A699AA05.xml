@@ -1,0 +1,39 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="LOCATION_INFO" directorySegmentName="seg_0" id="E5ADC155-D530-639F-F6DC-6865A699AA05">
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:56:40 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<schemaObject>338AE7C8-548F-7833-EDE8-4B09AE353DB0</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>244D2F2B-B533-B1FC-23C8-3F9E4D6C9842</segment>
+<tableSpace>3044F511-5D13-5A92-48AE-94A3810EAC8F</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="LOC_NAME" id="533D2507-7FA1-0E6A-AEA2-AE582983ED23">
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:56:40 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LOC_NUM" id="935B02F3-CBFA-0AFE-AAB8-249059A397E5">
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:56:40 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="LOCATION_INFO_PK" id="060D01E6-6042-1B8C-41CD-13494AE221FC">
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:56:40 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<schemaObject>338AE7C8-548F-7833-EDE8-4B09AE353DB0</schemaObject>
+<segment>12550172-71D8-7289-3591-DAE1F6395621</segment>
+<tableSpace>3044F511-5D13-5A92-48AE-94A3810EAC8F</tableSpace>
+<indexSegment>12550172-71D8-7289-3591-DAE1F6395621</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

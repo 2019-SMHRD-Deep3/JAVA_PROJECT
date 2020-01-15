@@ -1,0 +1,233 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4168F011-2DDF-0FF8-65AB-49092C28A51D" schemaObject="338AE7C8-548F-7833-EDE8-4B09AE353DB0" name="BOOK">
+<sourceConnName>%EC%B2%9C%EC%8A%B9%ED%98%84</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>BOOK</sourceObjName>
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:55:38 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="BOOK_NUM" id="7FCA5DAE-ADB0-A7EE-FB93-18084EBCC3BA">
+<sourceConnName>%EC%B2%9C%EC%8A%B9%ED%98%84</sourceConnName>
+<sourceObjSchema>BOOK</sourceObjSchema>
+<sourceObjName>BOOK_NUM</sourceObjName>
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:55:38 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="USER_ID" id="9B8421DA-6099-18A6-D627-24FD99B6F3A7">
+<sourceConnName>%EC%B2%9C%EC%8A%B9%ED%98%84</sourceConnName>
+<sourceObjSchema>BOOK</sourceObjSchema>
+<sourceObjName>USER_ID</sourceObjName>
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:55:38 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F9C50713-9A93-980E-EF89-AEA7A67FA39D" referredColumn="2DF2E329-8C48-4D4C-37F8-05D9DF2D8B54"/>
+</associations>
+</Column>
+<Column name="DEP_LOC_NUM" id="3D1C19AC-1F3F-793F-DE54-42F7DB6463D9">
+<sourceConnName>%EC%B2%9C%EC%8A%B9%ED%98%84</sourceConnName>
+<sourceObjSchema>BOOK</sourceObjSchema>
+<sourceObjName>DEP_LOC_NUM</sourceObjName>
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:55:38 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7A628B14-C289-6B01-94D3-32D28D856E69" referredColumn="935B02F3-CBFA-0AFE-AAB8-249059A397E5"/>
+</associations>
+</Column>
+<Column name="ARR_LOC_NUM" id="72F05444-408F-3EB3-6722-491CECE4CB99">
+<sourceConnName>%EC%B2%9C%EC%8A%B9%ED%98%84</sourceConnName>
+<sourceObjSchema>BOOK</sourceObjSchema>
+<sourceObjName>ARR_LOC_NUM</sourceObjName>
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:55:38 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DFF50EE1-8008-C0AD-B4E4-AF98771FA925" referredColumn="935B02F3-CBFA-0AFE-AAB8-249059A397E5"/>
+</associations>
+</Column>
+<Column name="SERV_NUM" id="768A8F74-917E-132B-BA62-417EAE13AFBA">
+<sourceConnName>%EC%B2%9C%EC%8A%B9%ED%98%84</sourceConnName>
+<sourceObjSchema>BOOK</sourceObjSchema>
+<sourceObjName>SERV_NUM</sourceObjName>
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:55:38 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6A41D8A9-DFD2-917C-05F9-A70503A839A2" referredColumn="B34A5F76-F31D-BD7B-82C9-15657E058A70"/>
+</associations>
+</Column>
+<Column name="DEP_TIME" id="A6B48431-E113-D405-FCA4-6F12F940BBEB">
+<sourceConnName>%EC%B2%9C%EC%8A%B9%ED%98%84</sourceConnName>
+<sourceObjSchema>BOOK</sourceObjSchema>
+<sourceObjName>DEP_TIME</sourceObjName>
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:55:38 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ARR_TIME" id="BBC8A9AE-07AF-D99D-E027-6829FC45D9A1">
+<sourceConnName>%EC%B2%9C%EC%8A%B9%ED%98%84</sourceConnName>
+<sourceObjSchema>BOOK</sourceObjSchema>
+<sourceObjName>ARR_TIME</sourceObjName>
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:55:38 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BOOK_NOM" id="67F02497-79D5-3B52-5FF1-D0EDB5F770A9">
+<sourceConnName>%EC%B2%9C%EC%8A%B9%ED%98%84</sourceConnName>
+<sourceObjSchema>BOOK</sourceObjSchema>
+<sourceObjName>BOOK_NOM</sourceObjName>
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:55:38 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>20</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,20,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BOOK_FARE" id="D0CD11BE-CBAF-21EE-4918-A8AA08771DE5">
+<sourceConnName>%EC%B2%9C%EC%8A%B9%ED%98%84</sourceConnName>
+<sourceObjSchema>BOOK</sourceObjSchema>
+<sourceObjName>BOOK_FARE</sourceObjName>
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:55:38 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>20</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,20,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BOOK_DATE" id="EF9EE2F5-396A-D306-4768-B30E8FE1B476">
+<sourceConnName>%EC%B2%9C%EC%8A%B9%ED%98%84</sourceConnName>
+<sourceObjSchema>BOOK</sourceObjSchema>
+<sourceObjName>BOOK_DATE</sourceObjName>
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:55:38 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9EEF71E6-BFC9-7018-E121-4FB8F6DB03E6" schemaObject="338AE7C8-548F-7833-EDE8-4B09AE353DB0" name="BOOK_PK">
+<sourceConnName>%EC%B2%9C%EC%8A%B9%ED%98%84</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>SYS_C007372</sourceObjName>
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:55:38 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7FCA5DAE-ADB0-A7EE-FB93-18084EBCC3BA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2AFFC3C4-88CD-FED6-5967-64B73178F432" name="BOOK_ARRLOCNUM_FK">
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:55:38 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="72F05444-408F-3EB3-6722-491CECE4CB99"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E8D6B835-E367-4B77-B213-54ED66B9259F" name="BOOK_DEPLOCBUM_FK">
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:55:38 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3D1C19AC-1F3F-793F-DE54-42F7DB6463D9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B0641157-0935-9528-C42B-C3B3C043D1D4" name="BOOK_TRANSSERVNUM_FK">
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:55:38 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="768A8F74-917E-132B-BA62-417EAE13AFBA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DE4DB9C2-0C54-3B38-E601-660217564E73" name="BOOK_USERID_FK">
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:55:38 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9B8421DA-6099-18A6-D627-24FD99B6F3A7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6A2C5438-7AB2-225C-57B4-06C8A01B0965" schemaObject="338AE7C8-548F-7833-EDE8-4B09AE353DB0" name="TRANS">
+<sourceConnName>%EC%B2%9C%EC%8A%B9%ED%98%84</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>TRANS</sourceObjName>
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:56:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="TRANS_CODE" id="C5E4D2E4-20CB-9194-1256-10CDDBFDFC4B">
+<sourceConnName>%EC%B2%9C%EC%8A%B9%ED%98%84</sourceConnName>
+<sourceObjSchema>TRANS</sourceObjSchema>
+<sourceObjName>TRANS_CODE</sourceObjName>
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:56:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TRANS_TYPE" id="C14371AE-4BB9-523D-22DA-535820123F1A">
+<sourceConnName>%EC%B2%9C%EC%8A%B9%ED%98%84</sourceConnName>
+<sourceObjSchema>TRANS</sourceObjSchema>
+<sourceObjName>TRANS_TYPE</sourceObjName>
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:56:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4563BAE4-9244-E5BA-4345-82F40FF6FBE4" schemaObject="338AE7C8-548F-7833-EDE8-4B09AE353DB0" name="TRANS_PK">
+<sourceConnName>%EC%B2%9C%EC%8A%B9%ED%98%84</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>SYS_C007369</sourceObjName>
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:56:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C5E4D2E4-20CB-9194-1256-10CDDBFDFC4B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

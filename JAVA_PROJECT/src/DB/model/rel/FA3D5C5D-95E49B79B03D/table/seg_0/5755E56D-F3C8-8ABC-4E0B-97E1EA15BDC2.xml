@@ -1,0 +1,194 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5755E56D-F3C8-8ABC-4E0B-97E1EA15BDC2" schemaObject="338AE7C8-548F-7833-EDE8-4B09AE353DB0" name="TRANS_INFO">
+<sourceConnName>%EC%B2%9C%EC%8A%B9%ED%98%84</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>TRANS_INFO</sourceObjName>
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:56:29 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="TRANS_SERV_NUM" id="B34A5F76-F31D-BD7B-82C9-15657E058A70">
+<sourceConnName>%EC%B2%9C%EC%8A%B9%ED%98%84</sourceConnName>
+<sourceObjSchema>TRANS_INFO</sourceObjSchema>
+<sourceObjName>TRANS_SERV_NUM</sourceObjName>
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:56:29 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TRANS_TYPE" id="C34A8797-415F-D9CB-8A64-4876B643DD3F">
+<sourceConnName>%EC%B2%9C%EC%8A%B9%ED%98%84</sourceConnName>
+<sourceObjSchema>TRANS_INFO</sourceObjSchema>
+<sourceObjName>TRANS_TYPE</sourceObjName>
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:56:29 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3F970E1F-F8A9-2CAF-E4E8-FE09DE21994B" referredColumn="C5E4D2E4-20CB-9194-1256-10CDDBFDFC4B"/>
+</associations>
+</Column>
+<Column name="TRANS_NUM" id="62707D57-E28E-26C3-8F91-D29E872623C4">
+<sourceConnName>%EC%B2%9C%EC%8A%B9%ED%98%84</sourceConnName>
+<sourceObjSchema>TRANS_INFO</sourceObjSchema>
+<sourceObjName>TRANS_NUM</sourceObjName>
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:56:29 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TRANS_DEP_LOC" id="65F76378-8763-3449-DE1B-A23651E08120">
+<sourceConnName>%EC%B2%9C%EC%8A%B9%ED%98%84</sourceConnName>
+<sourceObjSchema>TRANS_INFO</sourceObjSchema>
+<sourceObjName>TRANS_DEP_LOC</sourceObjName>
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:56:29 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TRANS_DEST_LOC" id="8FCE3649-1F52-E7C2-68B9-BB67221F663C">
+<sourceConnName>%EC%B2%9C%EC%8A%B9%ED%98%84</sourceConnName>
+<sourceObjSchema>TRANS_INFO</sourceObjSchema>
+<sourceObjName>TRANS_DEST_LOC</sourceObjName>
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:56:29 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TRANS_DEP_TIME" id="90D33F78-6203-2D25-7983-7EF31BCB0441">
+<sourceConnName>%EC%B2%9C%EC%8A%B9%ED%98%84</sourceConnName>
+<sourceObjSchema>TRANS_INFO</sourceObjSchema>
+<sourceObjName>TRANS_DEP_TIME</sourceObjName>
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:56:29 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TRANS_ARR_TIME" id="43E1E437-D896-2347-CF15-C8643387DAC4">
+<sourceConnName>%EC%B2%9C%EC%8A%B9%ED%98%84</sourceConnName>
+<sourceObjSchema>TRANS_INFO</sourceObjSchema>
+<sourceObjName>TRANS_ARR_TIME</sourceObjName>
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:56:29 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TRANS_GRADE" id="A11A4DEF-1F62-E4C5-4138-32367513286F">
+<sourceConnName>%EC%B2%9C%EC%8A%B9%ED%98%84</sourceConnName>
+<sourceObjSchema>TRANS_INFO</sourceObjSchema>
+<sourceObjName>TRANS_GRADE</sourceObjName>
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:56:29 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TRANS_SEAT" id="DAEC3D73-617D-426F-81DE-0C36CCDA2C04">
+<sourceConnName>%EC%B2%9C%EC%8A%B9%ED%98%84</sourceConnName>
+<sourceObjSchema>TRANS_INFO</sourceObjSchema>
+<sourceObjName>TRANS_SEAT</sourceObjName>
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:56:29 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TRANS_FARE" id="BD31B8C6-B84D-C05C-E798-607058045B33">
+<sourceConnName>%EC%B2%9C%EC%8A%B9%ED%98%84</sourceConnName>
+<sourceObjSchema>TRANS_INFO</sourceObjSchema>
+<sourceObjName>TRANS_FARE</sourceObjName>
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:56:29 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F05F7868-A91B-8B75-AA04-DAA2B139D922" schemaObject="338AE7C8-548F-7833-EDE8-4B09AE353DB0" name="TRANS_INFO_PK">
+<sourceConnName>%EC%B2%9C%EC%8A%B9%ED%98%84</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>SYS_C007370</sourceObjName>
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:56:29 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B34A5F76-F31D-BD7B-82C9-15657E058A70"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F0106E3F-7E53-ED4C-53CC-779E7A1C6294" name="TRANS_TRANSTYPE_FK">
+<createdBy>student</createdBy>
+<createdTime>2020-01-15 01:56:29 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C34A8797-415F-D9CB-8A64-4876B643DD3F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
