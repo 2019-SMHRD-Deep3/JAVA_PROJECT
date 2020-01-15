@@ -60,11 +60,11 @@ public class GUI_Login {
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(255, 255, 255));
-		frame.getContentPane().setFont(new Font("���� ���", Font.PLAIN, 12));
+		frame.getContentPane().setFont(new Font("占쏙옙占쏙옙 占쏙옙占�", Font.PLAIN, 12));
 		frame.setBounds(100, 100, 800, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		// �̹��� ����
+		// 占싱뱄옙占쏙옙 占쏙옙占쏙옙
 
 		String imgPath = this.getClass().getResource(".").getPath() + "..//..//img//main.png";
 		System.out.println(imgPath);
@@ -96,13 +96,13 @@ public class GUI_Login {
 		lblNewLabel_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_1.setBounds(189, 453, 85, 27);
 		panel.add(lblNewLabel_1);
-		lblNewLabel_1.setFont(new Font("���� ���", Font.PLAIN, 15));
+		lblNewLabel_1.setFont(new Font("占쏙옙占쏙옙 占쏙옙占�", Font.PLAIN, 15));
 
 		JLabel lblNewLabel = new JLabel("\uC544\uC774\uB514");
 		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setBounds(189, 402, 75, 35);
 		panel.add(lblNewLabel);
-		lblNewLabel.setFont(new Font("���� ���", Font.PLAIN, 15));
+		lblNewLabel.setFont(new Font("占쏙옙占쏙옙 占쏙옙占�", Font.PLAIN, 15));
 
 		JButton login = new JButton("\uB85C\uADF8\uC778");
 		login.setBackground(new Color(255, 255, 255));
@@ -140,7 +140,7 @@ public class GUI_Login {
 					frame.dispose();
 				} else {
 					JOptionPane.showMessageDialog(frame, "login success");
-					GUI_MainMenu main = new GUI_MainMenu();
+					GUI_MainMenu main = new GUI_MainMenu(loginUser);
 					frame.dispose();
 				}
 			}

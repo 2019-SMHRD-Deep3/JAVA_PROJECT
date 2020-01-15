@@ -29,9 +29,12 @@ public class MemberManagementService {
 		return false;
 	}
 	
-	public int memberInfoModify() {
-		dao.memberinfomodify();
-		return 0;
+	public boolean memberInfoModify(Member m) {
+		int rows = dao.memberinfomodify(m);
+		if(rows == 0)
+			return false;
+		else
+			return true;
 	}
 	
 	public int bookingCancle() {

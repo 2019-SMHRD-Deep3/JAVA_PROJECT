@@ -12,7 +12,7 @@ CREATE TABLE USER_INFO(
                 USER_ID VARCHAR2(20) PRIMARY KEY,
                 USER_PW VARCHAR2(20) NOT NULL,
                 USER_NAME VARCHAR2(20),
-                USER_BIRTH DATE,
+                USER_BIRTH VARCHAR2(20),
                 USER_PHONE VARCHAR2(20),
                 USER_EMAIL VARCHAR2(20));
 CREATE TABLE LOCATION_INFO(
