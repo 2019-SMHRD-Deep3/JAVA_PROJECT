@@ -6,6 +6,9 @@ import java.awt.GridLayout;
 import javax.swing.JPanel;
 import java.awt.Color;
 import javax.swing.border.LineBorder;
+
+import model.Member;
+
 import javax.swing.SpringLayout;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -13,6 +16,7 @@ import java.awt.CardLayout;
 import javax.swing.border.BevelBorder;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import javax.print.attribute.standard.Destination;
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.JSplitPane;
@@ -21,46 +25,40 @@ import javax.swing.border.CompoundBorder;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class GUI_Selection {
 
 	private JFrame frame;
-	private JTextField textField_1;
+	private JTextField dest;
+	private JTextField departure;
+	private JTextField depart;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GUI_Selection window = new GUI_Selection();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the application.
 	 */
-	public GUI_Selection() {
-		initialize();
+	public GUI_Selection(Member loginUser) {
+		
+		initialize(loginUser);
+		frame.setVisible(true);
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize(Member loginUser) {
 		frame = new JFrame();
 		frame.setResizable(false);
 		frame.getContentPane().setEnabled(false);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("\uC5EC\uD589\uC9C0\uC5ED \uC120\uD0DD");
-		lblNewLabel.setFont(new Font("±¼¸²", Font.PLAIN, 20));
+		lblNewLabel.setFont(new Font("ï¿½ï¿½ï¿½ï¿½", Font.PLAIN, 20));
 		lblNewLabel.setBackground(Color.GRAY);
 		lblNewLabel.setBounds(14, 12, 372, 90);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -71,58 +69,75 @@ public class GUI_Selection {
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(lblNewLabel_1);
 		
-		JButton btnNewButton = new JButton("\uB2E4\uC74C\uC73C\uB85C(\uC608\uB9E4\uD558\uAE30)");
-		btnNewButton.setBounds(19, 479, 170, 60);
-		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnJbtn = new JButton("\uC774\uC804 \uD654\uBA74\uC73C\uB85C");
 		btnJbtn.setBounds(211, 481, 170, 60);
 		frame.getContentPane().add(btnJbtn);
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBorder(new CompoundBorder(new LineBorder(new Color(0, 0, 0)), null));
-		panel_1.setBounds(14, 134, 372, 244);
-		frame.getContentPane().add(panel_1);
-		panel_1.setLayout(new GridLayout(2, 2, 2, 5));
+		JPanel panel = new JPanel();
+		panel.setBorder(new CompoundBorder(new LineBorder(new Color(0, 0, 0)), null));
+		panel.setBounds(14, 134, 372, 244);
+		frame.getContentPane().add(panel);
+		panel.setLayout(new GridLayout(2, 2, 2, 5));
 		
 		JLabel lblNewLabel_3 = new JLabel("\uCD9C\uBC1C\uC9C0\uC5ED");
-		lblNewLabel_3.setFont(new Font("±¼¸²", Font.PLAIN, 20));
-		panel_1.add(lblNewLabel_3);
+		lblNewLabel_3.setFont(new Font("ï¿½ï¿½ï¿½ï¿½", Font.PLAIN, 20));
+		panel.add(lblNewLabel_3);
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		JLabel lblNewLabel_2 = new JLabel("\uB3C4\uCC29\uC9C0\uC5ED");
-		lblNewLabel_2.setFont(new Font("±¼¸²", Font.PLAIN, 20));
+		lblNewLabel_2.setFont(new Font("ï¿½ï¿½ï¿½ï¿½", Font.PLAIN, 20));
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
-		panel_1.add(lblNewLabel_2);
+		panel.add(lblNewLabel_2);
 		
-		JPanel panel = new JPanel();
-		panel_1.add(panel);
-		panel.setLayout(null);
-		
-		JButton btnNewButton_1 = new JButton("\uC904\uBC1C\uC9C0\uC5ED");
+		JPanel panel1 = new JPanel();
+		panel.add(panel1);
+		panel1.setLayout(null);
+		JButton btnNewButton_1 = new JButton("ì¶œë°œì§€ì—­");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
 		btnNewButton_1.setBounds(39, 23, 105, 27);
-		panel.add(btnNewButton_1);
+		panel1.add(btnNewButton_1);
+
+		depart = new JTextField();
+		depart.setColumns(10);
+		depart.setBounds(28, 66, 116, 21);
+		panel1.add(depart);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(12, 68, 156, 21);
-		panel.add(comboBox);
+		dest = new JTextField();
+		dest.setColumns(10);
+		dest.setBounds(31, 66, 130, 24);
 		
-		JPanel panel_2 = new JPanel();
-		panel_1.add(panel_2);
-		panel_2.setLayout(null);
+		JPanel panel2 = new JPanel();
+		panel.add(panel2);
+		panel2.setLayout(null);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(16, 66, 156, 24);
-		panel_2.add(textField_1);
+		JButton btnNewButton = new JButton("\uB2E4\uC74C\uC73C\uB85C(\uC608\uB9E4\uD558\uAE30)");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				String input_depart = depart.getText();
+				String input_dest = dest.getText();
+				GUI_Booking pay = new GUI_Booking(loginUser,input_depart,input_dest);
+			}
+		});
+		
+		btnNewButton.setBounds(19, 479, 170, 60);
+		frame.getContentPane().add(btnNewButton);
+		
+		
+		
+		
+		
+		
+		
 		
 		JButton button = new JButton("\uB3C4\uCC29\uC9C0\uC5ED");
 		button.setBounds(39, 23, 105, 27);
-		panel_2.add(button);
+		panel2.add(button);
+		panel2.add(dest);
 		
 		JButton btnNewButton_2 = new JButton("\uC11C\uC6B8");
 		btnNewButton_2.setBounds(461, 131, 97, 23);
@@ -149,6 +164,6 @@ public class GUI_Selection {
 		frame.getContentPane().add(button_5);
 		frame.setAutoRequestFocus(false);
 		frame.setBounds(100, 100, 800, 600);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 }

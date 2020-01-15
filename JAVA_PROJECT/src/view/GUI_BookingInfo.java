@@ -45,19 +45,17 @@ public class GUI_BookingInfo {
 	private ListSelectionModel listSelectModel;
 	private Icon icon;
 	private DefaultTableModel defaultTableModel;
-	
+
 	/**
 	 * Launch the application.
 	 */
-
 
 	/**
 	 * Create the application.
 	 */
 	public GUI_BookingInfo(Member loginuser) {
-		
+
 		initialize(loginuser);
-		
 		frame.setVisible(true);
 	}
 
@@ -162,16 +160,12 @@ public class GUI_BookingInfo {
 		label.setBounds(58, 35, 150, 15);
 		frame.getContentPane().add(label);
 		label.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
-		
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				frame.dispose();
-			}
-		});
-		btnNewButton.setBounds(624, 353, 97, 23);
-		frame.getContentPane().add(btnNewButton);
+	}
+}
+
+
+//		btnNewButton.setBounds(624, 353, 97, 23);
+//		frame.getContentPane().add(btnNewButton);
 //		String[] petStrings = { "Bird", "Cat", "Dog", "Rabbit", "Pig" };
 //		//Create the combo box, select item at index 4.
 //		//Indices start at 0, so 4 specifies the pig.
@@ -179,7 +173,3 @@ public class GUI_BookingInfo {
 //		petList.setSelectedIndex(4);
 //		petList.addActionListener(petList);
 //	}
-	
-
-
-}}

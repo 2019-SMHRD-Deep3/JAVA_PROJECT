@@ -1,3 +1,4 @@
+
 package controller;
 
 import model.Member;
@@ -20,9 +21,12 @@ public class MemberManagementService {
 		return loginUser;
 	}
 
-	public int memberOut() {
-		dao.memberout();
-		return 0;
+	public boolean memberOut(Member m) {
+		int rows = dao.memberout(m);
+		if (rows == 0)
+			return false;
+		else
+			return true;
 	}
 
 	public boolean memberInfoSelect() {
@@ -39,13 +43,13 @@ public class MemberManagementService {
 	}
 
 	public int bookingCancle(Member m) {
-		int rows = dao.bookingcancle(m);
-		return rows;
+		dao.bookingcancle(m);
+		return 0;
 	}
 
 	public int bookingModify(Member m) {
-		int rows = dao.bookingmodify(m);
-		return rows;
+		dao.bookingmodify(m);
+		return 0;
 	}
 
 	public boolean booking() {
@@ -57,4 +61,11 @@ public class MemberManagementService {
 		dao.bookingpayment();
 		return 0;
 	}
+
+	public void transSelect(String depart_date,String depart, String dest) {
+		dao.transselect(depart_date,depart,dest);
+		// TODO Auto-generated method stub
+		
+	}
 }
+

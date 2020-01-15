@@ -77,13 +77,17 @@ public class GUI_MainMenu {
 		panel.add(my_reservation);
 		
 		JButton tb_reservation = new JButton("\uC2B9\uCC28\uAD8C \uC608\uB9E4");
+		tb_reservation.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				GUI_Selection selection = new GUI_Selection(loginUser);
+			}
+		});
 		tb_reservation.setBorder(new LineBorder(new Color(0, 0, 0)));
 		tb_reservation.setBackground(Color.WHITE);
 		tb_reservation.setFont(new Font("���� ���", Font.BOLD, 20));
-		tb_reservation.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
+		
+		
 		tb_reservation.setBounds(73, 237, 236, 59);
 		panel.add(tb_reservation);
 		

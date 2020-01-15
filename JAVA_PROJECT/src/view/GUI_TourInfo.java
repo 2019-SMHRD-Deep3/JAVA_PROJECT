@@ -43,7 +43,7 @@ public class GUI_TourInfo {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 800, 600);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
@@ -52,7 +52,7 @@ public class GUI_TourInfo {
 		panel.setLayout(new CardLayout(0, 0));
 		
 		JLabel lblNewLabel = new JLabel("\uBD80\uC0B0");
-		lblNewLabel.setFont(new Font("±¼¸²", Font.PLAIN, 24));
+		lblNewLabel.setFont(new Font("ï¿½ï¿½ï¿½ï¿½", Font.PLAIN, 24));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lblNewLabel, "name_1462338071176600");
 		

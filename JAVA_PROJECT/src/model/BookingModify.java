@@ -1,3 +1,4 @@
+
 package model;
 
 import java.sql.Connection;
@@ -16,8 +17,9 @@ public class BookingModify implements I_BookingModify {
 
 	// 예매수정하는 기능
 
+
 	@Override
-	public int bookingModify() {
+	public int bookingModify(Member m) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
