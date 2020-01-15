@@ -1,7 +1,4 @@
 package model;
-
-<<<<<<< HEAD
-=======
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -9,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import model.model_interface.I_MemberInfoModify;
->>>>>>> branch 'master' of https://github.com/spectra10/JAVA_PROJECT.git
 import model.model_interface.I_MemberJoin;
 import model.model_interface.I_MemberLogIn;
 
