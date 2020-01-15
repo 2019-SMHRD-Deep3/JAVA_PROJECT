@@ -17,37 +17,29 @@ import javax.swing.SwingConstants;
 import java.awt.Color;
 import javax.swing.border.LineBorder;
 
+import model.Member;
+
+import java.awt.CardLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 public class GUI_MainMenu {
 
 	private JFrame frame;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GUI_MainMenu window = new GUI_MainMenu();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the application.
 	 */
-	public GUI_MainMenu() {
-		initialize();
+	public GUI_MainMenu(Member loginUser) {
+		initialize(loginUser);
+		frame.setVisible(true);
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize(Member loginUser) {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 800, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -85,8 +77,23 @@ public class GUI_MainMenu {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		tb_reservation.setBounds(73, 335, 236, 59);
+		tb_reservation.setBounds(73, 237, 236, 59);
 		panel.add(tb_reservation);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBounds(73, 346, 236, 59);
+		panel.add(panel_2);
+		panel_2.setLayout(new CardLayout(0, 0));
+		
+		JButton btnNewButton = new JButton("\uB098\uC758 \uD68C\uC6D0 \uC815\uBCF4");
+		
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				GUI_MemberInfo info = new GUI_MemberInfo(loginUser);
+			}
+		});
+		panel_2.add(btnNewButton, "name_1270455870133100");
 		
 	    String imgPath = this.getClass().getResource(".").getPath()+"..//..//img//¿©Çà.png";
 	    System.out.println(imgPath);

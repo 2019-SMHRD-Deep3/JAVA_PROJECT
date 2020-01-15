@@ -16,7 +16,7 @@ public class MemberJoin implements I_MemberJoin{
 	public PreparedStatement psmt = null;
 	public ResultSet rs = null;
 	@Override
-	// 회원가입하는 기능
+
 	public int memberjoin(Member m) {
 		// TODO Auto-generated method stub
 		int rows = 0;
@@ -40,7 +40,7 @@ public class MemberJoin implements I_MemberJoin{
 			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally { // ������ �����ִ� �۾�
+		} finally { 
 			try {
 				if (psmt != null)
 					psmt.close();
