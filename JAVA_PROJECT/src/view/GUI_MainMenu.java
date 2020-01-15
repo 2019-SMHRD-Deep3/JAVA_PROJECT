@@ -58,6 +58,13 @@ public class GUI_MainMenu {
 		panel.setBackground(new Color(255,0,0,0));
 		
 		JButton my_reservation = new JButton("\uB098\uC758 \uC608\uB9E4\uC815\uBCF4");
+		my_reservation.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				GUI_BookingInfo bi = new GUI_BookingInfo(loginUser);
+				
+			}
+		});
 		my_reservation.setBorder(new LineBorder(new Color(0, 0, 0)));
 		my_reservation.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -65,14 +72,14 @@ public class GUI_MainMenu {
 			}
 		});
 		my_reservation.setBackground(Color.WHITE);
-		my_reservation.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
+		my_reservation.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½", Font.BOLD, 20));
 		my_reservation.setBounds(73, 134, 236, 59);
 		panel.add(my_reservation);
 		
 		JButton tb_reservation = new JButton("\uC2B9\uCC28\uAD8C \uC608\uB9E4");
 		tb_reservation.setBorder(new LineBorder(new Color(0, 0, 0)));
 		tb_reservation.setBackground(Color.WHITE);
-		tb_reservation.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
+		tb_reservation.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½", Font.BOLD, 20));
 		tb_reservation.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
@@ -95,7 +102,7 @@ public class GUI_MainMenu {
 		});
 		panel_2.add(btnNewButton, "name_1270455870133100");
 		
-	    String imgPath = this.getClass().getResource(".").getPath()+"..//..//img//¿©Çà.png";
+	    String imgPath = this.getClass().getResource(".").getPath()+"..//..//img//ï¿½ï¿½ï¿½ï¿½.png";
 	    System.out.println(imgPath);
 	      
 		ImageIcon icon = new ImageIcon(imgPath);
