@@ -16,15 +16,6 @@ import model.MemberDAO;
 public class GUI_Pay {
 
 	private JFrame frame;
-	private JTextField departure;
-	private JTextField arrival;
-	private JTextField serv_num;
-	private JTextField departime;
-	private JTextField arrivaltime;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField money;
 
 // 객체생성
 	MemberDAO dao = new MemberDAO();
@@ -69,75 +60,74 @@ public class GUI_Pay {
 		JLabel lblNewLabel_1 = new JLabel("도착");
 		lblNewLabel_1.setBounds(55, 93, 57, 15);
 		panel.add(lblNewLabel_1);
-/////////////////////////////////////////////////////////////////////////////		
-		departure = new JTextField();
 		
-		departure.setBounds(185, 46, 116, 21);
-		panel.add(departure);
-		departure.setColumns(10);
-		
-		arrival = new JTextField();
-		arrival.setBounds(185, 90, 116, 21);
-		panel.add(arrival);
-		arrival.setColumns(10);
-		
-		JLabel 교통수단 = new JLabel("New label");
-		교통수단.setBounds(55, 175, 57, 15);
-		panel.add(교통수단);
-		
-		serv_num = new JTextField();
-		serv_num.setBounds(185, 172, 116, 21);
+		JLabel serv_num = new JLabel("운행정보");
+		serv_num.setBounds(55, 205, 57, 15);
 		panel.add(serv_num);
-		serv_num.setColumns(10);
-		
-		departime = new JTextField();
-		departime.setBounds(414, 46, 116, 21);
-		panel.add(departime);
-		departime.setColumns(10);
-		
-		arrivaltime = new JTextField();
-		arrivaltime.setBounds(414, 90, 116, 21);
-		panel.add(arrivaltime);
-		arrivaltime.setColumns(10);
 		
 		JLabel per = new JLabel("인원수");
-		per.setBounds(414, 175, 57, 15);
+		per.setBounds(55, 510, 57, 15);
 		panel.add(per);
 		
-		textField_5 = new JTextField();
-		textField_5.setBounds(538, 172, 116, 21);
-		panel.add(textField_5);
-		textField_5.setColumns(10);
-		
-		JLabel lblNewLabel_4 = new JLabel("New label");
-		lblNewLabel_4.setBounds(414, 247, 57, 15);
+		JLabel lblNewLabel_4 = new JLabel("교통수단");
+		lblNewLabel_4.setBounds(55, 295, 57, 15);
 		panel.add(lblNewLabel_4);
 		
-		textField_6 = new JTextField();
-		textField_6.setBounds(548, 244, 116, 21);
-		panel.add(textField_6);
-		textField_6.setColumns(10);
-		
-		JLabel lblNewLabel_5 = new JLabel("New label");
-		lblNewLabel_5.setBounds(414, 321, 57, 15);
+		JLabel lblNewLabel_5 = new JLabel("차량번호");
+		lblNewLabel_5.setBounds(363, 205, 57, 15);
 		panel.add(lblNewLabel_5);
-		
-		textField_7 = new JTextField();
-		textField_7.setBounds(548, 318, 116, 21);
-		panel.add(textField_7);
-		textField_7.setColumns(10);
 		
 		JButton btnNewButton = new JButton("결제하기");
 		btnNewButton.setBounds(631, 506, 97, 23);
 		panel.add(btnNewButton);
 		
-		money = new JTextField();
-		money.setBounds(414, 507, 116, 21);
-		panel.add(money);
-		money.setColumns(10);
-		
 		JLabel lblNewLabel_6 = new JLabel("총 금액");
-		lblNewLabel_6.setBounds(297, 510, 57, 15);
+		lblNewLabel_6.setBounds(326, 510, 57, 15);
 		panel.add(lblNewLabel_6);
+		
+		JLabel lblNewLabel_2 = new JLabel("차량등급");
+		lblNewLabel_2.setBounds(363, 295, 57, 15);
+		panel.add(lblNewLabel_2);
+		
+		JLabel dep = new JLabel("New label");
+		dep.setBounds(193, 49, 161, 15);
+		panel.add(dep);
+		
+		JLabel depT = new JLabel("New label");
+		depT.setBounds(470, 49, 161, 15);
+		panel.add(depT);
+		
+		JLabel arr = new JLabel("New label");
+		arr.setBounds(193, 93, 161, 15);
+		panel.add(arr);
+		
+		JLabel arrT = new JLabel("New label");
+		arrT.setBounds(470, 93, 161, 15);
+		panel.add(arrT);
+		
+		JLabel servnum = new JLabel("New label");
+		servnum.setBounds(156, 205, 161, 15);
+		panel.add(servnum);
+		
+		JLabel num = new JLabel("New label");
+		num.setBounds(489, 205, 161, 15);
+		panel.add(num);
+		
+		JLabel type = new JLabel("New label");
+		type.setBounds(156, 295, 161, 15);
+		panel.add(type);
+		
+		JLabel grade = new JLabel("New label");
+		grade.setBounds(489, 295, 161, 15);
+		panel.add(grade);
+		
+		JLabel person = new JLabel("New label");
+		person.setBounds(111, 510, 161, 15);
+		panel.add(person);
+		
+		JLabel fare = new JLabel("New label");
+		fare.setBounds(406, 510, 161, 15);
+		panel.add(fare);
 	}
 }
+

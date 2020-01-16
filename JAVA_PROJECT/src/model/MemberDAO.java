@@ -6,10 +6,12 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import model.model_interface.I_BookingCancle;
 import model.model_interface.I_BookingModify;
 import model.model_interface.I_MemberInfoModify;
+import model.model_interface.I_MemberInfoSelect;
 import model.model_interface.I_MemberJoin;
 import model.model_interface.I_MemberLogIn;
 import model.model_interface.I_MemberOut;
@@ -36,9 +38,10 @@ public class MemberDAO {
 
 	}
 
-	public void memberinfoselect() {
+	public Book memberinfoselect(Member loginuser) {
 		// TODO Auto-generated method stub
-
+		I_MemberInfoSelect info = new MemberInfoSelect();
+		return info.memberInfoSelect(loginuser);
 	}
 
 	public int memberinfomodify(Member m) {
@@ -63,7 +66,6 @@ public class MemberDAO {
 		// TODO Auto-generated method stub
 
 	}
-
 	public void booking() {
 		// TODO Auto-generated method stub
 
@@ -74,12 +76,12 @@ public class MemberDAO {
 
 	}
 
-	public void transselect(String depart_date,String depart, String dest) {
+	public ArrayList<TransInfo> transselect(String depart_date,String depart, String dest) {
 		I_TransSelect list = new TransSelect();
-		list.transSelect(depart_date,depart,dest);
+		ArrayList<TransInfo> transSelect = list.transSelect(depart_date,depart,dest);
+		return transSelect;
 		// TODO Auto-generated method stub
 		
 	}
 
 }
-

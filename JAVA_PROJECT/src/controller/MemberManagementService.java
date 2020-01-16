@@ -1,6 +1,9 @@
 
 package controller;
 
+import java.util.ArrayList;
+
+import model.Book;
 import model.Member;
 import model.MemberDAO;
 import model.TransInfo;
@@ -30,9 +33,8 @@ public class MemberManagementService {
 			return true;
 	}
 
-	public boolean memberInfoSelect() {
-		dao.memberinfoselect();
-		return false;
+	public Book memberInfoSelect(Member loginuser) {
+		return dao.memberinfoselect(loginuser);
 	}
 
 	public boolean memberInfoModify(Member m) {
@@ -53,6 +55,7 @@ public class MemberManagementService {
 		return 0;
 	}
 
+
 	public boolean booking() {
 		dao.booking();
 		return false;
@@ -63,10 +66,12 @@ public class MemberManagementService {
 		return 0;
 	}
 
-	public void transSelect(String depart_date,String depart, String dest) {
-		dao.transselect(depart_date,depart,dest);
+	public ArrayList<TransInfo> transSelect(String depart_date,String depart, String dest) {
+		ArrayList<TransInfo> rslist = null;
+		rslist = dao.transselect(depart_date,depart,dest);
 		// TODO Auto-generated method stub
-		
+		return rslist;
 	}
 }
+
 
