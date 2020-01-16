@@ -111,41 +111,41 @@ public class GUI_Pay {
 		dep.setBounds(193, 49, 161, 15);
 		panel.add(dep);
 
-		depT = new JLabel(transinfo.getDep_time());
-		depT.setBounds(470, 49, 161, 15);
-		panel.add(depT);
-
-		arr = new JLabel(input_dest);
-		arr.setBounds(193, 93, 161, 15);
-		panel.add(arr);
-
-		arrT = new JLabel(transinfo.getArr_time());
-		arrT.setBounds(470, 93, 161, 15);
-		panel.add(arrT);
-
-		servnum = new JLabel(transinfo.getServ_num());
-		servnum.setBounds(156, 205, 161, 15);
-		panel.add(servnum);
-
-		num = new JLabel(transinfo.getNum());
-		num.setBounds(489, 205, 161, 15);
-		panel.add(num);
-
-		type = new JLabel(transinfo.getType());
-		type.setBounds(156, 295, 161, 15);
-		panel.add(type);
-
-		grade = new JLabel(transinfo.getGrade());
-		grade.setBounds(489, 295, 161, 15);
-		panel.add(grade);
-
-		person = new JLabel("1");
-		person.setBounds(111, 510, 161, 15);
-		panel.add(person);
-
-		fare = new JLabel(transinfo.getFare());
-		fare.setBounds(406, 510, 161, 15);
-		panel.add(fare);
+//		depT = new JLabel(transinfo.getDep_time());
+//		depT.setBounds(470, 49, 161, 15);
+//		panel.add(depT);
+//
+//		arr = new JLabel(input_dest);
+//		arr.setBounds(193, 93, 161, 15);
+//		panel.add(arr);
+//
+//		arrT = new JLabel(transinfo.getArr_time());
+//		arrT.setBounds(470, 93, 161, 15);
+//		panel.add(arrT);
+//
+//		servnum = new JLabel(transinfo.getServ_num());
+//		servnum.setBounds(156, 205, 161, 15);
+//		panel.add(servnum);
+//
+//		num = new JLabel(transinfo.getNum());
+//		num.setBounds(489, 205, 161, 15);
+//		panel.add(num);
+//
+//		type = new JLabel(transinfo.getType());
+//		type.setBounds(156, 295, 161, 15);
+//		panel.add(type);
+//
+//		grade = new JLabel(transinfo.getGrade());
+//		grade.setBounds(489, 295, 161, 15);
+//		panel.add(grade);
+//
+//		person = new JLabel("1");
+//		person.setBounds(111, 510, 161, 15);
+//		panel.add(person);
+//
+//		fare = new JLabel(transinfo.getFare());
+//		fare.setBounds(406, 510, 161, 15);
+//		panel.add(fare);
 
 	}
 }

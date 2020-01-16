@@ -31,6 +31,7 @@ public class MemberLogIn implements I_MemberLogIn {
 
 			System.out.println(m.getId());
 			System.out.println(m.getPw());
+			
 			if (rs.next()) {
 				String id = rs.getString("USER_ID");
 				String pw = rs.getString("USER_PW");
