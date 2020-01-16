@@ -76,8 +76,3 @@ public class MemberManagementService {
 	}
 
 }
-<<<<<<< HEAD
-=======
-
-
->>>>>>> branch 'master' of https://github.com/spectra10/JAVA_PROJECT.git

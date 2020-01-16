@@ -29,16 +29,16 @@ public class BookingPayment implements I_BookingPayment {
 			conn = DriverManager.getConnection(url, user, password);
 			String sql = "INSERT INTO BOOK VALUES(?,?,?,?,?,?,?,?,?,?)";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, "ti.getbooknum");
-			psmt.setString(2, "ti.getuserid");
-			psmt.setString(3, "ti.getdep_locnum");
-			psmt.setString(4, "ti.getarr_ocnum");
-			psmt.setString(5, "ti.getserv_num");
-			psmt.setString(6, "ti.getdep_t");
-			psmt.setString(7, "ti.getarrT");
-			psmt.setString(8, "ti.getbooknum");
-			psmt.setString(9, "ti.getbookfare");
-			psmt.setString(10, "ti.getbookdate");
+			psmt.setString(1, "1");
+			psmt.setString(2, loginUser.getId());
+			psmt.setString(3, input_depart);
+			psmt.setString(4, input_dest);
+			psmt.setString(5, selTransInfo.getServ_num());
+			psmt.setString(6, selTransInfo.getDep_time());
+			psmt.setString(7, selTransInfo.getArr_time());
+			psmt.setString(8, "인원");
+			psmt.setString(9, "요금");
+			psmt.setString(10, "sysdate");
 			if (rows == 0) {
 				System.out.println("sql error");
 			}

@@ -17,6 +17,9 @@ import model.TransInfo;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.JComboBox;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class GUI_Pay {
 //////////////////service 객체 생성 -> book객체를 service의 메소드에 넘겨줌
@@ -30,8 +33,7 @@ public class GUI_Pay {
 	private JLabel num;
 	private JLabel type;
 	private JLabel grade;
-	private JLabel person;
-	private JLabel fare;
+	
 
 	/**
 	 * Launch the application.
@@ -139,13 +141,26 @@ public class GUI_Pay {
 		grade.setBounds(489, 295, 161, 15);
 		panel.add(grade);
 
-		person = new JLabel("1");
-		person.setBounds(111, 510, 161, 15);
-		panel.add(person);
-
-		fare = new JLabel(selTransInfo.getFare());
-		fare.setBounds(406, 510, 161, 15);
-		panel.add(fare);
+		
+		
+		JLabel money = new JLabel(selTransInfo.getFare());
+		money.setBounds(470, 510, 109, 15);
+		panel.add(money);
+		int fare=Integer.parseInt(selTransInfo.getFare());
+		String[] count= {"1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"};
+		JComboBox comboBox = new JComboBox(count);
+		comboBox.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				JComboBox cb=(JComboBox)arg0.getSource();
+				int index=cb.getSelectedIndex();
+				money.setText((index+1)*fare+"원");
+				
+			}
+		});
+		comboBox.setBounds(156, 507, 69, 21);
+		panel.add(comboBox);
+		
+		
 
 	}
 }
