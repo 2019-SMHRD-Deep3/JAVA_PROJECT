@@ -87,9 +87,9 @@ public class GUI_Pay {
 			public void mouseClicked(MouseEvent e) {
 //////// 결제하기 버튼 클릭시 book객체를 생성하여 예매정보 생성
 ///////////////////////////BOOk 객체생성
-				Book book = new Book(booknum, dep, arr, servnum, depT, arrT, person, fare);
-
-				int rows = service.bookingPayment(book);
+//				Book book = new Book(booknum, dep, arr, servnum, depT, arrT, person, fare);
+//
+//				int rows = service.bookingPayment(book);
 
 			}
 		});
