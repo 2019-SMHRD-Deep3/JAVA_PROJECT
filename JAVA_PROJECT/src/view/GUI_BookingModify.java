@@ -88,11 +88,7 @@ public class GUI_BookingModify {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				JOptionPane.showMessageDialog(frame,
-					    "예매 변경 성공");
-				
-				
-				
-				
+					    "예매 변경 성공");			
 			}
 		});
 	
@@ -116,11 +112,6 @@ public class GUI_BookingModify {
 		comboBox.setBounds(12, 32, 279, 29);
 		panel_1.add(comboBox);
 		
-		
-		
-		
-		
-		
 		JLabel lblNewLabel_1 = new JLabel("원하는 시간대를 선택하세요.");
 		lblNewLabel_1.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
 		lblNewLabel_1.setBounds(12, 7, 279, 15);
@@ -136,10 +127,9 @@ public class GUI_BookingModify {
 			public void mouseClicked(MouseEvent e) {
 				
 				show_info.setToolTipText(comboBox.getSelectedItem().toString());
-				
-				
 			}
 		});
+		
 		btnNewButton_1.setBounds(315, 35, 101, 23);
 		panel_1.add(btnNewButton_1);
 		
