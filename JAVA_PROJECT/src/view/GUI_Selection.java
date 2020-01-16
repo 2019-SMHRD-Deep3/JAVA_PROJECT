@@ -70,9 +70,38 @@ public class GUI_Selection {
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		
-		JButton btnJbtn = new JButton("\uC774\uC804 \uD654\uBA74\uC73C\uB85C");
-		btnJbtn.setBounds(211, 481, 170, 60);
-		frame.getContentPane().add(btnJbtn);
+		JButton Backbtn = new JButton("\uC774\uC804 \uD654\uBA74\uC73C\uB85C");
+		Backbtn.setBounds(211, 481, 170, 60);
+		frame.getContentPane().add(Backbtn);
+		Backbtn.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+			}
+		});
+		Backbtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		
+//		JButton btnLoc1 = new JButton("\uC11C\uC6B8");
+//		btnLoc1.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) {
+//			}
+//		});
+//		btnLoc1.addMouseListener(new MouseAdapter() {
+//			@Override
+//			public void mouseClicked(MouseEvent arg0) {
+//				GUI_Image img = new GUI_Image(loginUser);
+//			}
+//		});
+//		btnLoc1.setBounds(461, 131, 97, 23);
+//		frame.getContentPane().add(btnLoc1);
+		
+		
+		
+		
+		
 		
 		JPanel panel = new JPanel();
 		panel.setBorder(new CompoundBorder(new LineBorder(new Color(0, 0, 0)), null));
@@ -127,41 +156,45 @@ public class GUI_Selection {
 		btnNewButton.setBounds(19, 479, 170, 60);
 		frame.getContentPane().add(btnNewButton);
 		
-		
-		
-		
-		
-		
-		
-		
 		JButton button = new JButton("\uB3C4\uCC29\uC9C0\uC5ED");
 		button.setBounds(39, 23, 105, 27);
 		panel2.add(button);
 		panel2.add(dest);
 		
-		JButton btnNewButton_2 = new JButton("\uC11C\uC6B8");
-		btnNewButton_2.setBounds(461, 131, 97, 23);
-		frame.getContentPane().add(btnNewButton_2);
+		JButton btnLoc1 = new JButton("\uC11C\uC6B8");
+		btnLoc1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnLoc1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				GUI_Image img = new GUI_Image(loginUser);
+			}
+		});
+		btnLoc1.setBounds(461, 131, 97, 23);
+		frame.getContentPane().add(btnLoc1);
 		
-		JButton button_1 = new JButton("\uB300\uC804");
-		button_1.setBounds(618, 131, 97, 23);
-		frame.getContentPane().add(button_1);
+		JButton btnLoc2 = new JButton("\uB300\uC804");
+		btnLoc2.setBounds(618, 131, 97, 23);
+		frame.getContentPane().add(btnLoc2);
 		
-		JButton button_2 = new JButton("\uC6B8\uC0B0");
-		button_2.setBounds(461, 279, 97, 23);
-		frame.getContentPane().add(button_2);
+		JButton btnLoc3 = new JButton("\uC6B8\uC0B0");
+		btnLoc3.setBounds(461, 279, 97, 23);
+		frame.getContentPane().add(btnLoc3);
 		
-		JButton button_3 = new JButton("\uB300\uAD6C");
-		button_3.setBounds(618, 279, 97, 23);
-		frame.getContentPane().add(button_3);
+		JButton btnLoc4 = new JButton("\uB300\uAD6C");
+		btnLoc4.setBounds(618, 279, 97, 23);
+		frame.getContentPane().add(btnLoc4);
 		
-		JButton button_4 = new JButton("\uAD11\uC8FC");
-		button_4.setBounds(461, 427, 97, 23);
-		frame.getContentPane().add(button_4);
+		JButton btnLoc5 = new JButton("\uAD11\uC8FC");
+		btnLoc5.setBounds(461, 427, 97, 23);
+		frame.getContentPane().add(btnLoc5);
 		
-		JButton button_5 = new JButton("\uBD80\uC0B0");
-		button_5.setBounds(618, 427, 97, 23);
-		frame.getContentPane().add(button_5);
+		JButton btnLoc6 = new JButton("\uBD80\uC0B0");
+		btnLoc6.setBounds(618, 427, 97, 23);
+		frame.getContentPane().add(btnLoc6);
+		
 		frame.setAutoRequestFocus(false);
 		frame.setBounds(100, 100, 800, 600);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

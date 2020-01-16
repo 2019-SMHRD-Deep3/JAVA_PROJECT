@@ -8,6 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SpringLayout;
 
+import model.Member;
+
 public class GUI_Image {
 
 	private JFrame frame;
@@ -16,33 +18,23 @@ public class GUI_Image {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GUI_Image window = new GUI_Image();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+
 
 	/**
 	 * Create the application.
 	 */
-	public GUI_Image() {
-		initialize();
+	public GUI_Image(Member loginuser) {
+		initialize(loginuser);
+		frame.setVisible(true);
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize(Member loginuser) {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1028, 631);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		SpringLayout springLayout = new SpringLayout();
 		frame.getContentPane().setLayout(springLayout);
 		
