@@ -85,7 +85,10 @@ public class GUI_Booking {
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				GUI_Pay pay = new GUI_Pay(loginuser);
+				int row = table.getSelectedRow();
+				TransInfo selTransInfo = transInfoList.get(row);
+				System.out.println(selTransInfo.getServ_num());
+				GUI_Pay pay = new GUI_Pay(loginuser,selTransInfo,input_depart,input_dest);
 			}
 		});
 	
