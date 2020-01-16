@@ -13,6 +13,7 @@ import model.model_interface.I_BookingPayment;
 
 public class BookingPayment implements I_BookingPayment {
 
+	public int num=4;
 	public String url = "jdbc:oracle:thin:@localhost:1521:xe";
 	public String user = "hr";
 	public String password = "hr";
@@ -29,20 +30,50 @@ public class BookingPayment implements I_BookingPayment {
 			int money=Integer.parseInt(selTransInfo.getFare());
 			int fare=booknom*money;
 			
-//			System.out.println(loginUser.getId());
-//			System.out.println(input_depart);
-//			System.out.println(input_dest);
-//			System.out.println(selTransInfo.getServ_num());
-			System.out.println(selTransInfo.getDep_time());
-			System.out.println(selTransInfo.getArr_time());
-			System.out.println(booknom);
-			System.out.println(fare);
+
+			if(input_depart.equals("서울")) {
+				input_depart="L1";
+			}
+			if(input_depart.equals("부산")) {
+				input_depart="L2";
+			}
+			if(input_depart.equals("광주")) {
+				input_depart="L3";
+			}
+			if(input_depart.equals("울산")) {
+				input_depart="L4";
+			}
+			if(input_depart.equals("대구")) {
+				input_depart="L5";
+			}
+			if(input_depart.equals("대전")) {
+				input_depart="L6";
+			}
+			
+			if(input_dest.equals("서울")) {
+				input_dest="L1";
+			}
+			if(input_dest.equals("부산")) {
+				input_dest="L2";
+			}
+			if(input_dest.equals("광주")) {
+				input_dest="L3";
+			}
+			if(input_dest.equals("울산")) {
+				input_dest="L4";
+			}
+			if(input_dest.equals("대구")) {
+				input_dest="L5";
+			}
+			if(input_dest.equals("대전")) {
+				input_dest="L6";
+			}
 			
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(url, user, password);
 			String sql = "INSERT INTO BOOK VALUES(?,?,?,?,?,?,?,?,?,sysdate)";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, "1");
+			psmt.setString(1, "booking"+num++);
 			psmt.setString(2, loginUser.getId());
 			psmt.setString(3, input_depart);
 			psmt.setString(4, input_dest);
@@ -50,7 +81,7 @@ public class BookingPayment implements I_BookingPayment {
 			psmt.setString(6, selTransInfo.getDep_time());
 			psmt.setString(7, selTransInfo.getArr_time());
 			psmt.setInt(8, booknom);
-			psmt.setInt(9, money);
+			psmt.setInt(9, fare);
 			
 			rows = psmt.executeUpdate();
 			if (rows == 0) {
