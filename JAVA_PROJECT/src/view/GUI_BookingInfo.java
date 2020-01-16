@@ -32,7 +32,7 @@ public class GUI_BookingInfo {
 	private ListSelectionModel listSelectModel;
 	private Icon icon;
 	private DefaultTableModel defaultTableModel;
-	private MemberManagementService ms = new MemberManagementService();
+	MemberManagementService ms = new MemberManagementService();
 
 	/**
 	 * Launch the application.
@@ -125,8 +125,13 @@ public class GUI_BookingInfo {
 //					 table.remove(table.getSelectedRow());
 				int i = listSelectModel.getAnchorSelectionIndex();
 				System.out.println(i);
-				JOptionPane.showMessageDialog(frame, "예매가 취소되었습니다.");
-				defaultTableModel.removeRow(i);
+				boolean result = ms.bookingCancle(loginuser);
+				if (result) {
+					defaultTableModel.removeRow(i);
+					JOptionPane.showMessageDialog(frame, "예매가 취소되었습니다.");
+				} else {
+					JOptionPane.showMessageDialog(frame, "예매가 존재하지 않습니다.");
+				}
 
 			}
 		});

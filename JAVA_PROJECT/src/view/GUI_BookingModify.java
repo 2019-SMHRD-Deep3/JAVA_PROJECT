@@ -11,6 +11,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.TableModel;
 
+import controller.MemberManagementService;
 import javafx.scene.control.ComboBox;
 
 import javax.swing.ListSelectionModel;
@@ -30,7 +31,7 @@ import javax.swing.JList;
 import javax.swing.JScrollBar;
 
 public class GUI_BookingModify {
-
+	MemberManagementService service = new MemberManagementService();
 	private JFrame frame;
 	private JTable table;
 	private JComboBox comboBox;
