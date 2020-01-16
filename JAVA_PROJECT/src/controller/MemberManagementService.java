@@ -3,6 +3,7 @@ package controller;
 
 import model.Member;
 import model.MemberDAO;
+import model.TransInfo;
 
 public class MemberManagementService {
 
@@ -47,8 +48,8 @@ public class MemberManagementService {
 		return 0;
 	}
 
-	public int bookingModify(Member m) {
-		dao.bookingmodify(m);
+	public int bookingModify(TransInfo t) {
+		dao.bookingmodify(t);
 		return 0;
 	}
 

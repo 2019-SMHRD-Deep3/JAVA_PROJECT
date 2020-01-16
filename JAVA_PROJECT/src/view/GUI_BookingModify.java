@@ -155,14 +155,14 @@ public class GUI_BookingModify {
 		lblNewLabel_2.setBounds(42, 298, 143, 15);
 		frame.getContentPane().add(lblNewLabel_2);
 		
-		JButton btnNewButton = new JButton("New button");
+		JButton btnNewButton = new JButton("◀◀");
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				frame.dispose();
 			}
 		});
-		btnNewButton.setBounds(443, 481, 97, 23);
+		btnNewButton.setBounds(30, 492, 97, 23);
 		frame.getContentPane().add(btnNewButton);
 	}
 }

@@ -56,9 +56,9 @@ public class MemberDAO {
 
 	}
 
-	public int bookingmodify(Member m) {
-		I_BookingModify member = new BookingModify();
-        int rows = member.bookingModify(m);
+	public int bookingmodify(TransInfo t) {
+		I_BookingModify TransInfo = new BookingModify();
+        int rows = TransInfo.bookingModify(t);
 		return rows;
 		// TODO Auto-generated method stub
 
