@@ -11,6 +11,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.TableModel;
 
+import controller.MemberManagementService;
 import javafx.scene.control.ComboBox;
 
 import javax.swing.ListSelectionModel;
@@ -30,7 +31,7 @@ import javax.swing.JList;
 import javax.swing.JScrollBar;
 
 public class GUI_BookingModify {
-
+	MemberManagementService service = new MemberManagementService();
 	private JFrame frame;
 	private JTable table;
 	private JComboBox comboBox;
@@ -109,14 +110,8 @@ public class GUI_BookingModify {
 		//콤보박스에 넣기
 		JComboBox comboBox = new JComboBox();
         comboBox.setEditable(true);
-        
-        
-        
-        
-        
-        
-        
-        comboBox.addItem("1시");
+
+        comboBox.addItem(service.transSelectDate(depart_date.getText()););
         
         comboBox.setSelectedItem("");
 		
@@ -137,7 +132,6 @@ public class GUI_BookingModify {
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				
 				show_info.setToolTipText(comboBox.getSelectedItem().toString());
 				
 				
