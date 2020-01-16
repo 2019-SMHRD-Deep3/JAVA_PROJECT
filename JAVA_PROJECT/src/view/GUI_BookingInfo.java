@@ -157,7 +157,8 @@ public class GUI_BookingInfo {
 		panel_1.add(reserve_cancel);
 		
 		JLabel name = new JLabel();
-		name.setBounds(24, 35, 48, 15);
+		name.setHorizontalAlignment(SwingConstants.CENTER);
+		name.setBounds(24, 28, 98, 38);
 		frame.getContentPane().add(name);
 		name.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		name.setText(loginuser.getName());
@@ -170,7 +171,7 @@ public class GUI_BookingInfo {
 //		userName.setText(loginUser.getName());
 		
 		JLabel label = new JLabel("\uB2D8\uC758 \uC608\uB9E4\uC815\uBCF4");
-		label.setBounds(58, 35, 150, 15);
+		label.setBounds(136, 40, 150, 15);
 		frame.getContentPane().add(label);
 		label.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 	}
