@@ -2,11 +2,6 @@
 
 package model;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 import model.model_interface.I_BookingCancle;
@@ -54,20 +49,22 @@ public class MemberDAO {
 	}
 
 	public int bookingcancle(Member m) {
-		I_BookingCancle member = new BookingCancle();
-        int rows = member.bookingCancle(m);
+
+		I_BookingCancle book = new BookingCancle();
+		int rows = book.bookingcancle(m);
 		return rows;
-		// TODO Auto-generated method stub
+
 
 	}
 
 	public int bookingmodify(TransInfo t) {
 		I_BookingModify TransInfo = new BookingModify();
-        int rows = TransInfo.bookingModify(t);
+		int rows = TransInfo.bookingModify(t);
 		return rows;
 		// TODO Auto-generated method stub
 
 	}
+
 	public void booking() {
 		// TODO Auto-generated method stub
 
@@ -91,3 +88,4 @@ public class MemberDAO {
 	
 
 }
+

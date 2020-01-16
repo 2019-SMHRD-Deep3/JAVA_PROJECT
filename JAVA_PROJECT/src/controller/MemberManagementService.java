@@ -45,9 +45,12 @@ public class MemberManagementService {
 			return true;
 	}
 
-	public int bookingCancle(Member m) {
-		dao.bookingcancle(m);
-		return 0;
+	public boolean bookingCancle(Member m) {
+		int rows = dao.bookingcancle(m);
+		if(rows == 0)
+			return false;
+		else
+			return true;
 	}
 
 	public int bookingModify(TransInfo t) {
@@ -73,3 +76,8 @@ public class MemberManagementService {
 	}
 
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> branch 'master' of https://github.com/spectra10/JAVA_PROJECT.git
