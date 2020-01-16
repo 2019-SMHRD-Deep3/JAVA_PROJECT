@@ -35,6 +35,7 @@ public class MemberManagementService {
 
 	public Book memberInfoSelect(Member loginuser) {
 		return dao.memberinfoselect(loginuser);
+
 	}
 
 	public boolean memberInfoModify(Member m) {
@@ -64,8 +65,8 @@ public class MemberManagementService {
 		return false;
 	}
 
-	public int bookingPayment() {
-		dao.bookingpayment();
+	public int bookingPayment(Member loginUser, TransInfo selTransInfo, String input_depart, String input_dest) {
+		dao.bookingpayment(loginUser,selTransInfo,input_depart,input_dest);
 		return 0;
 	}
 

@@ -1,10 +1,12 @@
 
+
 package model;
 
 import java.util.ArrayList;
 
 import model.model_interface.I_BookingCancle;
 import model.model_interface.I_BookingModify;
+import model.model_interface.I_BookingPayment;
 import model.model_interface.I_MemberInfoModify;
 import model.model_interface.I_MemberInfoSelect;
 import model.model_interface.I_MemberJoin;
@@ -52,6 +54,7 @@ public class MemberDAO {
 		int rows = book.bookingcancle(m);
 		return rows;
 
+
 	}
 
 	public int bookingmodify(TransInfo t) {
@@ -67,16 +70,22 @@ public class MemberDAO {
 
 	}
 
-	public void bookingpayment() {
+	public int bookingpayment(Member loginUser, TransInfo selTransInfo, String input_depart, String input_dest) {
+		I_BookingPayment payment = new BookingPayment();
+		int row = payment.bookingPayment(loginUser, selTransInfo,input_depart,input_dest);
+		return row;
 		// TODO Auto-generated method stub
 
 	}
 
-	public ArrayList<TransInfo> transselect(String depart_date, String depart, String dest) {
+	public ArrayList<TransInfo> transselect(String depart_date,String depart, String dest) {
 		I_TransSelect list = new TransSelect();
-		ArrayList<TransInfo> transSelect = list.transSelect(depart_date, depart, dest);
+		ArrayList<TransInfo> transSelect = list.transSelect(depart_date,depart,dest);
 		return transSelect;
 		// TODO Auto-generated method stub
-
+		
 	}
+	
+
 }
+
