@@ -1,4 +1,3 @@
-
 package view;
 
 import java.awt.EventQueue;
@@ -28,6 +27,7 @@ import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
+
 import controller.MemberManagementService;
 import model.Book;
 import model.Member;
@@ -48,19 +48,17 @@ public class GUI_BookingInfo {
 	private Icon icon;
 	private DefaultTableModel defaultTableModel;
 	private MemberManagementService ms = new MemberManagementService();
-	
+
 	/**
 	 * Launch the application.
 	 */
-
 
 	/**
 	 * Create the application.
 	 */
 	public GUI_BookingInfo(Member loginuser) {
-		
+
 		initialize(loginuser);
-		
 		frame.setVisible(true);
 	}
 
@@ -72,7 +70,7 @@ public class GUI_BookingInfo {
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.getContentPane().setForeground(Color.WHITE);
 		frame.setBounds(100, 100, 800,600);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JSeparator separator = new JSeparator();
@@ -87,8 +85,8 @@ public class GUI_BookingInfo {
 		
 		String[][]data = {{book.getBooknum(),book.getDep(),book.getArr(),book.getServnum(),book.getDepT(),book.getArrT(),book.getPer(),book.getFare()}};
 		
-		String[] columnNames = { "예매번호", "출발지","목적지","교통편","출발일" ,"도착일", "인원수", "가격"};
-		
+		String[] columnNames = { "예매번호", "출발지","목적지","교통편","출발일" ,"도착일", "인원수", "가격"};		
+
 		defaultTableModel = new DefaultTableModel(data, columnNames);
 		table = new JTable(defaultTableModel);
 		table.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
@@ -150,6 +148,7 @@ public class GUI_BookingInfo {
 					JOptionPane.showMessageDialog(frame,
 					    "예매가 취소되었습니다.");
 					defaultTableModel.removeRow(i);
+					
 			}
 		});
 
@@ -165,14 +164,5 @@ public class GUI_BookingInfo {
 		label.setBounds(58, 35, 150, 15);
 		frame.getContentPane().add(label);
 		label.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
-//		String[] petStrings = { "Bird", "Cat", "Dog", "Rabbit", "Pig" };
-//		//Create the combo box, select item at index 4.
-//		//Indices start at 0, so 4 specifies the pig.
-//		JComboBox petList = new JComboBox(petStrings);
-//		petList.setSelectedIndex(4);
-//		petList.addActionListener(petList);
-//	}
-	
-
-
-}}
+	}
+}
