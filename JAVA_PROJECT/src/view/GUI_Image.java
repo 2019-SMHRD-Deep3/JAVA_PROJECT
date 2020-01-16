@@ -36,21 +36,22 @@ public class GUI_Image {
 	 */
 	private void initialize(String str) {
 		if(str.equals("서울")) {
-			icon = new ImageIcon("C:\\Users\\student\\git\\JAVA_PROJECT\\JAVA_PROJECT\\img\\캡처.png");
+			
+			icon = new ImageIcon(this.getClass().getResource(".").getPath() + "..//..//img//캡처.png");
 		}else if(str.equals("서울")) {
-			icon = new ImageIcon("C:\\Users\\student\\git\\JAVA_PROJECT\\JAVA_PROJECT\\img\\캡처1.png");
+			icon = new ImageIcon(this.getClass().getResource(".").getPath() + "..//..//img//캡처1.png");
 		}else if(str.equals("부산")) {
-			icon = new ImageIcon("C:\\Users\\student\\git\\JAVA_PROJECT\\JAVA_PROJECT\\img\\캡처2.png");
+			icon = new ImageIcon(this.getClass().getResource(".").getPath() + "..//..//img//캡처2.png");
 		}else if(str.equals("대구")) {
-			icon = new ImageIcon("C:\\Users\\student\\git\\JAVA_PROJECT\\JAVA_PROJECT\\img\\캡처3.png");
+			icon = new ImageIcon(this.getClass().getResource(".").getPath() + "..//..//img//캡처3.png");
 		}else if(str.equals("대전")) {
-			icon = new ImageIcon("C:\\Users\\student\\git\\JAVA_PROJECT\\JAVA_PROJECT\\img\\캡처4.png");
+			icon = new ImageIcon(this.getClass().getResource(".").getPath() + "..//..//img//캡처4.png");
 		}else if(str.equals("인천")) {
-			icon = new ImageIcon("C:\\Users\\student\\git\\JAVA_PROJECT\\JAVA_PROJECT\\img\\캡처5.png");
+			icon = new ImageIcon(this.getClass().getResource(".").getPath() + "..//..//img//캡처5.png");
 		}else if(str.equals("광주")) {
-			icon = new ImageIcon("C:\\Users\\student\\git\\JAVA_PROJECT\\JAVA_PROJECT\\img\\캡처6.png");
+			icon = new ImageIcon(this.getClass().getResource(".").getPath() + "..//..//img//캡처6.png");
 		}else if(str.equals("울산")) {
-			icon = new ImageIcon("C:\\Users\\student\\git\\JAVA_PROJECT\\JAVA_PROJECT\\img\\캡처7.png");
+			icon = new ImageIcon(this.getClass().getResource(".").getPath() + "..//..//img//캡처7.png");
 		}
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1028, 631);
