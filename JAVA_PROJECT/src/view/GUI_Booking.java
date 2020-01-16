@@ -15,22 +15,28 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 import model.Member;
+import model.TransInfo;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 import controller.MemberManagementService;
 import java.awt.SystemColor;
+import java.awt.Window;
 
 public class GUI_Booking {
 
 	private JFrame frame;
 	private JTextField depart_date;
 	MemberManagementService service = new MemberManagementService();
+	ArrayList<TransInfo> transInfoList = null;
 	/**
 	 * Launch the application.
 	 */
@@ -94,7 +100,8 @@ public class GUI_Booking {
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				service.transSelect(depart_date.getText(),input_depart,input_dest);
+				
+				transInfoList = service.transSelect(depart_date.getText(),input_depart,input_dest);
 			}
 		});
 		btnNewButton_1.setBounds(150, 64, 97, 23);
@@ -125,26 +132,24 @@ public class GUI_Booking {
 		JPanel panel_3 = new JPanel();
 		panel_3.setBounds(22, 35, 678, 214);
 		panel_2.add(panel_3);
-		String[] columnNames = {"First Name",
-                "Last Name",
-                "Sport",
-                "# of Years",
-                "Vegetarian"};
-		Object[][] data = {
-			    {"Kathy", "Smith",
-			     "Snowboarding", new Integer(5), new Boolean(false)},
-			    {"John", "Doe",
-			     "Rowing", new Integer(3), new Boolean(true)},
-			    {"Sue", "Black",
-			     "Knitting", new Integer(2), new Boolean(false)},
-			    {"Jane", "White",
-			     "Speed reading", new Integer(20), new Boolean(true)},
-			    {"Joe", "Brown",
-			     "Pool", new Integer(10), new Boolean(false)}
-			};
 		panel_3.setLayout(null);
-		JTable table = new JTable(data, columnNames);
-		table.setBounds(0, 0, 678, 214);
+		
+		String[] columnNames = {"운행번호","운행종류","차량번호","출발시각","도착시각","등급","좌석","요금"};
+		DefaultTableModel tableModel = new DefaultTableModel(columnNames, 0);
+		for (int i = 0; i < transInfoList.size(); i++) {
+			String serv_num = transInfoList.get(i).getServ_num();
+			String type = transInfoList.get(i).getType();
+			String num = transInfoList.get(i).getNum();
+			String dep_time = transInfoList.get(i).getDep_time();
+			String arr_time = transInfoList.get(i).getArr_time();
+			String grade = transInfoList.get(i).getArr_time();
+			int seat = transInfoList.get(i).getSeat();
+			String fare = transInfoList.get(i).getFare();
+			Object [] data = {serv_num,type,num,dep_time,arr_time,grade,seat,fare};
+			tableModel.addRow(data);
+		}
+		JTable table = new JTable(tableModel);
+		JScrollPane scrollpane = new JScrollPane(table);
 		panel_3.add(table);
 	}
 }

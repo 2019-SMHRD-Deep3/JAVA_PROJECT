@@ -7,10 +7,10 @@ public class TransInfo {
 	private String dep_time;
 	private String arr_time;
 	private String grade;
-	private String seat;
+	private int seat;
 	private String fare;
 	public TransInfo(String serv_num, String type, String num, String dep_time, String arr_time, String grade,
-			String seat, String fare) {
+			int seat2, String fare) {
 		super();
 		this.serv_num = serv_num;
 		this.type = type;
@@ -18,7 +18,7 @@ public class TransInfo {
 		this.dep_time = dep_time;
 		this.arr_time = arr_time;
 		this.grade = grade;
-		this.seat = seat;
+		this.seat = seat2;
 		this.fare = fare;
 	}
 	public String getServ_num() {
@@ -39,7 +39,7 @@ public class TransInfo {
 	public String getGrade() {
 		return grade;
 	}
-	public String getSeat() {
+	public int getSeat() {
 		return seat;
 	}
 	public String getFare() {

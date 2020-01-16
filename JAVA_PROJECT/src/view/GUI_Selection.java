@@ -120,7 +120,7 @@ public class GUI_Selection {
 			public void mouseClicked(MouseEvent e) {
 				String input_depart = depart.getText();
 				String input_dest = dest.getText();
-				GUI_Booking pay = new GUI_Booking(loginUser,input_depart,input_dest);
+				GUI_Booking bo = new GUI_Booking(loginUser,input_depart,input_dest);
 			}
 		});
 		

@@ -130,3 +130,4 @@ public class GUI_Pay {
 		panel.add(fare);
 	}
 }
+
