@@ -58,10 +58,10 @@ public class MemberManagementService {
 		dao.booking();
 		return false;
 	}
-
-	public int bookingPayment() {
-		dao.bookingpayment();
-		return 0;
+/// 생성된 객체의 숫자를 세어줌
+	public int bookingPayment(Book book) {
+		int rows=dao.bookingpayment(book);
+		return rows;
 	}
 
 	public ArrayList<TransInfo> transSelect(String depart_date,String depart, String dest) {

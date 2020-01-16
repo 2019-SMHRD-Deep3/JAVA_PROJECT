@@ -1,14 +1,10 @@
 package model;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 import model.model_interface.I_BookingCancle;
 import model.model_interface.I_BookingModify;
+import model.model_interface.I_BookingPayment;
 import model.model_interface.I_MemberInfoModify;
 import model.model_interface.I_MemberInfoSelect;
 import model.model_interface.I_MemberJoin;
@@ -71,8 +67,10 @@ public class MemberDAO {
 
 	}
 
-	public void bookingpayment() {
-		// TODO Auto-generated method stub
+	public int bookingpayment(Book book) {
+		I_BookingPayment booking = new BookingPayment();
+		int rows = booking.bookingPayment(book);
+		return rows;
 
 	}
 

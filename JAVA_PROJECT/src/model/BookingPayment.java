@@ -19,7 +19,7 @@ public class BookingPayment implements I_BookingPayment {
 
 	@Override
 	// 결제하는 기능
-	public int bookingPayment() {
+	public int bookingPayment(Book book) {
 
 		int rows=0;
 

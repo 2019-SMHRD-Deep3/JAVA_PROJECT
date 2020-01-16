@@ -13,6 +13,8 @@ import controller.MemberManagementService;
 import model.Book;
 import model.Member;
 import model.MemberDAO;
+import model.TransInfo;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -38,16 +40,16 @@ public class GUI_Pay {
 	/**
 	 * Create the application.
 	 */
-	public GUI_Pay(Member loginUser) {
+	public GUI_Pay(Member loginUser,TransInfo transinfo,String input_depart,String input_dest) {
 
-		initialize(loginUser);
+		initialize(loginUser,transinfo,input_depart,input_dest);
 		frame.setVisible(true);
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize(Member loginUser) {
+	private void initialize(Member loginUser,TransInfo transinfo, String input_depart,String input_dest) {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 800, 600);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -104,43 +106,43 @@ public class GUI_Pay {
 		lblNewLabel_2.setBounds(363, 295, 57, 15);
 		panel.add(lblNewLabel_2);
 
-		dep = new JLabel("New label");
+		dep = new JLabel(input_depart);
 		dep.setBounds(193, 49, 161, 15);
 		panel.add(dep);
 
-		depT = new JLabel("New label");
+		depT = new JLabel(transinfo.getDep_time());
 		depT.setBounds(470, 49, 161, 15);
 		panel.add(depT);
 
-		arr = new JLabel("New label");
+		arr = new JLabel(input_dest);
 		arr.setBounds(193, 93, 161, 15);
 		panel.add(arr);
 
-		arrT = new JLabel("New label");
+		arrT = new JLabel(transinfo.getArr_time());
 		arrT.setBounds(470, 93, 161, 15);
 		panel.add(arrT);
 
-		servnum = new JLabel("New label");
+		servnum = new JLabel(transinfo.getServ_num());
 		servnum.setBounds(156, 205, 161, 15);
 		panel.add(servnum);
 
-		num = new JLabel("New label");
+		num = new JLabel(transinfo.getNum());
 		num.setBounds(489, 205, 161, 15);
 		panel.add(num);
 
-		type = new JLabel("New label");
+		type = new JLabel(transinfo.getType());
 		type.setBounds(156, 295, 161, 15);
 		panel.add(type);
 
-		grade = new JLabel("New label");
+		grade = new JLabel(transinfo.getGrade());
 		grade.setBounds(489, 295, 161, 15);
 		panel.add(grade);
 
-		person = new JLabel("New label");
+		person = new JLabel("1");
 		person.setBounds(111, 510, 161, 15);
 		panel.add(person);
 
-		fare = new JLabel("New label");
+		fare = new JLabel(transinfo.getFare());
 		fare.setBounds(406, 510, 161, 15);
 		panel.add(fare);
 

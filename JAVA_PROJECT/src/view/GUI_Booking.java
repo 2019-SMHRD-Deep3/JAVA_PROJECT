@@ -83,7 +83,8 @@ public class GUI_Booking {
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				GUI_Pay pay = new GUI_Pay(loginuser);
+				TransInfo transinfo=new TransInfo("Ts1","Trans2","t1","2020/01/01","2020/01/01","ITX",10,"1000");
+				GUI_Pay pay = new GUI_Pay(loginuser,transinfo,input_depart, input_dest);
 			}
 		});
 	
