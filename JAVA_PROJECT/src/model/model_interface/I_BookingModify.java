@@ -1,7 +1,10 @@
+
 package model.model_interface;
 
-import model.Member;
+
+import model.TransInfo;
 
 public interface I_BookingModify {
-	public int bookingModify(Member m);
+	int bookingModify(TransInfo t);
 }
+

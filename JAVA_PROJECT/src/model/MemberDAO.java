@@ -1,5 +1,12 @@
+
+
 package model;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import model.model_interface.I_BookingCancle;
@@ -54,23 +61,23 @@ public class MemberDAO {
 
 	}
 
-	public int bookingmodify(Member m) {
-		I_BookingModify member = new BookingModify();
-        int rows = member.bookingModify(m);
+	public int bookingmodify(TransInfo t) {
+		I_BookingModify TransInfo = new BookingModify();
+        int rows = TransInfo.bookingModify(t);
 		return rows;
 		// TODO Auto-generated method stub
 
 	}
-
 	public void booking() {
 		// TODO Auto-generated method stub
 
 	}
 
-	public int bookingpayment(Book book) {
-		I_BookingPayment booking = new BookingPayment();
-		int rows = booking.bookingPayment(book);
-		return rows;
+	public int bookingpayment(Member loginUser, TransInfo selTransInfo, String input_depart, String input_dest) {
+		I_BookingPayment payment = new BookingPayment();
+		int row = payment.bookingPayment(loginUser, selTransInfo,input_depart,input_dest);
+		return row;
+		// TODO Auto-generated method stub
 
 	}
 
@@ -81,6 +88,6 @@ public class MemberDAO {
 		// TODO Auto-generated method stub
 		
 	}
+	
 
 }
-

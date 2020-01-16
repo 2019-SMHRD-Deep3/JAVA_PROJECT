@@ -1,3 +1,4 @@
+
 package model;
 
 import java.sql.Connection;
@@ -19,7 +20,7 @@ public class BookingPayment implements I_BookingPayment {
 
 	@Override
 	// 결제하는 기능
-	public int bookingPayment(Book book) {
+	public int bookingPayment(Member loginUser,TransInfo selTransInfo, String input_depart, String input_dest) {
 
 		int rows=0;
 
@@ -64,3 +65,4 @@ public class BookingPayment implements I_BookingPayment {
 	}
 
 }
+

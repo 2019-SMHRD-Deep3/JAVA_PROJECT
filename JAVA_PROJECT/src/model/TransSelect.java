@@ -56,7 +56,7 @@ public class TransSelect implements I_TransSelect {
 			//psmt.setString();
 			rs = psmt.executeQuery();
 
-			if (rs.next()) {
+			while (rs.next()) {
 				String serv_num = rs.getString("TRANS_SERV_NUM");
 				String type = rs.getString("TRANS_TYPE");
 				String num = rs.getString("TRANS_NUM");

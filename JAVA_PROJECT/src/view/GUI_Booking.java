@@ -1,4 +1,5 @@
 
+
 package view;
 
 import java.awt.EventQueue;
@@ -37,6 +38,8 @@ public class GUI_Booking {
 	private JTextField depart_date;
 	MemberManagementService service = new MemberManagementService();
 	ArrayList<TransInfo> transInfoList = null;
+	private JTable table;
+	private JScrollPane scrollPane;
 	/**
 	 * Launch the application.
 	 */
@@ -83,8 +86,10 @@ public class GUI_Booking {
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				TransInfo transinfo=new TransInfo("Ts1","Trans2","t1","2020/01/01","2020/01/01","ITX",10,"1000");
-				GUI_Pay pay = new GUI_Pay(loginuser,transinfo,input_depart, input_dest);
+				int row = table.getSelectedRow();
+				TransInfo selTransInfo = transInfoList.get(row);
+				System.out.println(selTransInfo.getServ_num());
+				GUI_Pay pay = new GUI_Pay(loginuser,selTransInfo,input_depart,input_dest);
 			}
 		});
 	
@@ -103,6 +108,8 @@ public class GUI_Booking {
 			public void mouseClicked(MouseEvent e) {
 				
 				transInfoList = service.transSelect(depart_date.getText(),input_depart,input_dest);
+				System.out.println("조건에 맞는 운행수:"+transInfoList.size());
+				show(transInfoList);
 			}
 		});
 		btnNewButton_1.setBounds(150, 64, 97, 23);
@@ -120,21 +127,17 @@ public class GUI_Booking {
 		lblNewLabel_4.setBounds(350, 41, 57, 15);
 		panel_1.add(lblNewLabel_4);
 		
-		JPanel panel_2 = new JPanel();
-		panel_2.setBackground(SystemColor.activeCaption);
-		panel_2.setBounds(22, 171, 712, 259);
-		panel_1.add(panel_2);
-		panel_2.setLayout(null);
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(22, 154, 660, 263);
+		panel_1.add(scrollPane);
 		
-		JLabel lblNewLabel_1 = new JLabel("운행 정보");
-		lblNewLabel_1.setBounds(12, 10, 57, 15);
-		panel_2.add(lblNewLabel_1);
 		
-		JPanel panel_3 = new JPanel();
-		panel_3.setBounds(22, 35, 678, 214);
-		panel_2.add(panel_3);
-		panel_3.setLayout(null);
 		
+		
+		
+	}
+
+	protected void show(ArrayList<TransInfo> transInfoList2) {
 		String[] columnNames = {"운행번호","운행종류","차량번호","출발시각","도착시각","등급","좌석","요금"};
 		DefaultTableModel tableModel = new DefaultTableModel(columnNames, 0);
 		for (int i = 0; i < transInfoList.size(); i++) {
@@ -149,8 +152,10 @@ public class GUI_Booking {
 			Object [] data = {serv_num,type,num,dep_time,arr_time,grade,seat,fare};
 			tableModel.addRow(data);
 		}
-		JTable table = new JTable(tableModel);
-		JScrollPane scrollpane = new JScrollPane(table);
-		panel_3.add(table);
+		table = new JTable(tableModel);
+		scrollPane.setViewportView(table);
+		// TODO Auto-generated method stub
+		
 	}
+
 }

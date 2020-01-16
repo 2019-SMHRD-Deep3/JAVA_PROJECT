@@ -11,6 +11,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.TableModel;
 
+import controller.MemberManagementService;
 import javafx.scene.control.ComboBox;
 
 import javax.swing.ListSelectionModel;
@@ -30,7 +31,7 @@ import javax.swing.JList;
 import javax.swing.JScrollBar;
 
 public class GUI_BookingModify {
-
+	MemberManagementService service = new MemberManagementService();
 	private JFrame frame;
 	private JTable table;
 	private JComboBox comboBox;
@@ -105,12 +106,14 @@ public class GUI_BookingModify {
 		//콤보박스에 넣기
 		JComboBox comboBox = new JComboBox();
         comboBox.setEditable(true);
-        comboBox.addItem("1시");
+
+        //comboBox.addItem(service.transSelectDate(depart_date.getText()););
         
         comboBox.setSelectedItem("");
 		
 		comboBox.setBounds(12, 32, 279, 29);
 		panel_1.add(comboBox);
+
 		
 		JLabel lblNewLabel_1 = new JLabel("원하는 시간대를 선택하세요.");
 		lblNewLabel_1.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
@@ -125,7 +128,6 @@ public class GUI_BookingModify {
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				
 				show_info.setToolTipText(comboBox.getSelectedItem().toString());
 			}
 		});
@@ -145,14 +147,14 @@ public class GUI_BookingModify {
 		lblNewLabel_2.setBounds(42, 298, 143, 15);
 		frame.getContentPane().add(lblNewLabel_2);
 		
-		JButton btnNewButton = new JButton("New button");
+		JButton btnNewButton = new JButton("◀◀");
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				frame.dispose();
 			}
 		});
-		btnNewButton.setBounds(443, 481, 97, 23);
+		btnNewButton.setBounds(30, 492, 97, 23);
 		frame.getContentPane().add(btnNewButton);
 	}
 }

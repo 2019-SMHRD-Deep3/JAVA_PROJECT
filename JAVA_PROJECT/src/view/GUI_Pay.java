@@ -39,17 +39,23 @@ public class GUI_Pay {
 
 	/**
 	 * Create the application.
+	 * @param input_dest 
+	 * @param input_depart 
+	 * @param selTransInfo 
 	 */
-	public GUI_Pay(Member loginUser,TransInfo transinfo,String input_depart,String input_dest) {
 
-		initialize(loginUser,transinfo,input_depart,input_dest);
+	public GUI_Pay(Member loginUser, TransInfo selTransInfo, String input_depart, String input_dest) {
+
+
+		initialize(loginUser, selTransInfo,input_depart,input_dest);
 		frame.setVisible(true);
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize(Member loginUser,TransInfo transinfo, String input_depart,String input_dest) {
+
+	private void initialize(Member loginUser,TransInfo selTransInfo, String input_depart, String input_dest) {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 800, 600);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -87,12 +93,7 @@ public class GUI_Pay {
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-//////// 결제하기 버튼 클릭시 book객체를 생성하여 예매정보 생성
-///////////////////////////BOOk 객체생성
-//				Book book = new Book(booknum, dep, arr, servnum, depT, arrT, person, fare);
-//
-//				int rows = service.bookingPayment(book);
-
+				service.bookingPayment(loginUser, selTransInfo,input_depart,input_dest);
 			}
 		});
 		btnNewButton.setBounds(631, 506, 97, 23);
