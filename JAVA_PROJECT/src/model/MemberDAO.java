@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import model.model_interface.I_BookingCancle;
 import model.model_interface.I_BookingModify;
 import model.model_interface.I_MemberInfoModify;
+import model.model_interface.I_MemberInfoSelect;
 import model.model_interface.I_MemberJoin;
 import model.model_interface.I_MemberLogIn;
 import model.model_interface.I_MemberOut;
