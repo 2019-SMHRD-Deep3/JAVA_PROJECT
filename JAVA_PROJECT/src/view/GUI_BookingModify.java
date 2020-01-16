@@ -89,11 +89,7 @@ public class GUI_BookingModify {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				JOptionPane.showMessageDialog(frame,
-					    "예매 변경 성공");
-				
-				
-				
-				
+					    "예매 변경 성공");			
 			}
 		});
 	
@@ -133,10 +129,9 @@ public class GUI_BookingModify {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				show_info.setToolTipText(comboBox.getSelectedItem().toString());
-				
-				
 			}
 		});
+		
 		btnNewButton_1.setBounds(315, 35, 101, 23);
 		panel_1.add(btnNewButton_1);
 		
