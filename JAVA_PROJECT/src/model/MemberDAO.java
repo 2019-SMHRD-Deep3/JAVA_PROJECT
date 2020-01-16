@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import model.model_interface.I_BookingCancle;
 import model.model_interface.I_MemberInfoModify;
 import model.model_interface.I_MemberJoin;
 import model.model_interface.I_MemberLogIn;
@@ -44,8 +45,10 @@ public class MemberDAO {
 
 	}
 
-	public void bookingcancle() {
-		// TODO Auto-generated method stub
+	public int bookingcancle(Member m) {
+		I_BookingCancle book = new BookingCancle();
+		int rows = book.bookingcancle(m);
+		return rows;
 
 	}
 
@@ -63,5 +66,6 @@ public class MemberDAO {
 		// TODO Auto-generated method stub
 
 	}
+
 
 }

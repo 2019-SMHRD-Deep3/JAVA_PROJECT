@@ -94,7 +94,7 @@ public class GUI_BookingInfo {
 			
 			@Override
 			public void valueChanged(ListSelectionEvent e) {
-				// TODO Auto-generated method stub
+				
 				if(e.getValueIsAdjusting() == false) {
 					System.out.println("hello");
 					
