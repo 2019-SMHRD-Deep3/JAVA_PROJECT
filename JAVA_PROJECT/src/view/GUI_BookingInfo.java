@@ -1,4 +1,3 @@
-
 package view;
 
 import java.awt.EventQueue;
@@ -28,6 +27,9 @@ import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
+
+import controller.MemberManagementService;
+import model.Book;
 import model.Member;
 
 import javax.swing.JList;
@@ -45,6 +47,7 @@ public class GUI_BookingInfo {
 	private ListSelectionModel listSelectModel;
 	private Icon icon;
 	private DefaultTableModel defaultTableModel;
+	private MemberManagementService ms = new MemberManagementService();
 
 	/**
 	 * Launch the application.
@@ -78,11 +81,12 @@ public class GUI_BookingInfo {
 		scrollPane.setBounds(12, 78, 760, 77);
 		frame.getContentPane().add(scrollPane);
 		
+		Book book = ms.memberInfoSelect(loginuser);
 		
-		String[][]data = {{"01","광주","서울","ktx","2020-01-11","2020-02-01 09:00"},{"02","여수","순천","무궁화","2020-01-19","2020-02-02 09:00"}};
+		String[][]data = {{book.getBooknum(),book.getDep(),book.getArr(),book.getServnum(),book.getDepT(),book.getArrT(),book.getPer(),book.getFare()}};
 		
-		String[] columnNames = { "예매번호", "출발지","목적지","교통편","예매날짜" ,"출발시각"};
-		
+		String[] columnNames = { "예매번호", "출발지","목적지","교통편","출발일" ,"도착일", "인원수", "가격"};		
+
 		defaultTableModel = new DefaultTableModel(data, columnNames);
 		table = new JTable(defaultTableModel);
 		table.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
@@ -162,14 +166,3 @@ public class GUI_BookingInfo {
 		label.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 	}
 }
-
-
-//		btnNewButton.setBounds(624, 353, 97, 23);
-//		frame.getContentPane().add(btnNewButton);
-//		String[] petStrings = { "Bird", "Cat", "Dog", "Rabbit", "Pig" };
-//		//Create the combo box, select item at index 4.
-//		//Indices start at 0, so 4 specifies the pig.
-//		JComboBox petList = new JComboBox(petStrings);
-//		petList.setSelectedIndex(4);
-//		petList.addActionListener(petList);
-//	}

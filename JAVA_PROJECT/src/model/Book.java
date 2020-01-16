@@ -13,7 +13,9 @@ public class Book {
 	
 	BookingPayment bp = new BookingPayment();
 	
-	public Book(String booknum, String dep, String arr, String servnum, String depT, String arrT, String per, String fare) {
+	public Book(String booknum, String dep, String arr, 
+			String servnum, String depT, String arrT, String per, 
+			String fare) {
 		this.booknum=booknum;
 		this.dep=dep;
 		this.arr=arr;
@@ -89,9 +91,4 @@ public class Book {
 	public void setFare(String fare) {
 		this.fare = fare;
 	}
-	
-	
-
-	
-	
 }

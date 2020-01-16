@@ -1,8 +1,8 @@
-
 package controller;
 
 import java.util.ArrayList;
 
+import model.Book;
 import model.Member;
 import model.MemberDAO;
 import model.TransInfo;
@@ -32,9 +32,8 @@ public class MemberManagementService {
 			return true;
 	}
 
-	public boolean memberInfoSelect() {
-		dao.memberinfoselect();
-		return false;
+	public Book memberInfoSelect(Member loginuser) {
+		return dao.memberinfoselect(loginuser);
 	}
 
 	public boolean memberInfoModify(Member m) {
