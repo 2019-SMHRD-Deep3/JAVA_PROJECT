@@ -87,7 +87,7 @@ public class GUI_BookingInfo {
 		
 		String[][]data = {{book.getBooknum(),book.getDep(),book.getArr(),book.getServnum(),book.getDepT(),book.getArrT(),book.getPer(),book.getFare()}};
 		
-		String[] columnNames = { "예매번호", "출발지","목적지","교통편","예매날짜" ,"출발시각", "dd", "dd"};
+		String[] columnNames = { "예매번호", "출발지","목적지","교통편","출발일" ,"도착일", "인원수", "가격"};
 		
 		defaultTableModel = new DefaultTableModel(data, columnNames);
 		table = new JTable(defaultTableModel);
