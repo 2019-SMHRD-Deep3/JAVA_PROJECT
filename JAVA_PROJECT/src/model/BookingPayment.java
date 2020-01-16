@@ -6,6 +6,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import model.model_interface.I_BookingPayment;
 
@@ -20,14 +22,25 @@ public class BookingPayment implements I_BookingPayment {
 
 	@Override
 	// 결제하는 기능
-	public int bookingPayment(Member loginUser,TransInfo selTransInfo, String input_depart, String input_dest) {
+	public int bookingPayment(Member loginUser,TransInfo selTransInfo, String input_depart, String input_dest,int booknom) {
 
 		int rows=0;
-
 		try {
+			int money=Integer.parseInt(selTransInfo.getFare());
+			int fare=booknom*money;
+			
+//			System.out.println(loginUser.getId());
+//			System.out.println(input_depart);
+//			System.out.println(input_dest);
+//			System.out.println(selTransInfo.getServ_num());
+			System.out.println(selTransInfo.getDep_time());
+			System.out.println(selTransInfo.getArr_time());
+			System.out.println(booknom);
+			System.out.println(fare);
+			
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(url, user, password);
-			String sql = "INSERT INTO BOOK VALUES(?,?,?,?,?,?,?,?,?,?)";
+			String sql = "INSERT INTO BOOK VALUES(?,?,?,?,?,?,?,?,?,sysdate)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, "1");
 			psmt.setString(2, loginUser.getId());
@@ -36,9 +49,10 @@ public class BookingPayment implements I_BookingPayment {
 			psmt.setString(5, selTransInfo.getServ_num());
 			psmt.setString(6, selTransInfo.getDep_time());
 			psmt.setString(7, selTransInfo.getArr_time());
-			psmt.setString(8, "인원");
-			psmt.setString(9, "요금");
-			psmt.setString(10, "sysdate");
+			psmt.setInt(8, booknom);
+			psmt.setInt(9, money);
+			
+			rows = psmt.executeUpdate();
 			if (rows == 0) {
 				System.out.println("sql error");
 			}

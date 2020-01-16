@@ -33,6 +33,7 @@ public class GUI_Pay {
 	private JLabel num;
 	private JLabel type;
 	private JLabel grade;
+	private int book_nom;
 	
 
 	/**
@@ -91,16 +92,7 @@ public class GUI_Pay {
 		lblNewLabel_5.setBounds(363, 205, 57, 15);
 		panel.add(lblNewLabel_5);
 
-		JButton btnNewButton = new JButton("결제하기");
-		btnNewButton.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				service.bookingPayment(loginUser, selTransInfo,input_depart,input_dest);
-			}
-		});
-		btnNewButton.setBounds(631, 506, 97, 23);
-		panel.add(btnNewButton);
-
+	
 		JLabel lblNewLabel_6 = new JLabel("총 금액");
 		lblNewLabel_6.setBounds(326, 510, 57, 15);
 		panel.add(lblNewLabel_6);
@@ -154,11 +146,29 @@ public class GUI_Pay {
 				JComboBox cb=(JComboBox)arg0.getSource();
 				int index=cb.getSelectedIndex();
 				money.setText((index+1)*fare+"원");
+				book_nom=index+1;
+				
+				
+				
 				
 			}
 		});
 		comboBox.setBounds(156, 507, 69, 21);
 		panel.add(comboBox);
+		
+		
+		JButton btnNewButton = new JButton("결제하기");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				int booknom=book_nom;
+				service.bookingPayment(loginUser, selTransInfo,input_depart,input_dest,booknom);
+			}
+		});
+		btnNewButton.setBounds(631, 506, 97, 23);
+		panel.add(btnNewButton);
+
+		
 		
 		
 
