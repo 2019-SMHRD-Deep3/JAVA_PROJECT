@@ -1,3 +1,4 @@
+
 package model;
 
 import java.util.ArrayList;
@@ -53,9 +54,9 @@ public class MemberDAO {
 
 	}
 
-	public int bookingmodify(Member m) {
-		I_BookingModify member = new BookingModify();
-		int rows = member.bookingModify(m);
+	public int bookingmodify(TransInfo t) {
+		I_BookingModify TransInfo = new BookingModify();
+		int rows = TransInfo.bookingModify(t);
 		return rows;
 		// TODO Auto-generated method stub
 
@@ -71,14 +72,11 @@ public class MemberDAO {
 
 	}
 
-	
-	public ArrayList<TransInfo> transselect(String depart_date,String depart, String dest) {
+	public ArrayList<TransInfo> transselect(String depart_date, String depart, String dest) {
 		I_TransSelect list = new TransSelect();
-		ArrayList<TransInfo> transSelect = list.transSelect(depart_date,depart,dest);
+		ArrayList<TransInfo> transSelect = list.transSelect(depart_date, depart, dest);
 		return transSelect;
 		// TODO Auto-generated method stub
-		
+
 	}
-
 }
-

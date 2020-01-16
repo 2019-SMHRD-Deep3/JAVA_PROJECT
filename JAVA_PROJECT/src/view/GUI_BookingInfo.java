@@ -17,6 +17,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
+import javax.swing.SwingConstants;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
@@ -138,14 +139,16 @@ public class GUI_BookingInfo {
 
 		reserve_cancel.setBounds(185, 43, 119, 47);
 		panel_1.add(reserve_cancel);
-
-		JLabel name = new JLabel("ooo");
-		name.setBounds(24, 35, 48, 15);
+		
+		JLabel name = new JLabel();
+		name.setHorizontalAlignment(SwingConstants.CENTER);
+		name.setBounds(24, 28, 98, 38);
 		frame.getContentPane().add(name);
 		name.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
+		name.setText(loginuser.getName());
 
 		JLabel label = new JLabel("\uB2D8\uC758 \uC608\uB9E4\uC815\uBCF4");
-		label.setBounds(58, 35, 150, 15);
+		label.setBounds(136, 40, 150, 15);
 		frame.getContentPane().add(label);
 		label.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 	}

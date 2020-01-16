@@ -1,3 +1,4 @@
+
 package controller;
 
 import java.util.ArrayList;
@@ -52,10 +53,11 @@ public class MemberManagementService {
 			return true;
 	}
 
-	public int bookingModify(Member m) {
-		dao.bookingmodify(m);
+	public int bookingModify(TransInfo t) {
+		dao.bookingmodify(t);
 		return 0;
 	}
+
 
 	public boolean booking() {
 		dao.booking();
@@ -73,5 +75,8 @@ public class MemberManagementService {
 		// TODO Auto-generated method stub
 		return rslist;
 	}
+
+	
 }
+
 
