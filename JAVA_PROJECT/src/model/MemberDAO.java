@@ -70,9 +70,9 @@ public class MemberDAO {
 
 	}
 
-	public int bookingpayment(Member loginUser, TransInfo selTransInfo, String input_depart, String input_dest) {
+	public int bookingpayment(Member loginUser, TransInfo selTransInfo, String input_depart, String input_dest,int booknom) {
 		I_BookingPayment payment = new BookingPayment();
-		int row = payment.bookingPayment(loginUser, selTransInfo,input_depart,input_dest);
+		int row = payment.bookingPayment(loginUser, selTransInfo,input_depart,input_dest,booknom);
 		return row;
 		// TODO Auto-generated method stub
 

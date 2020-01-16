@@ -17,6 +17,9 @@ import model.TransInfo;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.JComboBox;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class GUI_Pay {
 //////////////////service 객체 생성 -> book객체를 service의 메소드에 넘겨줌
@@ -30,8 +33,8 @@ public class GUI_Pay {
 	private JLabel num;
 	private JLabel type;
 	private JLabel grade;
-	private JLabel person;
-	private JLabel fare;
+	private int book_nom;
+	
 
 	/**
 	 * Launch the application.
@@ -89,16 +92,7 @@ public class GUI_Pay {
 		lblNewLabel_5.setBounds(363, 205, 57, 15);
 		panel.add(lblNewLabel_5);
 
-		JButton btnNewButton = new JButton("결제하기");
-		btnNewButton.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				service.bookingPayment(loginUser, selTransInfo,input_depart,input_dest);
-			}
-		});
-		btnNewButton.setBounds(631, 506, 97, 23);
-		panel.add(btnNewButton);
-
+	
 		JLabel lblNewLabel_6 = new JLabel("총 금액");
 		lblNewLabel_6.setBounds(326, 510, 57, 15);
 		panel.add(lblNewLabel_6);
@@ -111,41 +105,72 @@ public class GUI_Pay {
 		dep.setBounds(193, 49, 161, 15);
 		panel.add(dep);
 
-//		depT = new JLabel(transinfo.getDep_time());
-//		depT.setBounds(470, 49, 161, 15);
-//		panel.add(depT);
-//
-//		arr = new JLabel(input_dest);
-//		arr.setBounds(193, 93, 161, 15);
-//		panel.add(arr);
-//
-//		arrT = new JLabel(transinfo.getArr_time());
-//		arrT.setBounds(470, 93, 161, 15);
-//		panel.add(arrT);
-//
-//		servnum = new JLabel(transinfo.getServ_num());
-//		servnum.setBounds(156, 205, 161, 15);
-//		panel.add(servnum);
-//
-//		num = new JLabel(transinfo.getNum());
-//		num.setBounds(489, 205, 161, 15);
-//		panel.add(num);
-//
-//		type = new JLabel(transinfo.getType());
-//		type.setBounds(156, 295, 161, 15);
-//		panel.add(type);
-//
-//		grade = new JLabel(transinfo.getGrade());
-//		grade.setBounds(489, 295, 161, 15);
-//		panel.add(grade);
-//
-//		person = new JLabel("1");
-//		person.setBounds(111, 510, 161, 15);
-//		panel.add(person);
-//
-//		fare = new JLabel(transinfo.getFare());
-//		fare.setBounds(406, 510, 161, 15);
-//		panel.add(fare);
+		depT = new JLabel(selTransInfo.getDep_time());
+		depT.setBounds(470, 49, 161, 15);
+		panel.add(depT);
+
+		arr = new JLabel(input_dest);
+		arr.setBounds(193, 93, 161, 15);
+		panel.add(arr);
+
+		arrT = new JLabel(selTransInfo.getArr_time());
+		arrT.setBounds(470, 93, 161, 15);
+		panel.add(arrT);
+
+		servnum = new JLabel(selTransInfo.getServ_num());
+		servnum.setBounds(156, 205, 161, 15);
+		panel.add(servnum);
+
+		num = new JLabel(selTransInfo.getNum());
+		num.setBounds(489, 205, 161, 15);
+		panel.add(num);
+
+		type = new JLabel(selTransInfo.getType());
+		type.setBounds(156, 295, 161, 15);
+		panel.add(type);
+
+		grade = new JLabel(selTransInfo.getGrade());
+		grade.setBounds(489, 295, 161, 15);
+		panel.add(grade);
+
+		
+		
+		JLabel money = new JLabel(selTransInfo.getFare());
+		money.setBounds(470, 510, 109, 15);
+		panel.add(money);
+		int fare=Integer.parseInt(selTransInfo.getFare());
+		String[] count= {"1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"};
+		JComboBox comboBox = new JComboBox(count);
+		comboBox.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				JComboBox cb=(JComboBox)arg0.getSource();
+				int index=cb.getSelectedIndex();
+				money.setText((index+1)*fare+"원");
+				book_nom=index+1;
+				
+				
+				
+				
+			}
+		});
+		comboBox.setBounds(156, 507, 69, 21);
+		panel.add(comboBox);
+		
+		
+		JButton btnNewButton = new JButton("결제하기");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				int booknom=book_nom;
+				service.bookingPayment(loginUser, selTransInfo,input_depart,input_dest,booknom);
+			}
+		});
+		btnNewButton.setBounds(631, 506, 97, 23);
+		panel.add(btnNewButton);
+
+		
+		
+
 
 	}
 }

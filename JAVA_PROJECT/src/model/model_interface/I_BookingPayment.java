@@ -6,6 +6,6 @@ import model.Member;
 import model.TransInfo;
 
 public interface I_BookingPayment {
-	public int bookingPayment(Member loginUser,TransInfo selTransInfo, String input_depart, String input_dest);
+	public int bookingPayment(Member loginUser,TransInfo selTransInfo, String input_depart, String input_dest,int booknom);
 }
 

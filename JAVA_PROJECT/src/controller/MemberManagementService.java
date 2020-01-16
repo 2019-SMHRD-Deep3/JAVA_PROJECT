@@ -35,7 +35,6 @@ public class MemberManagementService {
 
 	public Book memberInfoSelect(Member loginuser) {
 		return dao.memberinfoselect(loginuser);
-
 	}
 
 	public boolean memberInfoModify(Member m) {
@@ -59,25 +58,21 @@ public class MemberManagementService {
 		return 0;
 	}
 
-
 	public boolean booking() {
 		dao.booking();
 		return false;
 	}
 
-	public int bookingPayment(Member loginUser, TransInfo selTransInfo, String input_depart, String input_dest) {
-		dao.bookingpayment(loginUser,selTransInfo,input_depart,input_dest);
+	public int bookingPayment(Member loginUser, TransInfo selTransInfo, String input_depart, String input_dest,int booknom) {
+		dao.bookingpayment(loginUser, selTransInfo, input_depart, input_dest,booknom);
 		return 0;
 	}
 
-	public ArrayList<TransInfo> transSelect(String depart_date,String depart, String dest) {
+	public ArrayList<TransInfo> transSelect(String depart_date, String depart, String dest) {
 		ArrayList<TransInfo> rslist = null;
-		rslist = dao.transselect(depart_date,depart,dest);
+		rslist = dao.transselect(depart_date, depart, dest);
 		// TODO Auto-generated method stub
 		return rslist;
 	}
 
-	
 }
-
-
