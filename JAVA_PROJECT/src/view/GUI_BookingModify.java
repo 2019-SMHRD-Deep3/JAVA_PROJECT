@@ -107,7 +107,7 @@ public class GUI_BookingModify {
 		JComboBox comboBox = new JComboBox();
         comboBox.setEditable(true);
 
-        comboBox.addItem(service.transSelectDate(depart_date.getText()););
+        //comboBox.addItem(service.transSelectDate(depart_date.getText()););
         
         comboBox.setSelectedItem("");
 		
