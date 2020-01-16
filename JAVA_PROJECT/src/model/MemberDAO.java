@@ -1,16 +1,15 @@
 package model;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.util.ArrayList;
 
 import model.model_interface.I_BookingCancle;
+import model.model_interface.I_BookingModify;
 import model.model_interface.I_MemberInfoModify;
+import model.model_interface.I_MemberInfoSelect;
 import model.model_interface.I_MemberJoin;
 import model.model_interface.I_MemberLogIn;
 import model.model_interface.I_MemberOut;
+import model.model_interface.I_TransSelect;
 
 public class MemberDAO {
 
@@ -33,9 +32,10 @@ public class MemberDAO {
 
 	}
 
-	public void memberinfoselect() {
+	public Book memberinfoselect(Member loginuser) {
 		// TODO Auto-generated method stub
-
+		I_MemberInfoSelect info = new MemberInfoSelect();
+		return info.memberInfoSelect(loginuser);
 	}
 
 	public int memberinfomodify(Member m) {
@@ -46,13 +46,17 @@ public class MemberDAO {
 	}
 
 	public int bookingcancle(Member m) {
+
 		I_BookingCancle book = new BookingCancle();
 		int rows = book.bookingcancle(m);
 		return rows;
 
 	}
 
-	public void bookingmodify() {
+	public int bookingmodify(Member m) {
+		I_BookingModify member = new BookingModify();
+		int rows = member.bookingModify(m);
+		return rows;
 		// TODO Auto-generated method stub
 
 	}
@@ -67,5 +71,14 @@ public class MemberDAO {
 
 	}
 
+	
+	public ArrayList<TransInfo> transselect(String depart_date,String depart, String dest) {
+		I_TransSelect list = new TransSelect();
+		ArrayList<TransInfo> transSelect = list.transSelect(depart_date,depart,dest);
+		return transSelect;
+		// TODO Auto-generated method stub
+		
+	}
 
 }
+

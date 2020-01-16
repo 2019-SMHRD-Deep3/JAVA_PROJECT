@@ -9,33 +9,28 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import controller.MemberManagementService;
 import model.Book;
 import model.Member;
 import model.MemberDAO;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class GUI_Pay {
-
+//////////////////service 객체 생성 -> book객체를 service의 메소드에 넘겨줌
+	MemberManagementService service = new MemberManagementService();
 	private JFrame frame;
-	private JTextField departure;
-	private JTextField arrival;
-	private JTextField serv_num;
-	private JTextField departime;
-	private JTextField arrivaltime;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField money;
+	private JLabel dep;
+	private JLabel depT;
+	private JLabel arr;
+	private JLabel arrT;
+	private JLabel servnum;
+	private JLabel num;
+	private JLabel type;
+	private JLabel grade;
+	private JLabel person;
+	private JLabel fare;
 
-// 객체생성
-	MemberDAO dao = new MemberDAO();
-// 객체생성
-	Book bookUser;
-	
-	
-
-	
-	
-	
 	/**
 	 * Launch the application.
 	 */
@@ -44,7 +39,7 @@ public class GUI_Pay {
 	 * Create the application.
 	 */
 	public GUI_Pay(Member loginUser) {
-	
+
 		initialize(loginUser);
 		frame.setVisible(true);
 	}
@@ -57,87 +52,97 @@ public class GUI_Pay {
 		frame.setBounds(100, 100, 800, 600);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(new CardLayout(0, 0));
-		
+
 		JPanel panel = new JPanel();
 		frame.getContentPane().add(panel, "name_1614660541439400");
 		panel.setLayout(null);
-		
+
 		JLabel lblNewLabel = new JLabel("출발");
 		lblNewLabel.setBounds(55, 49, 57, 15);
 		panel.add(lblNewLabel);
-		
+
 		JLabel lblNewLabel_1 = new JLabel("도착");
 		lblNewLabel_1.setBounds(55, 93, 57, 15);
 		panel.add(lblNewLabel_1);
-/////////////////////////////////////////////////////////////////////////////		
-		departure = new JTextField();
-		
-		departure.setBounds(185, 46, 116, 21);
-		panel.add(departure);
-		departure.setColumns(10);
-		
-		arrival = new JTextField();
-		arrival.setBounds(185, 90, 116, 21);
-		panel.add(arrival);
-		arrival.setColumns(10);
-		
-		JLabel 교통수단 = new JLabel("New label");
-		교통수단.setBounds(55, 175, 57, 15);
-		panel.add(교통수단);
-		
-		serv_num = new JTextField();
-		serv_num.setBounds(185, 172, 116, 21);
+
+		JLabel serv_num = new JLabel("운행정보");
+		serv_num.setBounds(55, 205, 57, 15);
 		panel.add(serv_num);
-		serv_num.setColumns(10);
-		
-		departime = new JTextField();
-		departime.setBounds(414, 46, 116, 21);
-		panel.add(departime);
-		departime.setColumns(10);
-		
-		arrivaltime = new JTextField();
-		arrivaltime.setBounds(414, 90, 116, 21);
-		panel.add(arrivaltime);
-		arrivaltime.setColumns(10);
-		
+
 		JLabel per = new JLabel("인원수");
-		per.setBounds(414, 175, 57, 15);
+		per.setBounds(55, 510, 57, 15);
 		panel.add(per);
-		
-		textField_5 = new JTextField();
-		textField_5.setBounds(538, 172, 116, 21);
-		panel.add(textField_5);
-		textField_5.setColumns(10);
-		
-		JLabel lblNewLabel_4 = new JLabel("New label");
-		lblNewLabel_4.setBounds(414, 247, 57, 15);
+
+		JLabel lblNewLabel_4 = new JLabel("교통수단");
+		lblNewLabel_4.setBounds(55, 295, 57, 15);
 		panel.add(lblNewLabel_4);
-		
-		textField_6 = new JTextField();
-		textField_6.setBounds(548, 244, 116, 21);
-		panel.add(textField_6);
-		textField_6.setColumns(10);
-		
-		JLabel lblNewLabel_5 = new JLabel("New label");
-		lblNewLabel_5.setBounds(414, 321, 57, 15);
+
+		JLabel lblNewLabel_5 = new JLabel("차량번호");
+		lblNewLabel_5.setBounds(363, 205, 57, 15);
 		panel.add(lblNewLabel_5);
-		
-		textField_7 = new JTextField();
-		textField_7.setBounds(548, 318, 116, 21);
-		panel.add(textField_7);
-		textField_7.setColumns(10);
-		
+
 		JButton btnNewButton = new JButton("결제하기");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+//////// 결제하기 버튼 클릭시 book객체를 생성하여 예매정보 생성
+///////////////////////////BOOk 객체생성
+//				Book book = new Book(booknum, dep, arr, servnum, depT, arrT, person, fare);
+//
+//				int rows = service.bookingPayment(book);
+
+			}
+		});
 		btnNewButton.setBounds(631, 506, 97, 23);
 		panel.add(btnNewButton);
-		
-		money = new JTextField();
-		money.setBounds(414, 507, 116, 21);
-		panel.add(money);
-		money.setColumns(10);
-		
+
 		JLabel lblNewLabel_6 = new JLabel("총 금액");
-		lblNewLabel_6.setBounds(297, 510, 57, 15);
+		lblNewLabel_6.setBounds(326, 510, 57, 15);
 		panel.add(lblNewLabel_6);
+
+		JLabel lblNewLabel_2 = new JLabel("차량등급");
+		lblNewLabel_2.setBounds(363, 295, 57, 15);
+		panel.add(lblNewLabel_2);
+
+		dep = new JLabel("New label");
+		dep.setBounds(193, 49, 161, 15);
+		panel.add(dep);
+
+		depT = new JLabel("New label");
+		depT.setBounds(470, 49, 161, 15);
+		panel.add(depT);
+
+		arr = new JLabel("New label");
+		arr.setBounds(193, 93, 161, 15);
+		panel.add(arr);
+
+		arrT = new JLabel("New label");
+		arrT.setBounds(470, 93, 161, 15);
+		panel.add(arrT);
+
+		servnum = new JLabel("New label");
+		servnum.setBounds(156, 205, 161, 15);
+		panel.add(servnum);
+
+		num = new JLabel("New label");
+		num.setBounds(489, 205, 161, 15);
+		panel.add(num);
+
+		type = new JLabel("New label");
+		type.setBounds(156, 295, 161, 15);
+		panel.add(type);
+
+		grade = new JLabel("New label");
+		grade.setBounds(489, 295, 161, 15);
+		panel.add(grade);
+
+		person = new JLabel("New label");
+		person.setBounds(111, 510, 161, 15);
+		panel.add(person);
+
+		fare = new JLabel("New label");
+		fare.setBounds(406, 510, 161, 15);
+		panel.add(fare);
+
 	}
 }

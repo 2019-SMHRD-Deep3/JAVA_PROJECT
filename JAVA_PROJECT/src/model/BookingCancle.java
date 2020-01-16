@@ -1,3 +1,4 @@
+
 package model;
 
 import java.sql.Connection;
@@ -25,7 +26,7 @@ public class BookingCancle implements I_BookingCancle {
 			psmt = conn.prepareStatement(sql);
 
 			psmt.setString(1, m.getId());
-			
+
 			rows = psmt.executeUpdate();
 			if (rows == 0) {
 				System.out.println("SQL문을 확인하세요");
