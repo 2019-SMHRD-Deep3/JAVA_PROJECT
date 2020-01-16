@@ -109,17 +109,20 @@ public class GUI_BookingModify {
 		//콤보박스에 넣기
 		JComboBox comboBox = new JComboBox();
         comboBox.setEditable(true);
+        
+        
+        
+        
+        
+        
+        
         comboBox.addItem("1시");
         
         comboBox.setSelectedItem("");
 		
 		comboBox.setBounds(12, 32, 279, 29);
 		panel_1.add(comboBox);
-		
-		
-		
-		
-		
+
 		
 		JLabel lblNewLabel_1 = new JLabel("원하는 시간대를 선택하세요.");
 		lblNewLabel_1.setFont(new Font("맑은 고딕", Font.PLAIN, 12));

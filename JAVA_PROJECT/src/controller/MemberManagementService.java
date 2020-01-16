@@ -72,6 +72,8 @@ public class MemberManagementService {
 		// TODO Auto-generated method stub
 		return rslist;
 	}
+
+	
 }
 
 

@@ -17,34 +17,34 @@ public  class BookingModify implements I_BookingModify {
 	public Connection conn = null;
 	public PreparedStatement psmt = null;
 	public ResultSet rs = null;
-
+	ArrayList<TransInfo> list = new ArrayList<>();
 	// 예매수정하는 기능
 
 
-	public ArrayList<TransInfo> selectAll(String login_id) {
-			ArrayList<TransInfo> list = new ArrayList<>();
+	public ArrayList<TransInfo> transSelectDate(String depart_date) {
+			
 
 			try {
 				Class.forName("oracle.jdbc.driver.OracleDriver");
 				conn = DriverManager.getConnection(url, user, password);
-				String sql = "SELECT * FROM Book " + "WHERE USER_ID = ? ";
+				String sql = "SELECT * FROM Book " + "WHERE DEP_TIME = ? ";
 				psmt = conn.prepareStatement(sql);
-				psmt.setString(1, login_id);
+				psmt.setString(1,depart_date);
 				rs = psmt.executeQuery();
 
 				while (rs.next()) {
 					String dep_Loc = rs.getString("DEP_LOC_NUM");
 					String arr_Loc = rs.getString("ARR_LOC_NUM");
 					String s_Num = rs.getString("SERV_NUM");
-					String dep_Time = rs.getString("DEP_TIME");
-					String arr_Time = rs.getString("ARR_TIME");
+					String dep_T= rs.getString("DEP_TIME");
+					String arr_T = rs.getString("ARR_TIME");
 					String nom = rs.getString("BOOK_NUM");
-					String fare = rs.getString("BOOK_FARE");
+					int fare = rs.getInt("BOOK_FARE");
 					String date = rs.getString("BOOK_DATE");
 					
+					TransInfo t = new TransInfo(dep_Loc, arr_Loc, s_Num, dep_T, arr_T, nom, fare, date );
+					list.add(t);
 					
-					list.add(new TransInfo(dep_Loc, arr_Loc, s_Num, dep_Time, arr_Time, nom, fare, date));
-
 				}
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
