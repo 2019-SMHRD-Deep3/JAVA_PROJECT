@@ -30,7 +30,7 @@ import java.awt.event.MouseEvent;
 
 public class GUI_Selection {
 
-	private JFrame frame;
+	private JFrame Sel_Frame;
 	private JTextField dest;
 	private JTextField departure;
 	private JTextField depart;
@@ -45,38 +45,38 @@ public class GUI_Selection {
 	public GUI_Selection(Member loginUser) {
 		
 		initialize(loginUser);
-		frame.setVisible(true);
+		Sel_Frame.setVisible(true);
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize(Member loginUser) {
-		frame = new JFrame();
-		frame.setResizable(false);
-		frame.getContentPane().setEnabled(false);
-		frame.getContentPane().setLayout(null);
+		Sel_Frame = new JFrame();
+		Sel_Frame.setResizable(false);
+		Sel_Frame.getContentPane().setEnabled(false);
+		Sel_Frame.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("\uC5EC\uD589\uC9C0\uC5ED \uC120\uD0DD");
 		lblNewLabel.setFont(new Font("����", Font.PLAIN, 20));
 		lblNewLabel.setBackground(Color.GRAY);
 		lblNewLabel.setBounds(14, 12, 372, 90);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		frame.getContentPane().add(lblNewLabel);
+		Sel_Frame.getContentPane().add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setBounds(396, 12, 384, 539);
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		frame.getContentPane().add(lblNewLabel_1);
+		Sel_Frame.getContentPane().add(lblNewLabel_1);
 		
 		
 		JButton Backbtn = new JButton("\uC774\uC804 \uD654\uBA74\uC73C\uB85C");
 		Backbtn.setBounds(211, 481, 170, 60);
-		frame.getContentPane().add(Backbtn);
+		Sel_Frame.getContentPane().add(Backbtn);
 		Backbtn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+				Sel_Frame.dispose();
 			}
 		});
 		Backbtn.addActionListener(new ActionListener() {
@@ -106,7 +106,7 @@ public class GUI_Selection {
 		JPanel panel = new JPanel();
 		panel.setBorder(new CompoundBorder(new LineBorder(new Color(0, 0, 0)), null));
 		panel.setBounds(14, 134, 372, 244);
-		frame.getContentPane().add(panel);
+		Sel_Frame.getContentPane().add(panel);
 		panel.setLayout(new GridLayout(2, 2, 2, 5));
 		
 		JLabel lblNewLabel_3 = new JLabel("\uCD9C\uBC1C\uC9C0\uC5ED");
@@ -154,7 +154,7 @@ public class GUI_Selection {
 		});
 		
 		btnNewButton.setBounds(19, 479, 170, 60);
-		frame.getContentPane().add(btnNewButton);
+		Sel_Frame.getContentPane().add(btnNewButton);
 		
 		JButton button = new JButton("\uB3C4\uCC29\uC9C0\uC5ED");
 		button.setBounds(39, 23, 105, 27);
@@ -173,30 +173,30 @@ public class GUI_Selection {
 			}
 		});
 		btnLoc1.setBounds(461, 131, 97, 23);
-		frame.getContentPane().add(btnLoc1);
+		Sel_Frame.getContentPane().add(btnLoc1);
 		
 		JButton btnLoc2 = new JButton("\uB300\uC804");
 		btnLoc2.setBounds(618, 131, 97, 23);
-		frame.getContentPane().add(btnLoc2);
+		Sel_Frame.getContentPane().add(btnLoc2);
 		
 		JButton btnLoc3 = new JButton("\uC6B8\uC0B0");
 		btnLoc3.setBounds(461, 279, 97, 23);
-		frame.getContentPane().add(btnLoc3);
+		Sel_Frame.getContentPane().add(btnLoc3);
 		
 		JButton btnLoc4 = new JButton("\uB300\uAD6C");
 		btnLoc4.setBounds(618, 279, 97, 23);
-		frame.getContentPane().add(btnLoc4);
+		Sel_Frame.getContentPane().add(btnLoc4);
 		
 		JButton btnLoc5 = new JButton("\uAD11\uC8FC");
 		btnLoc5.setBounds(461, 427, 97, 23);
-		frame.getContentPane().add(btnLoc5);
+		Sel_Frame.getContentPane().add(btnLoc5);
 		
 		JButton btnLoc6 = new JButton("\uBD80\uC0B0");
 		btnLoc6.setBounds(618, 427, 97, 23);
-		frame.getContentPane().add(btnLoc6);
+		Sel_Frame.getContentPane().add(btnLoc6);
 		
-		frame.setAutoRequestFocus(false);
-		frame.setBounds(100, 100, 800, 600);
-		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		Sel_Frame.setAutoRequestFocus(false);
+		Sel_Frame.setBounds(100, 100, 800, 600);
+		Sel_Frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 }

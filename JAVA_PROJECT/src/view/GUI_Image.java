@@ -48,10 +48,6 @@ public class GUI_Image {
 			}
 			};
 		
-		
-		
-		
-		
 
 		springLayout.putConstraint(SpringLayout.NORTH, panel, 44, SpringLayout.NORTH, frame.getContentPane());
 		springLayout.putConstraint(SpringLayout.WEST, panel, 86, SpringLayout.WEST, frame.getContentPane());
