@@ -1,5 +1,5 @@
 <p align="center">
-<img src="/img/main.PNG" width="500" height=300">
+<img src="JAVA_PROJECT/img/main.PNG" width="500" height=300">
 </p>
 
 국내 여행 스마트 예매 시스템 - 가보자
