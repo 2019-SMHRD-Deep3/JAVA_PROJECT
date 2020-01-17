@@ -135,18 +135,18 @@ public class GUI_Pay {
 
 		
 		
-		JLabel money = new JLabel(selTransInfo.getFare());
+		JLabel money = new JLabel("0");
 		money.setBounds(470, 510, 109, 15);
 		panel.add(money);
 		int fare=Integer.parseInt(selTransInfo.getFare());
-		String[] count= {"1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"};
+		String[] count= {"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"};
 		JComboBox comboBox = new JComboBox(count);
 		comboBox.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				JComboBox cb=(JComboBox)arg0.getSource();
 				int index=cb.getSelectedIndex();
-				money.setText((index+1)*fare+"원");
-				book_nom=index+1;
+				money.setText((index)*fare+"원");
+				book_nom=index;
 				
 				
 				
@@ -163,6 +163,7 @@ public class GUI_Pay {
 			public void mouseClicked(MouseEvent e) {
 				int booknom=book_nom;
 				GUI_Pay2 p2= new GUI_Pay2(loginUser, selTransInfo,input_depart,input_dest,booknom);
+				frame.dispose();
 			}
 		});
 		btnNewButton.setBounds(631, 506, 97, 23);

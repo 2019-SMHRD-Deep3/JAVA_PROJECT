@@ -78,6 +78,9 @@ public class GUI_Pay2 {
 					    "결제가 완료되었습니다.",
 					    "A plain message",
 					    JOptionPane.PLAIN_MESSAGE);
+				frame.dispose();
+				
+				
 			}
 		});
 		btnNewButton.setBounds(176, 369, 97, 23);
