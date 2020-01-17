@@ -73,11 +73,11 @@ public class GUI_Pay {
 		panel.add(lblNewLabel);
 
 		JLabel lblNewLabel_1 = new JLabel("도착");
-		lblNewLabel_1.setBounds(55, 93, 57, 15);
+		lblNewLabel_1.setBounds(55, 258, 57, 15);
 		panel.add(lblNewLabel_1);
 
 		JLabel serv_num = new JLabel("운행정보");
-		serv_num.setBounds(55, 205, 57, 15);
+		serv_num.setBounds(446, 59, 57, 15);
 		panel.add(serv_num);
 
 		JLabel per = new JLabel("인원수");
@@ -85,11 +85,11 @@ public class GUI_Pay {
 		panel.add(per);
 
 		JLabel lblNewLabel_4 = new JLabel("교통수단");
-		lblNewLabel_4.setBounds(55, 295, 57, 15);
+		lblNewLabel_4.setBounds(446, 149, 57, 15);
 		panel.add(lblNewLabel_4);
 
 		JLabel lblNewLabel_5 = new JLabel("차량번호");
-		lblNewLabel_5.setBounds(363, 205, 57, 15);
+		lblNewLabel_5.setBounds(430, 277, 57, 15);
 		panel.add(lblNewLabel_5);
 
 	
@@ -98,7 +98,7 @@ public class GUI_Pay {
 		panel.add(lblNewLabel_6);
 
 		JLabel lblNewLabel_2 = new JLabel("차량등급");
-		lblNewLabel_2.setBounds(363, 295, 57, 15);
+		lblNewLabel_2.setBounds(430, 357, 57, 15);
 		panel.add(lblNewLabel_2);
 
 		dep = new JLabel(input_depart);
@@ -106,31 +106,31 @@ public class GUI_Pay {
 		panel.add(dep);
 
 		depT = new JLabel(selTransInfo.getDep_time());
-		depT.setBounds(470, 49, 161, 15);
+		depT.setBounds(193, 135, 161, 15);
 		panel.add(depT);
 
 		arr = new JLabel(input_dest);
-		arr.setBounds(193, 93, 161, 15);
+		arr.setBounds(175, 277, 161, 15);
 		panel.add(arr);
 
 		arrT = new JLabel(selTransInfo.getArr_time());
-		arrT.setBounds(470, 93, 161, 15);
+		arrT.setBounds(193, 357, 161, 15);
 		panel.add(arrT);
 
 		servnum = new JLabel(selTransInfo.getServ_num());
-		servnum.setBounds(156, 205, 161, 15);
+		servnum.setBounds(567, 70, 161, 15);
 		panel.add(servnum);
 
 		num = new JLabel(selTransInfo.getNum());
-		num.setBounds(489, 205, 161, 15);
+		num.setBounds(567, 357, 161, 15);
 		panel.add(num);
 
 		type = new JLabel(selTransInfo.getType());
-		type.setBounds(156, 295, 161, 15);
+		type.setBounds(567, 149, 161, 15);
 		panel.add(type);
 
 		grade = new JLabel(selTransInfo.getGrade());
-		grade.setBounds(489, 295, 161, 15);
+		grade.setBounds(567, 277, 161, 15);
 		panel.add(grade);
 
 		
