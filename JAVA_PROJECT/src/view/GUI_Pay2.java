@@ -12,8 +12,13 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import controller.MemberManagementService;
+import model.Member;
+import model.TransInfo;
+
 public class GUI_Pay2 {
 
+	MemberManagementService service = new MemberManagementService();
 	private JFrame frame;
 	private JTextField textField;
 	private JPasswordField passwordField;
@@ -27,15 +32,16 @@ public class GUI_Pay2 {
 	/**
 	 * Create the application.
 	 */
-	public GUI_Pay2() {
-		initialize();
+
+	public GUI_Pay2(Member loginUser, TransInfo selTransInfo, String input_depart, String input_dest, int booknom) {
+		initialize(loginUser, selTransInfo,input_depart,input_dest,booknom);
 		frame.setVisible(true);
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize(Member loginUser, TransInfo selTransInfo,String input_depart,String input_dest,int booknom) {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 465, 460);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -67,6 +73,7 @@ public class GUI_Pay2 {
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				service.bookingPayment(loginUser, selTransInfo,input_depart,input_dest,booknom);
 				JOptionPane.showMessageDialog(frame,
 					    "결제가 완료되었습니다.",
 					    "A plain message",
