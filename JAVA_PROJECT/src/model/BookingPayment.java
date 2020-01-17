@@ -19,7 +19,9 @@ public class BookingPayment implements I_BookingPayment {
 	public String password = "hr";
 	public Connection conn = null;
 	public PreparedStatement psmt = null;
+	public PreparedStatement psmtSeq = null;
 	public ResultSet rs = null;
+	public ResultSet rsSeq = null;
 
 	@Override
 	// 결제하는 기능
@@ -72,8 +74,15 @@ public class BookingPayment implements I_BookingPayment {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(url, user, password);
 			String sql = "INSERT INTO BOOK VALUES(?,?,?,?,?,?,?,?,?,sysdate)";
+			String sqlGetSeqnum = "SELECT book_seq.NEXTVAL FROM DUAL";
+			psmtSeq = conn.prepareStatement(sqlGetSeqnum);
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, "booking"+num++);
+			rsSeq = psmtSeq.executeQuery();
+			String value = "";
+			if(rsSeq.next()) {
+				value = rsSeq.getString(1);
+			}
+			psmt.setString(1, "booking"+value);
 			psmt.setString(2, loginUser.getId());
 			psmt.setString(3, input_depart);
 			psmt.setString(4, input_dest);

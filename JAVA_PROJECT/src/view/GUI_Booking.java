@@ -12,6 +12,7 @@ import java.awt.CardLayout;
 import java.awt.Font;
 import javax.swing.JComboBox;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
@@ -108,6 +109,9 @@ public class GUI_Booking {
 			public void mouseClicked(MouseEvent e) {
 				
 				transInfoList = service.transSelect(depart_date.getText(),input_depart,input_dest);
+				if(transInfoList.size()==0) {
+					JOptionPane.showMessageDialog(frame, "조건에 맞는 운행이 없습니다.");
+				}
 				System.out.println("조건에 맞는 운행수:"+transInfoList.size());
 				show(transInfoList);
 			}

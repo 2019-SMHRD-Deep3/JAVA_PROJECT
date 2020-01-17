@@ -102,13 +102,11 @@ public class GUI_MainMenu {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				GUI_MemberInfo info = new GUI_MemberInfo(loginUser);
-				frame.dispose();
 			}
 		});
 		panel_2.add(btnNewButton, "name_1270455870133100");
 		
 	    String imgPath = this.getClass().getResource(".").getPath()+"..//..//img//����.png";
-	    System.out.println(imgPath);
 	      
 		ImageIcon icon = new ImageIcon(imgPath);
 		JPanel panel_1 = new JPanel() {
@@ -131,3 +129,4 @@ public class GUI_MainMenu {
 		
 	}
 }
+

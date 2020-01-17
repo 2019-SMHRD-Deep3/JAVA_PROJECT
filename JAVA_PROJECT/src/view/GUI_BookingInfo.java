@@ -130,6 +130,7 @@ public class GUI_BookingInfo {
 		name.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		name.setText(loginuser.getName());
 
+
 		JLabel label = new JLabel("\uB2D8\uC758 \uC608\uB9E4\uC815\uBCF4");
 		label.setBounds(136, 40, 150, 15);
 		frame.getContentPane().add(label);

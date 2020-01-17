@@ -68,12 +68,12 @@ public class GUI_Login {
 		// 占싱뱄옙占쏙옙 占쏙옙占쏙옙
 
 		String imgPath = this.getClass().getResource(".").getPath() + "..//..//img//main.png";
-		System.out.println(imgPath);
 
 		ImageIcon icon = new ImageIcon(imgPath);
 		JPanel panel = new JPanel() {
 			protected void paintComponent(Graphics g) {
-				g.drawImage(icon.getImage(), 0, 0, 900, 565, null);
+
+				g.drawImage(icon.getImage(), 0, 0, 900, 600, null);
 				setOpaque(false);
 				super.paintComponent(g);
 			}
@@ -83,31 +83,31 @@ public class GUI_Login {
 		panel.setLayout(null);
 
 		id = new JTextField();
-		id.setBounds(272, 406, 240, 35);
+		id.setBounds(325, 404, 240, 35);
 		id.setBorder(null);
 		panel.add(id);
 		id.setColumns(10);
 
 		passwordField = new JPasswordField();
-		passwordField.setBounds(272, 449, 240, 35);
+		passwordField.setBounds(325, 449, 240, 35);
 		passwordField.setBorder(null);
 		panel.add(passwordField);
 
 		JLabel lblNewLabel_1 = new JLabel("\uBE44\uBC00\uBC88\uD638");
 		lblNewLabel_1.setForeground(new Color(255, 255, 255));
-		lblNewLabel_1.setBounds(189, 453, 85, 27);
+		lblNewLabel_1.setBounds(238, 453, 85, 27);
 		panel.add(lblNewLabel_1);
 		lblNewLabel_1.setFont(new Font("占쏙옙占쏙옙 占쏙옙占�", Font.PLAIN, 15));
 
 		JLabel lblNewLabel = new JLabel("\uC544\uC774\uB514");
 		lblNewLabel.setForeground(new Color(255, 255, 255));
-		lblNewLabel.setBounds(189, 402, 75, 35);
+		lblNewLabel.setBounds(238, 404, 75, 35);
 		panel.add(lblNewLabel);
 		lblNewLabel.setFont(new Font("占쏙옙占쏙옙 占쏙옙占�", Font.PLAIN, 15));
 
 		JButton login = new JButton("\uB85C\uADF8\uC778");
 		login.setBackground(new Color(255, 255, 255));
-		login.setBounds(272, 508, 97, 28);
+		login.setBounds(325, 508, 97, 28);
 		login.setBorderPainted(false);
 		panel.add(login);
 
@@ -118,7 +118,7 @@ public class GUI_Login {
 		});
 		btnNewButton.setForeground(new Color(0, 0, 0));
 		btnNewButton.setBackground(new Color(255, 255, 255));
-		btnNewButton.setBounds(415, 508, 97, 28);
+		btnNewButton.setBounds(468, 508, 97, 28);
 		btnNewButton.setBorderPainted(false);
 		panel.add(btnNewButton);
 		btnNewButton.addMouseListener(new MouseAdapter() {
