@@ -86,7 +86,7 @@ public class BookingPayment implements I_BookingPayment {
 			psmt.setString(2, loginUser.getId());
 			psmt.setString(3, input_depart);
 			psmt.setString(4, input_dest);
-			psmt.setString(5, selTransInfo.getServ_num());
+			psmt.setInt(5, selTransInfo.getServ_num());
 			psmt.setString(6, selTransInfo.getDep_time());
 			psmt.setString(7, selTransInfo.getArr_time());
 			psmt.setInt(8, booknom);

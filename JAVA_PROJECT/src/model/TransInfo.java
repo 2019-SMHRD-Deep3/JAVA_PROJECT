@@ -1,7 +1,7 @@
 package model;
 
 public class TransInfo {
-	private String serv_num;
+	private int serv_num;
 	private String type;
 	private String num;
 	private String dep_time;
@@ -9,7 +9,7 @@ public class TransInfo {
 	private String grade;
 	private int seat;
 	private String fare;
-	public TransInfo(String serv_num, String type, String num, String dep_time, String arr_time, String grade,
+	public TransInfo(int serv_num, String type, String num, String dep_time, String arr_time, String grade,
 			int seat2, String fare) {
 		super();
 		this.serv_num = serv_num;
@@ -21,7 +21,7 @@ public class TransInfo {
 		this.seat = seat2;
 		this.fare = fare;
 	}
-	public String getServ_num() {
+	public int getServ_num() {
 		return serv_num;
 	}
 	public String getType() {
