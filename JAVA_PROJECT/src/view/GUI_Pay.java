@@ -29,10 +29,8 @@ public class GUI_Pay {
 	private JLabel depT;
 	private JLabel arr;
 	private JLabel arrT;
-	private JLabel servnum;
 	private JLabel num;
 	private JLabel type;
-	private JLabel grade;
 	private int book_nom;
 	
 
@@ -69,28 +67,24 @@ public class GUI_Pay {
 		panel.setLayout(null);
 
 		JLabel lblNewLabel = new JLabel("출발");
-		lblNewLabel.setBounds(55, 49, 57, 15);
+		lblNewLabel.setBounds(55, 104, 57, 15);
 		panel.add(lblNewLabel);
 
 		JLabel lblNewLabel_1 = new JLabel("도착");
-		lblNewLabel_1.setBounds(55, 258, 57, 15);
+		lblNewLabel_1.setBounds(55, 206, 57, 15);
 		panel.add(lblNewLabel_1);
 
 		JLabel serv_num = new JLabel("운행정보");
-		serv_num.setBounds(446, 59, 57, 15);
+		serv_num.setBounds(55, 36, 57, 15);
 		panel.add(serv_num);
 
 		JLabel per = new JLabel("인원수");
-		per.setBounds(55, 510, 57, 15);
+		per.setBounds(360, 247, 57, 15);
 		panel.add(per);
 
 		JLabel lblNewLabel_4 = new JLabel("교통수단");
-		lblNewLabel_4.setBounds(446, 149, 57, 15);
+		lblNewLabel_4.setBounds(360, 104, 57, 15);
 		panel.add(lblNewLabel_4);
-
-		JLabel lblNewLabel_5 = new JLabel("차량번호");
-		lblNewLabel_5.setBounds(430, 277, 57, 15);
-		panel.add(lblNewLabel_5);
 
 	
 		JLabel lblNewLabel_6 = new JLabel("총 금액");
@@ -98,42 +92,32 @@ public class GUI_Pay {
 		panel.add(lblNewLabel_6);
 
 		JLabel lblNewLabel_2 = new JLabel("차량등급");
-		lblNewLabel_2.setBounds(430, 357, 57, 15);
+		lblNewLabel_2.setBounds(360, 166, 57, 15);
 		panel.add(lblNewLabel_2);
 
 		dep = new JLabel(input_depart);
-		dep.setBounds(193, 49, 161, 15);
+		dep.setBounds(156, 104, 161, 15);
 		panel.add(dep);
 
 		depT = new JLabel(selTransInfo.getDep_time());
-		depT.setBounds(193, 135, 161, 15);
+		depT.setBounds(156, 149, 161, 15);
 		panel.add(depT);
 
 		arr = new JLabel(input_dest);
-		arr.setBounds(175, 277, 161, 15);
+		arr.setBounds(156, 206, 161, 15);
 		panel.add(arr);
 
 		arrT = new JLabel(selTransInfo.getArr_time());
-		arrT.setBounds(193, 357, 161, 15);
+		arrT.setBounds(156, 247, 161, 15);
 		panel.add(arrT);
 
-
-		servnum = new JLabel(Integer.toString(selTransInfo.getServ_num()));
-		servnum.setBounds(156, 205, 161, 15);
-
-		panel.add(servnum);
-
-		num = new JLabel(selTransInfo.getNum());
-		num.setBounds(567, 357, 161, 15);
+		num = new JLabel(selTransInfo.getGrade());
+		num.setBounds(470, 166, 161, 15);
 		panel.add(num);
 
 		type = new JLabel(selTransInfo.getType());
-		type.setBounds(567, 149, 161, 15);
+		type.setBounds(470, 104, 161, 15);
 		panel.add(type);
-
-		grade = new JLabel(selTransInfo.getGrade());
-		grade.setBounds(567, 277, 161, 15);
-		panel.add(grade);
 
 		
 		
@@ -155,7 +139,7 @@ public class GUI_Pay {
 				
 			}
 		});
-		comboBox.setBounds(156, 507, 69, 21);
+		comboBox.setBounds(470, 244, 69, 21);
 		panel.add(comboBox);
 		
 		
@@ -170,6 +154,10 @@ public class GUI_Pay {
 		});
 		btnNewButton.setBounds(631, 506, 97, 23);
 		panel.add(btnNewButton);
+		
+		JLabel label = new JLabel("할인");
+		label.setBounds(360, 311, 57, 15);
+		panel.add(label);
 
 		
 		
