@@ -72,6 +72,7 @@ public class GUI_MainMenu {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				GUI_Selection selection = new GUI_Selection(loginUser);
+				frame.dispose();
 			}
 		});
 		tb_reservation.setBackground(Color.WHITE);
@@ -103,11 +104,7 @@ public class GUI_MainMenu {
 				
 			}
 		});
-		my_reservation.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
+		
 		my_reservation.setBackground(Color.WHITE);
 		my_reservation.setFont(new Font("���� ���", Font.BOLD, 20));
 		
