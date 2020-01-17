@@ -30,7 +30,7 @@ public class GUI_MemberInfoModify {
 
 	MemberManagementService service = new MemberManagementService();
 	private JFrame frame;
-	private JLabel id;
+
 	private JTextField pw;
 	private JTextField pwcheck;
 	private JTextField birth;
@@ -88,7 +88,7 @@ public class GUI_MemberInfoModify {
 		ok.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				String infoId = id.getText();
+				String infoId = loginUser.getId();
 				String infoPw = pw.getText();
 				String infoPw1 = pwcheck.getText();
 				String infoName = name.getText();
