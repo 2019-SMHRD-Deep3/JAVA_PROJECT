@@ -68,7 +68,6 @@ public class GUI_Login {
 		// 占싱뱄옙占쏙옙 占쏙옙占쏙옙
 
 		String imgPath = this.getClass().getResource(".").getPath() + "..//..//img//main.png";
-		System.out.println(imgPath);
 
 		ImageIcon icon = new ImageIcon(imgPath);
 		JPanel panel = new JPanel() {

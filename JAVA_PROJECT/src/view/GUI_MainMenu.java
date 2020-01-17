@@ -107,7 +107,6 @@ public class GUI_MainMenu {
 		panel_2.add(btnNewButton, "name_1270455870133100");
 		
 	    String imgPath = this.getClass().getResource(".").getPath()+"..//..//img//����.png";
-	    System.out.println(imgPath);
 	      
 		ImageIcon icon = new ImageIcon(imgPath);
 		JPanel panel_1 = new JPanel() {
