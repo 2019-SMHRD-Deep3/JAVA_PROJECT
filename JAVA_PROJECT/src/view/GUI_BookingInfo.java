@@ -69,6 +69,11 @@ public class GUI_BookingInfo {
 
 		Book book = ms.memberInfoSelect(loginuser);
 
+		if(book==null) {
+			JOptionPane.showMessageDialog(frame,
+				    "예매내역이 존재하지 않습니다.");
+		}
+		else {
 		String[][] data = { { book.getBooknum(), book.getDep(), book.getArr(), book.getServnum(), book.getDepT(),
 				book.getArrT(), book.getPer(), book.getFare() } };
 
@@ -80,7 +85,7 @@ public class GUI_BookingInfo {
 		scrollPane.setViewportView(table);
 		listSelectModel = table.getSelectionModel();
 		listSelectModel.addListSelectionListener(new ListSelectionListener() {
-
+		
 			@Override
 			public void valueChanged(ListSelectionEvent e) {
 				// TODO Auto-generated method stub
@@ -91,6 +96,8 @@ public class GUI_BookingInfo {
 			}
 		});
 
+		}
+		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(Color.WHITE);
 		panel_1.setBounds(429, 397, 343, 154);
