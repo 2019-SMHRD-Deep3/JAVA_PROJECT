@@ -33,16 +33,16 @@ public  class BookingModify implements I_BookingModify {
 				rs = psmt.executeQuery();
 
 				while (rs.next()) {
-					String dep_Loc = rs.getString("DEP_LOC_NUM");
+					int s_Num = rs.getInt("SERV_NUM");
 					String arr_Loc = rs.getString("ARR_LOC_NUM");
-					String s_Num = rs.getString("SERV_NUM");
+					String dep_Loc = rs.getString("DEP_LOC_NUM");
 					String dep_T= rs.getString("DEP_TIME");
 					String arr_T = rs.getString("ARR_TIME");
 					String nom = rs.getString("BOOK_NUM");
 					int fare = rs.getInt("BOOK_FARE");
 					String date = rs.getString("BOOK_DATE");
 					
-					TransInfo t = new TransInfo(dep_Loc, arr_Loc, s_Num, dep_T, arr_T, nom, fare, date );
+					TransInfo t = new TransInfo(s_Num, arr_Loc, dep_Loc, dep_T, arr_T, nom, fare, date );
 					list.add(t);
 					
 				}

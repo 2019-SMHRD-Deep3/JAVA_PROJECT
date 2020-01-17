@@ -145,12 +145,12 @@ public class GUI_Booking {
 		String[] columnNames = {"운행번호","운행종류","차량번호","출발시각","도착시각","등급","좌석","요금"};
 		DefaultTableModel tableModel = new DefaultTableModel(columnNames, 0);
 		for (int i = 0; i < transInfoList.size(); i++) {
-			String serv_num = transInfoList.get(i).getServ_num();
+			int serv_num = transInfoList.get(i).getServ_num();
 			String type = transInfoList.get(i).getType();
 			String num = transInfoList.get(i).getNum();
 			String dep_time = transInfoList.get(i).getDep_time();
 			String arr_time = transInfoList.get(i).getArr_time();
-			String grade = transInfoList.get(i).getArr_time();
+			String grade = transInfoList.get(i).getGrade();
 			int seat = transInfoList.get(i).getSeat();
 			String fare = transInfoList.get(i).getFare();
 			Object [] data = {serv_num,type,num,dep_time,arr_time,grade,seat,fare};

@@ -117,8 +117,10 @@ public class GUI_Pay {
 		arrT.setBounds(193, 357, 161, 15);
 		panel.add(arrT);
 
-		servnum = new JLabel(selTransInfo.getServ_num());
-		servnum.setBounds(567, 70, 161, 15);
+
+		servnum = new JLabel(Integer.toString(selTransInfo.getServ_num()));
+		servnum.setBounds(156, 205, 161, 15);
+
 		panel.add(servnum);
 
 		num = new JLabel(selTransInfo.getNum());
