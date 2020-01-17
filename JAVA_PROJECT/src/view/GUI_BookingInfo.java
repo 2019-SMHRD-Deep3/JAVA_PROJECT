@@ -65,7 +65,7 @@ public class GUI_BookingInfo {
 
 		Book book = ms.memberInfoSelect(loginuser);
 
-		if (book == null) {
+		if (book ==null) {
 
 		} else {
 			String[][] data = { { book.getBooknum(), book.getDep(), book.getArr(), book.getServnum(), book.getDepT(),
