@@ -6,6 +6,8 @@ DROP TABLE TRANS_INFO;
 DROP TABLE TRANS;
 DROP TABLE LOCATION_INFO;
 DROP TABLE USER_INFO;
+--기존 시퀀스 삭제
+DROP SEQUENCE book_seq;
 
 -- create table
 CREATE TABLE USER_INFO(
@@ -55,6 +57,12 @@ CREATE TABLE BOOK(
                 REFERENCES LOCATION_INFO ("LOC_NUM"),
                 CONSTRAINT book_transservnum_fk FOREIGN KEY ("SERV_NUM")
                 REFERENCES TRANS_INFO ("TRANS_SERV_NUM"));
+-- 시퀀스 생성
+CREATE SEQUENCE book_seq
+START WITH 1
+INCREMENT BY 1
+MAXVALUE 100000 ;
+
 
 -- insert
 
@@ -112,5 +120,6 @@ VALUES('Bs3','Trans1','B3','L1','L4','2020/01/01 12:00:00','2020/01/01 15:30:00'
 
 
 -- 예매 현황 데이터 삽입
+-- 샘플 데이터
 INSERT INTO BOOK
-VALUES('booking1','TEST1','L1','L2','Bs1','2020/01/01 12:00:00','2020/01/01 15:30:00',1,1000,sysdate);
+VALUES('booking0','TEST1','L1','L2','Bs1','2020/01/01 12:00:00','2020/01/01 15:30:00',1,1000,sysdate);
