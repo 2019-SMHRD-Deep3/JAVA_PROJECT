@@ -73,12 +73,12 @@ public class GUI_Login {
 		ImageIcon icon = new ImageIcon(imgPath);
 		JPanel panel = new JPanel() {
 			protected void paintComponent(Graphics g) {
-				g.drawImage(icon.getImage(), 0, 0, 785, 565, null);
+				g.drawImage(icon.getImage(), 0, 0, 900, 565, null);
 				setOpaque(false);
 				super.paintComponent(g);
 			}
 		};
-		panel.setBounds(0, 0, 784, 561);
+		panel.setBounds(0, 0, 884, 561);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 
