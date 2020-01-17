@@ -80,7 +80,7 @@ public class GUI_Booking {
 		panel_1.setLayout(null);
 		
 		JLabel lblEx = new JLabel("출발날짜를 입력해주세요 ex)2010/04/17");
-		lblEx.setBounds(22, 41, 260, 15);
+		lblEx.setBounds(422, 24, 260, 15);
 		panel_1.add(lblEx);
 		
 		JButton btnNewButton = new JButton("결제하기");
@@ -94,12 +94,12 @@ public class GUI_Booking {
 			}
 		});
 	
-		btnNewButton.setBounds(508, 64, 97, 23);
+		btnNewButton.setBounds(604, 427, 97, 23);
 		panel_1.add(btnNewButton);
 		
 	
 		depart_date = new JTextField();
-		depart_date.setBounds(22, 65, 116, 21);
+		depart_date.setBounds(422, 49, 116, 21);
 		panel_1.add(depart_date);
 		depart_date.setColumns(10);
 		
@@ -116,19 +116,19 @@ public class GUI_Booking {
 				show(transInfoList);
 			}
 		});
-		btnNewButton_1.setBounds(150, 64, 97, 23);
+		btnNewButton_1.setBounds(562, 48, 97, 23);
 		panel_1.add(btnNewButton_1);
 		
 		JLabel lblNewLabel_2 = new JLabel(input_depart);
-		lblNewLabel_2.setBounds(281, 41, 57, 15);
+		lblNewLabel_2.setBounds(34, 49, 57, 15);
 		panel_1.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel(input_dest);
-		lblNewLabel_3.setBounds(383, 41, 57, 15);
+		lblNewLabel_3.setBounds(195, 52, 57, 15);
 		panel_1.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("->");
-		lblNewLabel_4.setBounds(350, 41, 57, 15);
+		lblNewLabel_4.setBounds(142, 49, 57, 15);
 		panel_1.add(lblNewLabel_4);
 		
 		scrollPane = new JScrollPane();
