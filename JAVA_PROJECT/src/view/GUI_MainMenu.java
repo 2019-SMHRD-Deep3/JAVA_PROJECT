@@ -45,9 +45,8 @@ public class GUI_MainMenu {
 		frame.setBounds(100, 100, 960, 540);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
+///////////////////////////////////background image		
 	    String imgPath = this.getClass().getResource(".").getPath()+"..//..//img//gaboja.png";
-	      
 		ImageIcon icon = new ImageIcon(imgPath);
 		panel = new JPanel() {
 			protected void paintComponent(Graphics g) {
@@ -75,12 +74,14 @@ public class GUI_MainMenu {
 			}
 		});
 		tb_reservation.setBackground(Color.WHITE);
-		tb_reservation.setFont(new Font("���� ���", Font.BOLD, 20));
+		tb_reservation.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
 		
 		JButton btnNewButton = new JButton("내정보");
+		btnNewButton.setFont(new Font("굴림", Font.PLAIN, 14));
 		btnNewButton.setBackground(Color.WHITE);
-		btnNewButton.setBounds(836, 14, 83, 23);
+		btnNewButton.setBounds(836, 7, 85, 31);
 		btnNewButton.setBorderPainted(false);
+		btnNewButton.setFocusPainted(false);
 		panel.add(btnNewButton);
 		
 		btnNewButton.addMouseListener(new MouseAdapter() {
@@ -109,22 +110,25 @@ public class GUI_MainMenu {
 			}
 		});
 		my_reservation.setBackground(Color.WHITE);
-		my_reservation.setFont(new Font("���� ���", Font.BOLD, 20));
+		my_reservation.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
 		
 		JLabel lblNewLabel = new JLabel(loginUser.getName());
+		lblNewLabel.setFont(new Font("굴림", Font.PLAIN, 14));
 		lblNewLabel.setForeground(Color.WHITE);
-		lblNewLabel.setBounds(726, 18, 55, 15);
+		lblNewLabel.setBounds(741, 12, 59, 20);
 		panel.add(lblNewLabel);
 		
 		JLabel label = new JLabel("님");
+		label.setFont(new Font("굴림", Font.PLAIN, 14));
 		label.setForeground(Color.WHITE);
-		label.setBounds(782, 18, 33, 15);
+		label.setBounds(802, 12, 33, 20);
 		panel.add(label);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(Color.WHITE);
-		panel_1.setBounds(24, 62, 895, 351);
+		panel_1.setBounds(0, 404, 944, 97);
 		panel.add(panel_1);
+		
 	}
 
 	private void setBackground(Color color) {
