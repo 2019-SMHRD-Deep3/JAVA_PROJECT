@@ -59,10 +59,10 @@ public class GUI_MemberOut {
 			public void mouseClicked(MouseEvent e) {
 				boolean result = service.memberOut(loginUser);
 				if (result) {
-					JOptionPane.showMessageDialog(frame, "회원가입 성공");
+					JOptionPane.showMessageDialog(frame, "회원탈퇴 성공");
 					frame.dispose(); // ȭ�� ����
 				} else {
-					JOptionPane.showMessageDialog(frame, "회원가입 실패");
+					JOptionPane.showMessageDialog(frame, "회원탈퇴 실패");
 				}
 					
 			}
@@ -88,9 +88,13 @@ public class GUI_MemberOut {
 		panel.add(panel_3);
 		panel_3.setLayout(new CardLayout(0, 0));
 		
-		JLabel label = new JLabel("탈퇴 ?");
+		JLabel label = new JLabel("회원탈퇴시 예매정보가 전부 삭제됩니다");
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(label, "name_1290283716512000");
+		
+		JLabel lblNewLabel = new JLabel("정말 탈퇴하시겠습니까?");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(94, 76, 149, 15);
+		panel.add(lblNewLabel);
 	}
-
 }

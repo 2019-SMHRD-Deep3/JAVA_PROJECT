@@ -14,6 +14,7 @@ public class MemberOut implements I_MemberOut {
 	public String password = "hr";
 	Connection conn = null;
 	PreparedStatement psmt = null;
+	PreparedStatement psmtBookDel = null;
 
 	@Override
 	// 회원탈퇴 하는 기능
@@ -22,12 +23,16 @@ public class MemberOut implements I_MemberOut {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(url, user, password);
+			String sqlBookDel = "DELETE FROM book WHERE user_id = ?";
 			String sql = "DELETE FROM user_info WHERE user_id = ?";
+			psmtBookDel = conn.prepareStatement(sqlBookDel);
 			psmt = conn.prepareStatement(sql);
-
+			psmtBookDel.setString(1, m.getId());
 			psmt.setString(1, m.getId());
 			
+			psmtBookDel.executeUpdate();
 			rows = psmt.executeUpdate();
+			
 			if (rows == 0) {
 				System.out.println("SQL문을 확인하세요");
 			}
