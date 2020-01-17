@@ -88,7 +88,7 @@ public class GUI_MainMenu {
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				GUI_MemberInfo info = new GUI_MemberInfo(loginUser);
+				GUI_MemberMenu info = new GUI_MemberMenu(loginUser);
 				frame.dispose();
 			}
 		});
@@ -98,6 +98,7 @@ public class GUI_MainMenu {
 		my_reservation.setBorder(null);
 		panel.add(my_reservation);
 		my_reservation.addMouseListener(new MouseAdapter() {
+			// 나의 예매 정보 확인 
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				GUI_BookingInfo bi = new GUI_BookingInfo(loginUser);

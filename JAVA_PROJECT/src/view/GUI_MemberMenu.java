@@ -26,7 +26,7 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.CompoundBorder;
 
-public class GUI_MemberInfo {
+public class GUI_MemberMenu {
 
 	private JFrame frame;
 	private JPanel panel;
@@ -34,7 +34,7 @@ public class GUI_MemberInfo {
 	/**
 	 * Create the application.
 	 */
-	public GUI_MemberInfo(Member loginUser) {
+	public GUI_MemberMenu(Member loginUser) {
 		initialize(loginUser);
 		frame.setVisible(true);
 	}

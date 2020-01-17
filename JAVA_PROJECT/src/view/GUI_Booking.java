@@ -113,7 +113,7 @@ public class GUI_Booking {
 		
 		String [] depart_date_array = new String[31];
 		for (int i = 0; i < depart_date_array.length; i++) {
-			if(i<10) {
+			if(i<9) {
 				depart_date_array[i] = "2020/01/0"+ (i+1);
 			}else {
 				depart_date_array[i] = "2020/01/"+(i+1);
