@@ -21,7 +21,6 @@ public class GUI_MemberInfoModify {
 
 	MemberManagementService service = new MemberManagementService();
 	private JFrame frame;
-	private JTextField id;
 	private JTextField pw;
 	private JTextField pwcheck;
 	private JTextField birth;
@@ -61,7 +60,7 @@ public class GUI_MemberInfoModify {
 		ok.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				String infoId = id.getText();
+				String infoId = loginUser.getId();
 				String infoPw = pw.getText();
 				String infoPw1 = pwcheck.getText();
 				String infoName = name.getText();
@@ -110,10 +109,9 @@ public class GUI_MemberInfoModify {
 		JLabel lblNewLabel_1 = new JLabel("\uC544\uC774\uB514");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(lblNewLabel_1);
-
-		id = new JTextField(loginUser.getId());
-		panel_3.add(id);
-		id.setColumns(10);
+		
+		JLabel lblNewLabel_7 = new JLabel(loginUser.getId());
+		panel_3.add(lblNewLabel_7);
 
 		JLabel lblNewLabel_2 = new JLabel("\uBE44\uBC00\uBC88\uD638");
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
