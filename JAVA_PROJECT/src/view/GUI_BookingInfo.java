@@ -70,8 +70,7 @@ public class GUI_BookingInfo {
 		Book book = ms.memberInfoSelect(loginuser);
 
 		if(book==null) {
-			JOptionPane.showMessageDialog(frame,
-				    "예매내역이 존재하지 않습니다.");
+			
 		}
 		else {
 		String[][] data = { { book.getBooknum(), book.getDep(), book.getArr(), book.getServnum(), book.getDepT(),
