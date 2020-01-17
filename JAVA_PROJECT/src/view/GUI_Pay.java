@@ -163,6 +163,7 @@ public class GUI_Pay {
 			public void mouseClicked(MouseEvent e) {
 				int booknom=book_nom;
 				service.bookingPayment(loginUser, selTransInfo,input_depart,input_dest,booknom);
+				GUI_Pay2 p2= new GUI_Pay2();
 			}
 		});
 		btnNewButton.setBounds(631, 506, 97, 23);
