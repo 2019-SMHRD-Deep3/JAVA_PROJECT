@@ -78,7 +78,9 @@ public class GUI_MainMenu {
 		tb_reservation.setFont(new Font("���� ���", Font.BOLD, 20));
 		
 		JButton btnNewButton = new JButton("내정보");
-		btnNewButton.setBounds(806, 14, 113, 23);
+		btnNewButton.setBackground(Color.WHITE);
+		btnNewButton.setBounds(836, 14, 83, 23);
+		btnNewButton.setBorderPainted(false);
 		panel.add(btnNewButton);
 		
 		btnNewButton.addMouseListener(new MouseAdapter() {
@@ -118,6 +120,11 @@ public class GUI_MainMenu {
 		label.setForeground(Color.WHITE);
 		label.setBounds(782, 18, 33, 15);
 		panel.add(label);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(Color.WHITE);
+		panel_1.setBounds(24, 62, 895, 351);
+		panel.add(panel_1);
 	}
 
 	private void setBackground(Color color) {
