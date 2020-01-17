@@ -97,23 +97,6 @@ public class GUI_BookingInfo {
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
 
-		// 예매 수정시
-		// 1.셀 선택 2.수정버튼 클릭하고 콤보박스의 날짜와 시간 선택-DB 3.수정된 내용이 테이블에 저장-DB
-		JButton reserve_edit = new JButton("\uC608\uB9E4 \uC218\uC815");
-		reserve_edit.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				GUI_BookingModify bm = new GUI_BookingModify(loginuser);
-
-			}
-		});
-		reserve_edit.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
-		reserve_edit.addMouseListener(new MouseAdapter() {
-
-		});
-
-		reserve_edit.setBounds(39, 43, 119, 47);
-		panel_1.add(reserve_edit);
-
 		JButton reserve_cancel = new JButton("\uC608\uB9E4 \uCDE8\uC18C");
 		reserve_cancel.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
 
