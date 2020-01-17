@@ -122,21 +122,23 @@ public class GUI_Login {
 		lblNewLabel_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_1.setBounds(282, 392, 85, 27);
 		panel.add(lblNewLabel_1);
-		lblNewLabel_1.setFont(new Font("占쏙옙占쏙옙 占쏙옙占�", Font.PLAIN, 15));
+		lblNewLabel_1.setFont(new Font("맑은 고딕", Font.BOLD, 15));
 
 		JLabel lblNewLabel = new JLabel("\uC544\uC774\uB514");
 		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setBounds(282, 343, 75, 35);
 		panel.add(lblNewLabel);
-		lblNewLabel.setFont(new Font("占쏙옙占쏙옙 占쏙옙占�", Font.PLAIN, 15));
+		lblNewLabel.setFont(new Font("맑은 고딕", Font.BOLD, 15));
 
 		JButton login = new JButton("\uB85C\uADF8\uC778");
+		login.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
 		login.setBackground(new Color(255, 255, 255));
 		login.setBounds(368, 449, 97, 28);
 		login.setBorderPainted(false);
 		panel.add(login);
 
 		JButton btnNewButton = new JButton("\uD68C\uC6D0\uAC00\uC785");
+		btnNewButton.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
