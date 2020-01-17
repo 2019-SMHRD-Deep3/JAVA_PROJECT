@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.Scanner;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -23,9 +24,12 @@ import javax.swing.SwingConstants;
 import controller.MemberManagementService;
 import model.Member;
 import javax.swing.JPasswordField;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 
 public class GUI_Login {
+	
 
 	private MemberManagementService service = new MemberManagementService();
 	private JFrame frame;
@@ -89,6 +93,27 @@ public class GUI_Login {
 		id.setColumns(10);
 
 		passwordField = new JPasswordField();
+		passwordField.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				if(e.getKeyChar() == KeyEvent.VK_ENTER) {
+					String infoId = id.getText();
+					String infoPw = passwordField.getText();
+
+					Member m = new Member(infoId, infoPw);
+
+					Member loginUser = service.memberLogin(m);
+					if (loginUser == null) {
+						JOptionPane.showMessageDialog(frame, "login fail");
+						
+					} else {
+						JOptionPane.showMessageDialog(frame, "login success");
+						GUI_MainMenu main = new GUI_MainMenu(loginUser);
+						frame.dispose();
+					}
+				}
+			}
+		});
 		passwordField.setBounds(325, 449, 240, 35);
 		passwordField.setBorder(null);
 		panel.add(passwordField);
