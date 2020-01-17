@@ -17,6 +17,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 public class GUI_MemberOut {
 	MemberManagementService service = new MemberManagementService();
@@ -50,6 +51,7 @@ public class GUI_MemberOut {
 		panel_1.setLayout(new CardLayout(0, 0));
 		
 		JButton btnNewButton = new JButton("ok");
+		btnNewButton.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -75,6 +77,7 @@ public class GUI_MemberOut {
 		panel_2.setLayout(new CardLayout(0, 0));
 		
 		JButton btnNewButton_1 = new JButton("no");
+		btnNewButton_1.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -89,10 +92,12 @@ public class GUI_MemberOut {
 		panel_3.setLayout(new CardLayout(0, 0));
 		
 		JLabel label = new JLabel("회원탈퇴시 예매정보가 전부 삭제됩니다");
+		label.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(label, "name_1290283716512000");
 		
 		JLabel lblNewLabel = new JLabel("정말 탈퇴하시겠습니까?");
+		lblNewLabel.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(94, 76, 149, 15);
 		panel.add(lblNewLabel);
