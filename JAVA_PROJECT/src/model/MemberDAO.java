@@ -65,10 +65,7 @@ public class MemberDAO {
 
 	}
 
-	public void booking() {
-		// TODO Auto-generated method stub
 
-	}
 
 	public int bookingpayment(Member loginUser, TransInfo selTransInfo, String input_depart, String input_dest,int booknom) {
 		I_BookingPayment payment = new BookingPayment();
