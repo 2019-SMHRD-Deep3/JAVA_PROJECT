@@ -62,6 +62,7 @@ public class GUI_MainMenu {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				GUI_BookingInfo bi = new GUI_BookingInfo(loginUser);
+				frame.dispose();
 				
 			}
 		});
