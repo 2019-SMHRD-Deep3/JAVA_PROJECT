@@ -27,6 +27,9 @@ public class GUI_MainMenu {
 
 	private JFrame frame;
 	private JPanel panel;
+	private JPanel panel_2;
+	private JPanel panel_3;
+	private JPanel panel_4;
 
 
 	/**
@@ -126,8 +129,45 @@ public class GUI_MainMenu {
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(Color.WHITE);
-		panel_1.setBounds(0, 404, 944, 97);
+		panel_1.setBounds(12, 57, 920, 434);
 		panel.add(panel_1);
+		panel_1.setLayout(null);
+		
+//////////banner 1		
+		String imgPath2 = this.getClass().getResource(".").getPath() + "..//..//img//ulsan.png";
+		ImageIcon icon2 = new ImageIcon(imgPath2);
+		String imgPath3 = this.getClass().getResource(".").getPath() + "..//..//img//d.png";
+		ImageIcon icon3 = new ImageIcon(imgPath3);
+		String imgPath4 = this.getClass().getResource(".").getPath() + "..//..//img//sale.png";
+		ImageIcon icon4 = new ImageIcon(imgPath4);
+		
+		panel_2 = new JPanel() {
+		protected void paintComponent(Graphics g) {
+			g.drawImage(icon2.getImage(),0,0,panel_2.getWidth(),panel_2.getHeight(), null);
+			setOpaque(false);
+			super.paintComponent(g);
+		}
+		};
+		panel_2.setBounds(12, 10, 605, 336);
+		panel_1.add(panel_2);
+		
+		panel_4 = new JPanel() {
+			protected void paintComponent(Graphics g) {
+				g.drawImage(icon4.getImage(),0,0,panel_4.getWidth(),panel_4.getHeight(), null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		panel_4.setBounds(625, 10, 283, 336);
+		panel_1.add(panel_4);
+
+
+		
+		panel_3 = new JPanel() {
+			
+		};
+		panel_3.setBounds(320, 57, 307, 347);
+		panel.add(panel_3);
 		
 	}
 
