@@ -28,6 +28,7 @@ import java.awt.Color;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import java.awt.GridLayout;
+import java.awt.GridBagLayout;
 
 public class GUI_Pay {
 //////////////////service 객체 생성 -> book객체를 service의 메소드에 넘겨줌
@@ -202,36 +203,35 @@ public class GUI_Pay {
 		panel.add(btnNewButton_1);
 		btnNewButton_1.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		btnNewButton_1.setBackground(Color.WHITE);
-
-		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(Color.WHITE);
-		panel_1.setBounds(416, 130, 364, 62);
-		panel.add(panel_1);
-		panel_1.setLayout(new GridLayout(2, 2, 0, 0));
-
-		arr = new JLabel(input_dest);
-		panel_1.add(arr);
-		arr.setHorizontalAlignment(SwingConstants.CENTER);
-		arr.setFont(new Font("맑은 고딕", Font.BOLD, 20));
-		arr.setForeground(Color.BLACK);
-
-		depT = new JLabel(selTransInfo.getDep_time());
-		panel_1.add(depT);
-		depT.setHorizontalAlignment(SwingConstants.CENTER);
-		depT.setFont(new Font("맑은 고딕", Font.PLAIN, 16));
-		depT.setForeground(Color.BLACK);
-
-		dep = new JLabel(input_depart);
-		panel_1.add(dep);
-		dep.setHorizontalAlignment(SwingConstants.CENTER);
-		dep.setFont(new Font("맑은 고딕", Font.BOLD, 20));
-		dep.setForeground(Color.BLACK);
-
-		arrT = new JLabel(selTransInfo.getArr_time());
-		panel_1.add(arrT);
-		arrT.setHorizontalAlignment(SwingConstants.CENTER);
-		arrT.setFont(new Font("맑은 고딕", Font.PLAIN, 16));
-		arrT.setForeground(Color.BLACK);
+										
+										JPanel panel_1 = new JPanel();
+										panel_1.setBounds(407, 130, 397, 70);
+										panel.add(panel_1);
+										panel_1.setLayout(new GridLayout(2, 2, 0, 0));
+												
+														arr = new JLabel(input_dest);
+														panel_1.add(arr);
+														arr.setHorizontalAlignment(SwingConstants.CENTER);
+														arr.setFont(new Font("맑은 고딕", Font.BOLD, 20));
+														arr.setForeground(Color.BLACK);
+												
+														depT = new JLabel(selTransInfo.getDep_time());
+														panel_1.add(depT);
+														depT.setHorizontalAlignment(SwingConstants.CENTER);
+														depT.setFont(new Font("맑은 고딕", Font.PLAIN, 16));
+														depT.setForeground(Color.BLACK);
+										
+												dep = new JLabel(input_depart);
+												panel_1.add(dep);
+												dep.setHorizontalAlignment(SwingConstants.CENTER);
+												dep.setFont(new Font("맑은 고딕", Font.BOLD, 20));
+												dep.setForeground(Color.BLACK);
+												
+														arrT = new JLabel(selTransInfo.getArr_time());
+														panel_1.add(arrT);
+														arrT.setHorizontalAlignment(SwingConstants.CENTER);
+														arrT.setFont(new Font("맑은 고딕", Font.PLAIN, 16));
+														arrT.setForeground(Color.BLACK);
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
