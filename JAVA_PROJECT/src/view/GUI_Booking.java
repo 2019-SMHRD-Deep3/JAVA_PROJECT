@@ -10,6 +10,8 @@ import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import java.awt.CardLayout;
 import java.awt.Font;
+import java.awt.Graphics;
+
 import javax.swing.JComboBox;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
@@ -19,6 +21,7 @@ import javax.swing.JTable;
 import model.Member;
 import model.TransInfo;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -32,11 +35,11 @@ import javax.swing.table.DefaultTableModel;
 import controller.MemberManagementService;
 import java.awt.SystemColor;
 import java.awt.Window;
+import java.awt.Color;
 
 public class GUI_Booking {
 
 	private JFrame frame;
-	private JTextField depart_date_textf;
 	MemberManagementService service = new MemberManagementService();
 	ArrayList<TransInfo> transInfoList = null;
 	private JTable table;
@@ -46,6 +49,7 @@ public class GUI_Booking {
 	String sel_depart_time;
 	private JComboBox depart_date_cb;
 	private JComboBox depart_time_cb;
+	private JPanel panel;
 	
 	/**
 	 * Launch the application.
@@ -67,31 +71,27 @@ public class GUI_Booking {
 	 */
 	private void initialize(Member loginuser, String input_depart, String input_dest) {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 800, 600);
+		frame.setBounds(100, 100, 960, 540);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JPanel panel = new JPanel();
-		panel.setBounds(12, 10, 128, 47);
-		frame.getContentPane().add(panel);
-		panel.setLayout(new CardLayout(0, 0));
 		
-		JLabel lblNewLabel = new JLabel("\uAC00\uBCF4\uC790");
-		lblNewLabel.setFont(new Font("����", Font.PLAIN, 20));
-		panel.add(lblNewLabel, "name_1458993286850100");
-		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(22, 67, 737, 464);
+		JPanel panel_1 = new JPanel() {};
+		panel_1.setBackground(Color.WHITE);
+		panel_1.setBounds(22, 67, 899, 420);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
 		
-		JLabel lblEx = new JLabel("출발날짜를 입력해주세요 ex)2010/04/17");
-		lblEx.setBounds(422, 24, 260, 15);
+		JLabel lblEx = new JLabel("출발날짜 선택");
+		lblEx.setFont(new Font("맑은 고딕", Font.PLAIN, 14));
+		lblEx.setBounds(502, 49, 150, 15);
 		panel_1.add(lblEx);
 		
 		
 		
-		JButton btnNewButton = new JButton("결제하기");
+		JButton btnNewButton = new JButton("다음으로");
+		btnNewButton.setFont(new Font("맑은 고딕", Font.PLAIN, 14));
+		btnNewButton.setBackground(Color.WHITE);
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -102,14 +102,8 @@ public class GUI_Booking {
 			}
 		});
 	
-		btnNewButton.setBounds(604, 427, 97, 23);
+		btnNewButton.setBounds(774, 374, 97, 29);
 		panel_1.add(btnNewButton);
-		
-	
-		depart_date_textf = new JTextField();
-		depart_date_textf.setBounds(422, 49, 116, 21);
-		panel_1.add(depart_date_textf);
-		depart_date_textf.setColumns(10);
 		
 		String [] depart_date_array = new String[31];
 		for (int i = 0; i < depart_date_array.length; i++) {
@@ -144,17 +138,18 @@ public class GUI_Booking {
 		}
 		
 		depart_date_cb = new JComboBox(depart_date_array);
-		depart_date_cb.setBounds(422, 99, 116, 21);
+		depart_date_cb.setBounds(502, 99, 116, 21);
 		panel_1.add(depart_date_cb);
 		
 		
 		depart_time_cb = new JComboBox(depart_time_array);
-		depart_time_cb.setBounds(562, 99, 97, 21);
+		depart_time_cb.setBounds(641, 99, 97, 21);
 		panel_1.add(depart_time_cb);
 		
 		
 		
 		JButton btnNewButton_1 = new JButton("조회");
+		btnNewButton_1.setFont(new Font("맑은 고딕", Font.PLAIN, 14));
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -175,24 +170,64 @@ public class GUI_Booking {
 				show(transInfoList);
 			}
 		});
-		btnNewButton_1.setBounds(562, 48, 97, 23);
+		btnNewButton_1.setBounds(774, 98, 97, 23);
 		panel_1.add(btnNewButton_1);
 		
 		JLabel lblNewLabel_2 = new JLabel(input_depart);
-		lblNewLabel_2.setBounds(34, 49, 57, 15);
+		lblNewLabel_2.setFont(new Font("맑은 고딕", Font.PLAIN, 14));
+		lblNewLabel_2.setBounds(41, 102, 57, 15);
 		panel_1.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel(input_dest);
-		lblNewLabel_3.setBounds(195, 52, 57, 15);
+		lblNewLabel_3.setFont(new Font("맑은 고딕", Font.PLAIN, 14));
+		lblNewLabel_3.setBounds(208, 102, 57, 15);
 		panel_1.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("->");
-		lblNewLabel_4.setBounds(142, 49, 57, 15);
+		lblNewLabel_4.setFont(new Font("맑은 고딕", Font.PLAIN, 14));
+		lblNewLabel_4.setBounds(133, 102, 57, 15);
 		panel_1.add(lblNewLabel_4);
 		
 		scrollPane = new JScrollPane();
-		scrollPane.setBounds(22, 154, 660, 263);
+		scrollPane.setBounds(25, 143, 848, 218);
 		panel_1.add(scrollPane);
+	
+		
+		JLabel label = new JLabel("출발지");
+		label.setFont(new Font("맑은 고딕", Font.PLAIN, 14));
+		label.setBounds(47, 49, 75, 15);
+		panel_1.add(label);
+		
+		JLabel label_1 = new JLabel("도착지");
+		label_1.setFont(new Font("맑은 고딕", Font.PLAIN, 14));
+		label_1.setBounds(208, 49, 57, 15);
+		panel_1.add(label_1);
+		
+		JButton back = new JButton("이전으로");
+		back.setFont(new Font("맑은 고딕", Font.PLAIN, 14));
+		back.setBackground(Color.WHITE);
+		back.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				GUI_Selection selection = new GUI_Selection(loginuser);
+				frame.dispose();
+			}
+		});
+		back.setBounds(25, 377, 97, 29);
+		panel_1.add(back);
+		
+////////////background image
+		 String imgPath = this.getClass().getResource(".").getPath()+"..//..//img//gaboja.png";
+			ImageIcon icon = new ImageIcon(imgPath);
+			panel = new JPanel() {
+				protected void paintComponent(Graphics g) {
+					g.drawImage(icon.getImage(),0,0,panel.getWidth(),panel.getHeight(), null);
+					setOpaque(false);
+					super.paintComponent(g);
+				}
+				};
+		panel.setBounds(0, 0, 944, 501);
+		frame.getContentPane().add(panel);
 //		
 //		String [] loc = {"서울","부산","대구","인천","광주","대전","울산"};
 //		JComboBox comboBox = new JComboBox(loc);
@@ -221,6 +256,14 @@ public class GUI_Booking {
 		}
 		table = new JTable(tableModel);
 		scrollPane.setViewportView(table);
+		table.getColumn("운행번호").setPreferredWidth(50);
+		table.getColumn("운행종류").setPreferredWidth(50);
+		table.getColumn("차량번호").setPreferredWidth(50);
+		table.getColumn("출발시각").setPreferredWidth(150);
+		table.getColumn("도착시각").setPreferredWidth(150);
+		table.getColumn("등급").setPreferredWidth(50);
+		table.getColumn("좌석").setPreferredWidth(50);
+		table.getColumn("요금").setPreferredWidth(50);
 		// TODO Auto-generated method stub
 		
 	}
