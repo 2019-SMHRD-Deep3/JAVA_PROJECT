@@ -244,17 +244,6 @@ public class GUI_Selection {
 		Daegu.setBorderPainted(false);
 		panel_1.add(Daegu);
 		Daegu.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
-		
-		JLabel lblNewLabel_1 = new JLabel("여행지역 둘러보기 ▷");
-		lblNewLabel_1.setBackground(Color.WHITE);
-		lblNewLabel_1.setFont(new Font("맑은 고딕", Font.PLAIN, 14));
-		lblNewLabel_1.setBounds(463, 56, 141, 15);
-		panel_1.add(lblNewLabel_1);
-		
-		JPanel panel_2 = new JPanel();
-		panel_2.setBackground(Color.WHITE);
-		panel_2.setBounds(449, 48, 168, 31);
-		panel_1.add(panel_2);
 		Daegu.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
