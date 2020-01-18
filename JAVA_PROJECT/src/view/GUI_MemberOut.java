@@ -81,7 +81,7 @@ public class GUI_MemberOut {
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				GUI_MemberInfo info = new GUI_MemberInfo(null);
+				GUI_MemberMenu info = new GUI_MemberMenu(null);
 			}
 		});
 		panel_2.add(btnNewButton_1, "name_1290239572578400");

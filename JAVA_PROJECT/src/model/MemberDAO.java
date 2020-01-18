@@ -35,7 +35,7 @@ public class MemberDAO {
 
 	}
 
-	public Book memberinfoselect(Member loginuser) {
+	public ArrayList<Book> memberinfoselect(Member loginuser) {
 		// TODO Auto-generated method stub
 		I_MemberInfoSelect info = new MemberInfoSelect();
 		return info.memberInfoSelect(loginuser);

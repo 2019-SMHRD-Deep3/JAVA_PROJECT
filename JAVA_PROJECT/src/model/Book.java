@@ -8,13 +8,13 @@ public class Book {
 	private String servnum;
 	private String depT;
 	private String arrT;
-	private String per;
+	private int per;
 	private String fare;
 	
 	BookingPayment bp = new BookingPayment();
 	
 	public Book(String booknum, String dep, String arr, 
-			String servnum, String depT, String arrT, String per, 
+			String servnum, String depT, String arrT, int per, 
 			String fare) {
 		this.booknum=booknum;
 		this.dep=dep;
@@ -76,11 +76,11 @@ public class Book {
 		this.arrT = arrT;
 	}
 
-	public String getPer() {
+	public int getPer() {
 		return per;
 	}
 
-	public void setPer(String per) {
+	public void setPer(int per) {
 		this.per = per;
 	}
 
