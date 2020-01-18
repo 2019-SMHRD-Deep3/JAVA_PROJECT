@@ -126,7 +126,7 @@ public class GUI_MemberInfoModify {
 		cancel.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				GUI_MemberInfo info = new GUI_MemberInfo(loginUser);
+				GUI_MemberMenu info = new GUI_MemberMenu(loginUser);
 			}
 		});
 		panel_2.add(cancel, "name_1266578742455400");

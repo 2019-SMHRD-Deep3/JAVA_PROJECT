@@ -33,7 +33,7 @@ public class MemberManagementService {
 			return true;
 	}
 
-	public Book memberInfoSelect(Member loginuser) {
+	public ArrayList<Book> memberInfoSelect(Member loginuser) {
 		return dao.memberinfoselect(loginuser);
 	}
 

@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import model.Member;
 import model.model_interface.I_MemberInfoSelect;
@@ -17,10 +18,12 @@ public class MemberInfoSelect implements I_MemberInfoSelect {
 	public Connection conn = null;
 	public PreparedStatement psmt = null;
 	public ResultSet rs = null;
-	
+	ArrayList<Book> list = new ArrayList<>();
+
 	@Override
 	// 예매정보를 조회하는 기능
-	public Book memberInfoSelect(Member loginuser) {
+	public ArrayList<Book> memberInfoSelect(Member loginuser) {
+		
 		// TODO Auto-generated method stub
 			Book loginUser = null;
 			try {
@@ -32,7 +35,7 @@ public class MemberInfoSelect implements I_MemberInfoSelect {
 				psmt.setString(1, loginuser.getId());
 				rs = psmt.executeQuery();
 
-				if (rs.next()) {
+				while (rs.next()) {
 					//
 					String booknum = rs.getString("BOOK_NUM");
 					String dep = rs.getString("DEP_LOC_NUM");
@@ -40,10 +43,11 @@ public class MemberInfoSelect implements I_MemberInfoSelect {
 					String servnum = rs.getString("SERV_NUM");
 					String depT = rs.getString("DEP_TIME");
 					String arrT = rs.getString("ARR_TIME");
-					String per = rs.getString("BOOK_NOM"); // 이용객의 명수
+					int per = rs.getInt("BOOK_NOM"); // 이용객의 명수
 					String fare = rs.getString("BOOK_FARE"); // 요금
 
-					loginUser = new Book (booknum, dep, arr, servnum, depT, arrT, per, fare);
+					Book b = new Book (booknum, dep, arr, servnum, depT, arrT, per, fare);
+					list.add(b);
 				}
 
 			} catch (ClassNotFoundException e) {
@@ -64,7 +68,7 @@ public class MemberInfoSelect implements I_MemberInfoSelect {
 					e.printStackTrace();
 				}
 			}
-			return loginUser;
+			return list;
 
 	}
 

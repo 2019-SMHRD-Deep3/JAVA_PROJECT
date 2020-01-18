@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -27,6 +28,7 @@ import javax.swing.table.DefaultTableModel;
 import controller.MemberManagementService;
 import model.Book;
 import model.Member;
+import model.TransInfo;
 
 public class GUI_BookingInfo {
 
@@ -35,10 +37,12 @@ public class GUI_BookingInfo {
 	private ListSelectionModel listSelectModel;
 	private Icon icon;
 	private DefaultTableModel defaultTableModel;
-	MemberManagementService ms = new MemberManagementService();
+	MemberManagementService service = new MemberManagementService();
 	private JPanel panel;
 	private JScrollPane scrollPane;
-
+	private JScrollPane scrollPane_1;
+	private JTable table_1;
+	ArrayList<Book> bookList;
 	/**
 	 * Launch the application.
 	 */
@@ -47,15 +51,17 @@ public class GUI_BookingInfo {
 	 * Create the application.
 	 */
 	public GUI_BookingInfo(Member loginuser) {
-
 		initialize(loginuser);
+		
 		frame.setVisible(true);
+		
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize(Member loginuser) {
+		
 		frame = new JFrame();
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.getContentPane().setForeground(Color.WHITE);
@@ -63,37 +69,7 @@ public class GUI_BookingInfo {
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
-		Book book = ms.memberInfoSelect(loginuser);
-
-
-
-		if (book ==null) {
-
-
-		} else {
-			String[][] data = { { book.getBooknum(), book.getDep(), book.getArr(), book.getServnum(), book.getDepT(),
-					book.getArrT(), book.getPer(), book.getFare() } };
-
-			String[] columnNames = { "예매번호", "출발지", "목적지", "교통편", "출발일", "도착일", "인원수", "가격" };
-
-			defaultTableModel = new DefaultTableModel(data, columnNames);
-			table = new JTable(defaultTableModel);
-			table.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-			scrollPane.setViewportView(table);
-			listSelectModel = table.getSelectionModel();
-			listSelectModel.addListSelectionListener(new ListSelectionListener() {
-
-				@Override
-				public void valueChanged(ListSelectionEvent e) {
-					// TODO Auto-generated method stub
-					if (e.getValueIsAdjusting() == false) {
-						System.out.println("hello");
-
-					}
-				}
-			});
-
-		}
+		bookList = service.memberInfoSelect(loginuser);
 
 		String imgPath = this.getClass().getResource(".").getPath() + "..//..//img//gaboja.png";
 		ImageIcon icon = new ImageIcon(imgPath);
@@ -124,11 +100,10 @@ public class GUI_BookingInfo {
 				// int numRows = table.getSelectedRows().length;
 				// for(int i=0; i< numRows; i++ )
 				// table.remove(table.getSelectedRow());
-				int i = listSelectModel.getAnchorSelectionIndex();
-				System.out.println(i);
-				boolean result = ms.bookingCancle(loginuser);
+				
+				
+				boolean result = service.bookingCancle(loginuser);
 				if (result) {
-					defaultTableModel.removeRow(i);
 					JOptionPane.showMessageDialog(frame, "예매가 취소되었습니다.");
 				} else {
 					JOptionPane.showMessageDialog(frame, "예매가 존재하지 않습니다.");
@@ -137,7 +112,7 @@ public class GUI_BookingInfo {
 			}
 		});
 
-		reserve_cancel.setBounds(789, 365, 119, 47);
+		reserve_cancel.setBounds(439, 8, 119, 47);
 		panel_1.add(reserve_cancel);
 
 		JLabel label = new JLabel("\uB2D8\uC758 \uC608\uB9E4\uC815\uBCF4");
@@ -151,11 +126,7 @@ public class GUI_BookingInfo {
 		name.setHorizontalAlignment(SwingConstants.CENTER);
 		name.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		name.setText(loginuser.getName());
-
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(21, 63, 877, 264);
-		panel_1.add(scrollPane);
-
+	
 		JButton back = new JButton("");
 		back.setBounds(12, 10, 129, 49);
 		back.setFocusPainted(false);
@@ -170,5 +141,47 @@ public class GUI_BookingInfo {
 			}
 
 		});
+		
+		
+		
+		scrollPane_1 = new JScrollPane();
+		scrollPane_1.setBounds(31, 88, 857, 217);
+		panel_1.add(scrollPane_1);
+		
+		JButton btnNewButton = new JButton("예매 조회");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if(bookList.size()==0) {
+					JOptionPane.showMessageDialog(frame, "예매가 존재하지 않습니다.");
+
+				}
+				show(bookList);
+			}
+		});
+		btnNewButton.setBounds(279, 8, 119, 47);
+		panel_1.add(btnNewButton);
+		
+		
+		
+	}
+	protected void show(ArrayList<Book> bookList) {
+		String[] columnNames = {"예매번호", "출발지", "목적지", "교통편", "출발일", "도착일", "인원수", "가격"};
+		DefaultTableModel tableModel = new DefaultTableModel(columnNames, 0);
+		for (int i = 0; i < bookList.size(); i++) {
+			String bookNum = bookList.get(i).getServnum();
+			String depLocation = bookList.get(i).getDep();
+			String arrLocation = bookList.get(i).getArr();
+			String dep_time = bookList.get(i).getDepT();
+			String arr_time = bookList.get(i).getArr();
+			int personNum = bookList.get(i).getPer();
+			String fare = bookList.get(i).getFare();
+			Object [] data = {bookNum,depLocation,arrLocation,dep_time,arr_time,personNum,fare};
+			tableModel.addRow(data);
+		}
+		table = new JTable(tableModel);
+		scrollPane_1.setViewportView(table);
+		// TODO Auto-generated method stub
+		
 	}
 }
