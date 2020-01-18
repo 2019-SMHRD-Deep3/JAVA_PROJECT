@@ -149,6 +149,7 @@ public class GUI_BookingInfo {
 		panel_1.add(scrollPane_1);
 		
 		JButton btnNewButton = new JButton("예매 조회");
+		btnNewButton.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
