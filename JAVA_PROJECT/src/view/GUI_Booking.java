@@ -50,7 +50,6 @@ public class GUI_Booking {
 	private JComboBox depart_date_cb;
 	private JComboBox depart_time_cb;
 	private JPanel panel;
-	int row;
 	/**
 	 * Launch the application.
 	 */
@@ -90,15 +89,14 @@ public class GUI_Booking {
 		
 		
 		JButton btnNewButton = new JButton("다음으로");
+		btnNewButton.setEnabled(false);
 		btnNewButton.setFont(new Font("맑은 고딕", Font.PLAIN, 14));
 		btnNewButton.setBackground(Color.WHITE);
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if(row==0) {
-					JOptionPane.showMessageDialog(frame, "운행정보를 선택해주세요.");
-				}
-				row = table.getSelectedRow();
+				
+				int row = table.getSelectedRow();
 				TransInfo selTransInfo = transInfoList.get(row);
 				System.out.println(selTransInfo.getServ_num());
 				GUI_Pay pay = new GUI_Pay(loginuser,selTransInfo,input_depart,input_dest);
@@ -170,6 +168,9 @@ public class GUI_Booking {
 				transInfoList = service.transSelect(f_sel_depart_time,input_depart,input_dest);
 				if(transInfoList.size()==0) {
 					JOptionPane.showMessageDialog(frame, "조건에 맞는 운행이 없습니다.");
+					btnNewButton.setEnabled(false);
+				}else {
+					btnNewButton.setEnabled(true);
 				}
 				System.out.println("조건에 맞는 운행수:"+transInfoList.size());
 				show(transInfoList);
