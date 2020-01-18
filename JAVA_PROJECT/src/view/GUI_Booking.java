@@ -50,7 +50,7 @@ public class GUI_Booking {
 	private JComboBox depart_date_cb;
 	private JComboBox depart_time_cb;
 	private JPanel panel;
-	
+	int row;
 	/**
 	 * Launch the application.
 	 */
@@ -95,7 +95,10 @@ public class GUI_Booking {
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				int row = table.getSelectedRow();
+				if(row==0) {
+					JOptionPane.showMessageDialog(frame, "운행정보를 선택해주세요.");
+				}
+				row = table.getSelectedRow();
 				TransInfo selTransInfo = transInfoList.get(row);
 				System.out.println(selTransInfo.getServ_num());
 				GUI_Pay pay = new GUI_Pay(loginuser,selTransInfo,input_depart,input_dest);
