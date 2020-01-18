@@ -57,7 +57,7 @@ public class GUI_MemberInfoModify {
 		frame.getContentPane().setLayout(null);
 
 		
-		   String imgPath = this.getClass().getResource(".").getPath()+"..//..//img//gaboja.png";
+		   String imgPath = this.getClass().getResource(".").getPath()+"..//..//img//goboja_column.png";
 		      
 			ImageIcon icon = new ImageIcon(imgPath);
 			panel_4 = new JPanel() {
@@ -76,7 +76,7 @@ public class GUI_MemberInfoModify {
 		panel_4.setLayout(null);
 
 		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(304, 440, 137, 47);
+		panel_1.setBounds(453, 444, 137, 47);
 		panel_4.add(panel_1);
 		panel_1.setLayout(new CardLayout(0, 0));
 
@@ -125,7 +125,7 @@ public class GUI_MemberInfoModify {
 		panel_1.add(ok, "name_1266465774629600");
 
 		JPanel panel_2 = new JPanel();
-		panel_2.setBounds(507, 440, 137, 47);
+		panel_2.setBounds(639, 444, 137, 47);
 		panel_4.add(panel_2);
 		panel_2.setLayout(new CardLayout(0, 0));
 		
@@ -150,7 +150,7 @@ public class GUI_MemberInfoModify {
 		JPanel panel_3 = new JPanel();
 		panel_3.setOpaque(false);
 		panel_3.setBorder(new LineBorder(new Color(255, 255, 255), 3, true));
-		panel_3.setBounds(188, 86, 568, 344);
+		panel_3.setBounds(324, 74, 568, 344);
 		panel_4.add(panel_3);
 		panel_3.setLayout(new GridLayout(7, 2, 0, 0));
 
@@ -243,7 +243,7 @@ public class GUI_MemberInfoModify {
 	      btnNewButton.setBorderPainted(false);
 	
 		btnNewButton.setOpaque(false);
-		btnNewButton.setBounds(48, 10, 104, 39);
+		btnNewButton.setBounds(46, 77, 163, 322);
 		panel_4.add(btnNewButton);
 	}
 }
