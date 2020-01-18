@@ -138,12 +138,12 @@ public class GUI_Booking {
 		}
 		
 		depart_date_cb = new JComboBox(depart_date_array);
-		depart_date_cb.setBounds(502, 99, 116, 21);
+		depart_date_cb.setBounds(502, 86, 116, 21);
 		panel_1.add(depart_date_cb);
 		
 		
 		depart_time_cb = new JComboBox(depart_time_array);
-		depart_time_cb.setBounds(641, 99, 97, 21);
+		depart_time_cb.setBounds(641, 86, 97, 21);
 		panel_1.add(depart_time_cb);
 		
 		
@@ -170,22 +170,22 @@ public class GUI_Booking {
 				show(transInfoList);
 			}
 		});
-		btnNewButton_1.setBounds(774, 98, 97, 23);
+		btnNewButton_1.setBounds(774, 84, 97, 23);
 		panel_1.add(btnNewButton_1);
 		
 		JLabel lblNewLabel_2 = new JLabel(input_depart);
 		lblNewLabel_2.setFont(new Font("맑은 고딕", Font.PLAIN, 14));
-		lblNewLabel_2.setBounds(41, 102, 57, 15);
+		lblNewLabel_2.setBounds(47, 88, 57, 15);
 		panel_1.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel(input_dest);
 		lblNewLabel_3.setFont(new Font("맑은 고딕", Font.PLAIN, 14));
-		lblNewLabel_3.setBounds(208, 102, 57, 15);
+		lblNewLabel_3.setBounds(202, 88, 57, 15);
 		panel_1.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("->");
 		lblNewLabel_4.setFont(new Font("맑은 고딕", Font.PLAIN, 14));
-		lblNewLabel_4.setBounds(133, 102, 57, 15);
+		lblNewLabel_4.setBounds(138, 88, 52, 15);
 		panel_1.add(lblNewLabel_4);
 		
 		scrollPane = new JScrollPane();
@@ -195,12 +195,12 @@ public class GUI_Booking {
 		
 		JLabel label = new JLabel("출발지");
 		label.setFont(new Font("맑은 고딕", Font.PLAIN, 14));
-		label.setBounds(47, 49, 75, 15);
+		label.setBounds(25, 49, 75, 15);
 		panel_1.add(label);
 		
 		JLabel label_1 = new JLabel("도착지");
 		label_1.setFont(new Font("맑은 고딕", Font.PLAIN, 14));
-		label_1.setBounds(208, 49, 57, 15);
+		label_1.setBounds(184, 49, 57, 15);
 		panel_1.add(label_1);
 		
 		JButton back = new JButton("이전으로");
