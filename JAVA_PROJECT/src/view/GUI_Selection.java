@@ -83,15 +83,9 @@ public class GUI_Selection {
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
 
-		JSeparator separator_2 = new JSeparator();
-		separator_2.setForeground(Color.WHITE);
-		separator_2.setOrientation(SwingConstants.VERTICAL);
-		separator_2.setBounds(500, 69, 86, 415);
-		panel_1.add(separator_2);
-
 		JLabel lblNewLabel = new JLabel("\uC5EC\uD589\uC9C0\uC5ED \uC120\uD0DD");
 		lblNewLabel.setForeground(Color.WHITE);
-		lblNewLabel.setBounds(131, 89, 270, 79);
+		lblNewLabel.setBounds(105, 81, 270, 99);
 		panel_1.add(lblNewLabel);
 		lblNewLabel.setFont(new Font("맑은 고딕", Font.BOLD, 23));
 		lblNewLabel.setBackground(Color.GRAY);
@@ -112,10 +106,10 @@ public class GUI_Selection {
 //		frame.getContentPane().add(btnLoc1);
 
 		JPanel panel = new JPanel();
-		panel.setBounds(92, 190, 344, 159);
+		panel.setBounds(68, 190, 344, 177);
 		panel_1.add(panel);
 		panel.setBackground(Color.white);
-		panel.setBorder(new CompoundBorder(new LineBorder(new Color(0, 0, 0)), null));
+		panel.setBorder(null);
 		panel.setLayout(new GridLayout(2, 2, 2, 5));
 
 		JLabel lblNewLabel_3 = new JLabel("\uCD9C\uBC1C\uC9C0\uC5ED");
@@ -134,11 +128,11 @@ public class GUI_Selection {
 		panel1.setLayout(null);
 		JComboBox comboBox = new JComboBox(loc);
 		comboBox.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
-		comboBox.setBounds(36, 26, 97, 21);
+		comboBox.setBounds(37, 32, 97, 21);
 		panel1.add(comboBox);
 
 		JSeparator separator = new JSeparator();
-		separator.setBounds(0, 0, 184, 99);
+		separator.setBounds(0, 0, 170, 85);
 		panel1.add(separator);
 
 		JSeparator separator_3 = new JSeparator();
@@ -149,7 +143,7 @@ public class GUI_Selection {
 		dest = new JTextField();
 		dest.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
 		dest.setColumns(10);
-		dest.setBounds(20, 25, 130, 24);
+		dest.setBounds(20, 30, 130, 24);
 
 		JPanel panel2 = new JPanel();
 		panel2.setBackground(UIManager.getColor("Button.disabledShadow"));
@@ -158,7 +152,7 @@ public class GUI_Selection {
 		panel2.add(dest);
 
 		JSeparator separator_1 = new JSeparator();
-		separator_1.setBounds(0, 0, 184, 99);
+		separator_1.setBounds(0, 0, 170, 85);
 		panel2.add(separator_1);
 
 		JSeparator separator_4 = new JSeparator();
@@ -167,9 +161,16 @@ public class GUI_Selection {
 		separator_4.setOrientation(SwingConstants.VERTICAL);
 
 		JButton btnNewButton_2_1 = new JButton("예매하기");
-		btnNewButton_2_1.setBounds(196, 359, 135, 23);
+		btnNewButton_2_1.setBackground(Color.WHITE);
+		btnNewButton_2_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnNewButton_2_1.setBounds(172, 403, 135, 41);
 		panel_1.add(btnNewButton_2_1);
 		btnNewButton_2_1.setFont(new Font("맑은 고딕 Semilight", Font.PLAIN, 12));
+		btnNewButton_2_1.setFocusPainted(false);
+		btnNewButton_2_1.setBorderPainted(false);
 
 		JButton btnNewButton = new JButton("");
 		btnNewButton.setFocusPainted(false);
@@ -243,6 +244,17 @@ public class GUI_Selection {
 		Daegu.setBorderPainted(false);
 		panel_1.add(Daegu);
 		Daegu.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
+		
+		JLabel lblNewLabel_1 = new JLabel("여행지역 둘러보기 ▷");
+		lblNewLabel_1.setBackground(Color.WHITE);
+		lblNewLabel_1.setFont(new Font("맑은 고딕", Font.PLAIN, 14));
+		lblNewLabel_1.setBounds(463, 56, 141, 15);
+		panel_1.add(lblNewLabel_1);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBackground(Color.WHITE);
+		panel_2.setBounds(449, 48, 168, 31);
+		panel_1.add(panel_2);
 		Daegu.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
