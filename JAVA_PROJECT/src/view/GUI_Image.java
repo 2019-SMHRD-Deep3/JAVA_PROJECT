@@ -10,6 +10,8 @@ import javax.swing.JPanel;
 import javax.swing.SpringLayout;
 
 import model.Member;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class GUI_Image {
 	
@@ -25,16 +27,17 @@ public class GUI_Image {
 	 * Create the application.
 	 * @param str 
 	 */
-	public GUI_Image(String str) {
+	public GUI_Image(String str, Member loginUser) {
 		
-		initialize(str);
+		initialize(str, loginUser);
+		
 		frame.setVisible(true);
 	}
 	
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize(String str) {
+	private void initialize(String str, Member loginUser) {
 		if(str.equals("서울")) {
 			
 			icon = new ImageIcon(this.getClass().getResource(".").getPath() + "..//..//img//캡처.png");
@@ -65,8 +68,18 @@ public class GUI_Image {
 				g.drawImage(icon.getImage(), 0, 0, panel.getWidth(), panel.getHeight(), null);
 				setOpaque(false);
 				super.paintComponent(g);
+				
 			}
 		};
+		panel.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frame.dispose();
+				
+				
+				
+			}
+		});
 
 		springLayout.putConstraint(SpringLayout.NORTH, panel, 44, SpringLayout.NORTH, frame.getContentPane());
 		springLayout.putConstraint(SpringLayout.WEST, panel, 86, SpringLayout.WEST, frame.getContentPane());

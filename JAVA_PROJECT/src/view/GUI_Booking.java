@@ -130,9 +130,9 @@ public class GUI_Booking {
 			}
 
 			if (h < 10) {
-				depart_time_array[i] = "0" + h + ":" + m2 + ":00";
+				depart_time_array[i] = "0" + h + ":" + m2;
 			} else {
-				depart_time_array[i] = h + ":" + m2 + ":00";
+				depart_time_array[i] = h + ":" + m2;
 			}
 			min += 30;
 		}
@@ -154,7 +154,7 @@ public class GUI_Booking {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				sel_depart_date = depart_date_array[depart_date_cb.getSelectedIndex()];
-				sel_depart_time = depart_time_array[depart_time_cb.getSelectedIndex()];
+				sel_depart_time = depart_time_array[depart_time_cb.getSelectedIndex()]+":00";
 				f_sel_depart_time = sel_depart_date+" "+sel_depart_time;
 				//transInfoList = service.transSelect(depart_date_textf.getText(),input_depart,input_dest);
 				System.out.println("선택한 콤보박스 인덱스 "+depart_time_cb.getSelectedIndex());

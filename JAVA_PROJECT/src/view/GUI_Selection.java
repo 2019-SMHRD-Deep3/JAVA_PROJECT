@@ -43,6 +43,7 @@ public class GUI_Selection {
 	String input_depart;
 	private JPanel panel_1;
 	private JButton btnNewButton_2;
+	private JPanel panel_2;
 
 	/**
 	 * Launch the application.
@@ -66,24 +67,6 @@ public class GUI_Selection {
 		frame.getContentPane().setLayout(null);
 
 		String [] loc = {"서울","부산","대구","인천","광주","대전","울산"};
-
-		
-		JButton btnNewButton_2 = new JButton("\uB2E4\uC74C\uC73C\uB85C(\uC608\uB9E4\uD558\uAE30)");
-		btnNewButton_2.setFont(new Font("맑은 고딕 Semilight", Font.PLAIN, 12));
-		btnNewButton_2.addMouseListener(new MouseAdapter() {
-			private JComboBox comboBox;
-
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				input_depart = loc[comboBox.getSelectedIndex()];
-				//input_depart = depart.getText();
-				String input_dest = dest.getText();
-				GUI_Booking bo = new GUI_Booking(loginUser,input_depart,input_dest);
-			}
-		});
-		
-		btnNewButton_2.setBounds(797, 458, 145, 33);
-		frame.getContentPane().add(btnNewButton_2);
 		
 	
 		
@@ -93,7 +76,7 @@ public class GUI_Selection {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				String str = "서울";
-				GUI_Image img = new GUI_Image(str);
+				GUI_Image img = new GUI_Image(str,loginUser);
 				dest.setText(str);
 				
 			}
@@ -107,7 +90,7 @@ public class GUI_Selection {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				String str = "대전";
-				GUI_Image img = new GUI_Image(str);
+				GUI_Image img = new GUI_Image(str, loginUser);
 				dest.setText(str);
 			}
 		});
@@ -120,7 +103,7 @@ public class GUI_Selection {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				String str = "울산";
-				GUI_Image img = new GUI_Image(str);
+				GUI_Image img = new GUI_Image(str, loginUser);
 				dest.setText(str);
 			}
 		});
@@ -133,7 +116,7 @@ public class GUI_Selection {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				String str = "대구";
-				GUI_Image img = new GUI_Image(str);
+				GUI_Image img = new GUI_Image(str, loginUser);
 				dest.setText(str);
 			}
 		});
@@ -146,7 +129,7 @@ public class GUI_Selection {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				String str = "광주";
-				GUI_Image img = new GUI_Image(str);
+				GUI_Image img = new GUI_Image(str, loginUser);
 				dest.setText(str);
 			}
 		});
@@ -159,7 +142,7 @@ public class GUI_Selection {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				String str = "부산";
-				GUI_Image img = new GUI_Image(str);
+				GUI_Image img = new GUI_Image(str, loginUser);
 				dest.setText(str);
 			}
 		});
@@ -173,7 +156,7 @@ public class GUI_Selection {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				String str = "인천";
-				GUI_Image img = new GUI_Image(str);
+				GUI_Image img = new GUI_Image(str, loginUser);
 				dest.setText(str);
 			}
 		});
@@ -255,7 +238,6 @@ public class GUI_Selection {
 			comboBox.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
 			comboBox.setBounds(43, 39, 97, 21);
 			panel1.add(comboBox);
-			comboBox.setSelectedIndex(6);
 			
 			JSeparator separator = new JSeparator();
 			separator.setBounds(0, 0, 184, 99);
@@ -285,6 +267,56 @@ public class GUI_Selection {
 			separator_4.setBounds(0, -86, 102, 236);
 			panel2.add(separator_4);
 			separator_4.setOrientation(SwingConstants.VERTICAL);
+			
+					
+					JButton btnNewButton_2_1 = new JButton("예매하기");
+					btnNewButton_2_1.setBounds(194, 419, 145, 33);
+					panel_1.add(btnNewButton_2_1);
+					btnNewButton_2_1.setFont(new Font("맑은 고딕 Semilight", Font.PLAIN, 12));
+					
+			
+					 String imgPath2 = this.getClass().getResource(".").getPath()+"..//..//img//map.png";
+						ImageIcon icon2 = new ImageIcon(imgPath2);
+						panel_2 = new JPanel() {
+							protected void paintComponent(Graphics g) {
+								g.drawImage(icon2.getImage(),0,0,panel_2.getWidth(),panel_2.getHeight(), null);
+								setOpaque(false);
+								super.paintComponent(g);
+							}
+							};
+					
+					
+					
+					panel_2.setBounds(512, 10, 408, 474);
+					panel_1.add(panel_2);
+					
+					JButton btnNewButton = new JButton("");
+					  btnNewButton.setFocusPainted(false);
+				      btnNewButton.setContentAreaFilled(false);
+				      btnNewButton.setBorderPainted(false);
+				
+					btnNewButton.addMouseListener(new MouseAdapter() {
+						@Override
+						public void mouseClicked(MouseEvent e) {
+						GUI_MainMenu main = new GUI_MainMenu(loginUser);
+						frame.dispose();
+							
+							
+						}
+					});
+					btnNewButton.setBounds(12, 10, 163, 41);
+					panel_1.add(btnNewButton);
+					btnNewButton_2_1.addMouseListener(new MouseAdapter() {
+					
+
+						@Override
+						public void mouseClicked(MouseEvent e) {
+							input_depart = loc[comboBox.getSelectedIndex()];
+							//input_depart = depart.getText();
+							String input_dest = dest.getText();
+							GUI_Booking bo = new GUI_Booking(loginUser,input_depart,input_dest);
+						}
+					});
 		
 		
 		frame.setAutoRequestFocus(false);

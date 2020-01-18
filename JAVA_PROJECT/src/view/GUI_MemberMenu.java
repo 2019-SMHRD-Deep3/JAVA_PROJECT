@@ -25,6 +25,8 @@ import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.CompoundBorder;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class GUI_MemberMenu {
 
@@ -79,6 +81,7 @@ public class GUI_MemberMenu {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				GUI_MemberInfoModify modify = new GUI_MemberInfoModify(loginUser);
+				frame.dispose();
 			}
 		});
 		panel_1.add(btnNewButton, "name_1270908918196400");

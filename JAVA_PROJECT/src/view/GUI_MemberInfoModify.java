@@ -36,7 +36,7 @@ public class GUI_MemberInfoModify {
 	private JTextField phone;
 	private JTextField name;
 	private JTextField email;
-	Member loginUser = new Member("id", "pw", "name", "birth", "phone", "email");
+	
 	private JPanel panel_4;
 
 	/**
@@ -80,6 +80,10 @@ public class GUI_MemberInfoModify {
 		panel_4.add(panel_1);
 		panel_1.setLayout(new CardLayout(0, 0));
 
+		
+		
+		
+		// 수정후 확인 버튼 
 		JButton ok = new JButton("\uD655\uC778");
 		ok.setBackground(Color.WHITE);
 		ok.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
@@ -94,19 +98,25 @@ public class GUI_MemberInfoModify {
 				String infoBirth = birth.getText();
 				String infoPhone = phone.getText();
 				String infoEmail = email.getText();
-
+				
+				// 비밀번호와 비밀번호 확인 체크 
 				if (infoPw.equals(infoPw1)) {
 					Member m = new Member(infoId, infoPw, infoName, infoBirth, infoPhone, infoEmail);
 					
+					// 수정된 정보로 새로운 member객체 생성
+					Member loginUser_modify = service.memberLogin(m);
 					boolean result = service.memberInfoModify(m);
 					if (result) {
-						JOptionPane.showMessageDialog(frame, "성공");
+						JOptionPane.showMessageDialog(frame, "성공. 다시 로그인 해주세요");
+						
+						// 성공할 경우 loginUser_modify객체를 넘겨서 메인메뉴 실행 
+						GUI_Login.main(null);
 						frame.dispose();
 					} else {
 						JOptionPane.showMessageDialog(frame, "실패");
 					}
 				} else {
-					JOptionPane.showMessageDialog(frame, "��й�ȣ �ٽ� Ȯ��");
+					JOptionPane.showMessageDialog(frame, "비밀번호를 확인해주세요");
 				}
 			}
 
@@ -118,7 +128,9 @@ public class GUI_MemberInfoModify {
 		panel_2.setBounds(507, 440, 137, 47);
 		panel_4.add(panel_2);
 		panel_2.setLayout(new CardLayout(0, 0));
-
+		
+		
+		// 취소 버튼 
 		JButton cancel = new JButton("\uCDE8\uC18C");
 		cancel.setBackground(Color.WHITE);
 		cancel.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
@@ -127,8 +139,12 @@ public class GUI_MemberInfoModify {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				GUI_MemberMenu info = new GUI_MemberMenu(loginUser);
+				frame.dispose();
 			}
 		});
+		
+		
+		
 		panel_2.add(cancel, "name_1266578742455400");
 
 		JPanel panel_3 = new JPanel();
@@ -212,8 +228,9 @@ public class GUI_MemberInfoModify {
 		panel_3.add(email);
 		email.setColumns(10);
 		
+		
+		// 메인 메뉴로 돌아가는 버튼 gaboja
 		JButton btnNewButton = new JButton("");
-	
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
