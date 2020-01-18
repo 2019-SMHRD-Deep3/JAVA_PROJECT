@@ -99,6 +99,7 @@ public class GUI_Booking {
 				TransInfo selTransInfo = transInfoList.get(row);
 				System.out.println(selTransInfo.getServ_num());
 				GUI_Pay pay = new GUI_Pay(loginuser,selTransInfo,input_depart,input_dest);
+				frame.dispose();
 			}
 		});
 	
