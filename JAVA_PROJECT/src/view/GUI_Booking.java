@@ -99,6 +99,7 @@ public class GUI_Booking {
 				TransInfo selTransInfo = transInfoList.get(row);
 				System.out.println(selTransInfo.getServ_num());
 				GUI_Pay pay = new GUI_Pay(loginuser,selTransInfo,input_depart,input_dest);
+				frame.dispose();
 			}
 		});
 	
@@ -174,17 +175,17 @@ public class GUI_Booking {
 		panel_1.add(btnNewButton_1);
 		
 		JLabel lblNewLabel_2 = new JLabel(input_depart);
-		lblNewLabel_2.setFont(new Font("맑은 고딕", Font.PLAIN, 14));
+		lblNewLabel_2.setFont(new Font("맑은 고딕 Semilight", Font.BOLD, 14));
 		lblNewLabel_2.setBounds(47, 88, 57, 15);
 		panel_1.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel(input_dest);
-		lblNewLabel_3.setFont(new Font("맑은 고딕", Font.PLAIN, 14));
+		lblNewLabel_3.setFont(new Font("맑은 고딕 Semilight", Font.BOLD, 14));
 		lblNewLabel_3.setBounds(202, 88, 57, 15);
 		panel_1.add(lblNewLabel_3);
 		
-		JLabel lblNewLabel_4 = new JLabel("->");
-		lblNewLabel_4.setFont(new Font("맑은 고딕", Font.PLAIN, 14));
+		JLabel lblNewLabel_4 = new JLabel("→");
+		lblNewLabel_4.setFont(new Font("맑은 고딕", Font.BOLD, 14));
 		lblNewLabel_4.setBounds(138, 88, 52, 15);
 		panel_1.add(lblNewLabel_4);
 		
@@ -194,13 +195,13 @@ public class GUI_Booking {
 	
 		
 		JLabel label = new JLabel("출발지");
-		label.setFont(new Font("맑은 고딕", Font.PLAIN, 14));
-		label.setBounds(25, 49, 75, 15);
+		label.setFont(new Font("맑은 고딕", Font.BOLD, 14));
+		label.setBounds(47, 49, 75, 15);
 		panel_1.add(label);
 		
 		JLabel label_1 = new JLabel("도착지");
-		label_1.setFont(new Font("맑은 고딕", Font.PLAIN, 14));
-		label_1.setBounds(184, 49, 57, 15);
+		label_1.setFont(new Font("맑은 고딕", Font.BOLD, 14));
+		label_1.setBounds(202, 49, 57, 15);
 		panel_1.add(label_1);
 		
 		JButton back = new JButton("이전으로");
@@ -228,6 +229,25 @@ public class GUI_Booking {
 				};
 		panel.setBounds(0, 0, 944, 501);
 		frame.getContentPane().add(panel);
+		panel.setLayout(null);
+		
+		JButton btnNewButton_2 = new JButton("");
+	
+		btnNewButton_2.setFocusPainted(false);
+		btnNewButton_2.setContentAreaFilled(false);
+		btnNewButton_2.setBorderPainted(false);
+		btnNewButton_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				GUI_MainMenu main = new GUI_MainMenu(loginuser);
+				frame.dispose();
+				
+
+				
+			}
+		});
+		btnNewButton_2.setBounds(12, 10, 158, 41);
+		panel.add(btnNewButton_2);
 //		
 //		String [] loc = {"서울","부산","대구","인천","광주","대전","울산"};
 //		JComboBox comboBox = new JComboBox(loc);
