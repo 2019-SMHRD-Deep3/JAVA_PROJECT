@@ -44,7 +44,9 @@ public class GUI_Pay {
 	private int book_nom1;
 	private int book_nom2;
 	private int book_nom;
+	
 
+	
 	/**
 	 * Launch the application.
 	 */
@@ -116,13 +118,6 @@ public class GUI_Pay {
 		lblNewLabel_4.setBounds(151, 229, 80, 25);
 		panel.add(lblNewLabel_4);
 
-		JLabel lblNewLabel_6 = new JLabel("총 금액");
-		lblNewLabel_6.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_6.setFont(new Font("맑은 고딕", Font.BOLD, 15));
-		lblNewLabel_6.setForeground(Color.BLACK);
-		lblNewLabel_6.setBounds(536, 324, 80, 25);
-		panel.add(lblNewLabel_6);
-
 		JLabel lblNewLabel_2 = new JLabel("차량등급");
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setFont(new Font("맑은 고딕", Font.BOLD, 15));
@@ -149,12 +144,22 @@ public class GUI_Pay {
 		type.setBounds(233, 234, 161, 15);
 		panel.add(type);
 
-		JLabel studentmoney = new JLabel("0");
+		JLabel studentmoney = new JLabel("0원");
 		studentmoney.setHorizontalAlignment(SwingConstants.CENTER);
 		studentmoney.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		studentmoney.setForeground(Color.BLACK);
-		studentmoney.setBounds(716, 274, 122, 21);
+		studentmoney.setBounds(667, 274, 122, 21);
 		panel.add(studentmoney);
+		
+			JLabel adultmoney = new JLabel("0원");
+		adultmoney.setHorizontalAlignment(SwingConstants.CENTER);
+		adultmoney.setForeground(Color.BLACK);
+		adultmoney.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
+		adultmoney.setBounds(667, 231, 122, 21);
+		panel.add(adultmoney);
+		
+		
+		
 ////////////////////// combobox adult
 		int fare = Integer.parseInt(selTransInfo.getFare());
 		String[] count = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16",
@@ -166,20 +171,16 @@ public class GUI_Pay {
 			public void actionPerformed(ActionEvent arg0) {
 				JComboBox cb = (JComboBox) arg0.getSource();
 				int index = cb.getSelectedIndex();
-				
+				adultmoney.setText(index*fare+"원");
 				book_nom1 = index;
-
+				
 			}
 		});
-		
-		JLabel adultmoney = new JLabel("0원");
-		adultmoney.setHorizontalAlignment(SwingConstants.CENTER);
-		adultmoney.setForeground(Color.BLACK);
-		adultmoney.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
-		adultmoney.setBounds(716, 236, 122, 21);
-		panel.add(adultmoney);
 		comboBox.setBounds(575, 231, 80, 21);
 		panel.add(comboBox);
+		
+		
+		
 		
 		
 ///////////////////////// combobox student		
@@ -191,11 +192,10 @@ public class GUI_Pay {
 		comboBox_1.setBounds(575, 274, 80, 21);
 		comboBox_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				JComboBox cb = (JComboBox) arg0.getSource();
-				int index = cb.getSelectedIndex();
+				int index = comboBox_1.getSelectedIndex();
 				studentmoney.setText((index) * fare/2 + "원");
 				book_nom2 = index;
-
+				
 			}
 		});
 		panel.add(comboBox_1);
@@ -210,7 +210,7 @@ public class GUI_Pay {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				int booknom = book_nom1+book_nom2;
-				GUI_Pay2 p2 = new GUI_Pay2(loginUser, selTransInfo, input_depart, input_dest, book_nom1, book_nom2);
+				GUI_Pay2 p2 = new GUI_Pay2(loginUser, selTransInfo, input_depart, input_dest, book_nom1, book_nom2,fare);
 				
 			}
 		});
@@ -284,12 +284,6 @@ public class GUI_Pay {
 		label.setBounds(483, 272, 80, 25);
 		panel.add(label);
 		
-		JLabel moneysum = new JLabel("0원");
-		moneysum.setHorizontalAlignment(SwingConstants.CENTER);
-		moneysum.setForeground(Color.BLACK);
-		moneysum.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
-		moneysum.setBounds(716, 324, 122, 21);
-		panel.add(moneysum);
 		
 		
 
