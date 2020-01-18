@@ -139,6 +139,7 @@ public class GUI_Booking {
 		}
 		
 		depart_date_cb = new JComboBox(depart_date_array);
+		depart_date_cb.setSelectedIndex(19);
 		depart_date_cb.setBounds(502, 86, 116, 21);
 		panel_1.add(depart_date_cb);
 		
