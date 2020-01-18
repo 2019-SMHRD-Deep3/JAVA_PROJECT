@@ -152,6 +152,10 @@ public class GUI_BookingInfo {
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				if(bookList.size()==0) {
+					JOptionPane.showMessageDialog(frame, "예매가 존재하지 않습니다.");
+
+				}
 				show(bookList);
 			}
 		});
