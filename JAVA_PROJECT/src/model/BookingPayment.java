@@ -39,16 +39,19 @@ public class BookingPayment implements I_BookingPayment {
 			if(input_depart.equals("부산")) {
 				input_depart="L2";
 			}
-			if(input_depart.equals("광주")) {
+			if(input_depart.equals("대구")) {
 				input_depart="L3";
 			}
-			if(input_depart.equals("울산")) {
+			if(input_depart.equals("인천")) {
 				input_depart="L4";
 			}
-			if(input_depart.equals("대구")) {
+			if(input_depart.equals("광주")) {
 				input_depart="L5";
 			}
 			if(input_depart.equals("대전")) {
+				input_depart="L6";
+			}
+			if(input_depart.equals("울산")) {
 				input_depart="L6";
 			}
 			
@@ -58,16 +61,19 @@ public class BookingPayment implements I_BookingPayment {
 			if(input_dest.equals("부산")) {
 				input_dest="L2";
 			}
-			if(input_dest.equals("광주")) {
+			if(input_dest.equals("대구")) {
 				input_dest="L3";
 			}
-			if(input_dest.equals("울산")) {
+			if(input_dest.equals("인천")) {
 				input_dest="L4";
 			}
-			if(input_dest.equals("대구")) {
+			if(input_dest.equals("광주")) {
 				input_dest="L5";
 			}
 			if(input_dest.equals("대전")) {
+				input_dest="L6";
+			}
+			if(input_dest.equals("울산")) {
 				input_dest="L6";
 			}
 			
