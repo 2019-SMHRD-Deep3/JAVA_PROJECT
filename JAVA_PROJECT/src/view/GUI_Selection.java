@@ -43,6 +43,7 @@ public class GUI_Selection {
 	String input_depart;
 	private JPanel panel_1;
 	private JButton btnNewButton_2;
+	private JPanel panel_2;
 
 	/**
 	 * Launch the application.
@@ -75,7 +76,7 @@ public class GUI_Selection {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				String str = "서울";
-				GUI_Image img = new GUI_Image(str);
+				GUI_Image img = new GUI_Image(str,loginUser);
 				dest.setText(str);
 				
 			}
@@ -89,7 +90,7 @@ public class GUI_Selection {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				String str = "대전";
-				GUI_Image img = new GUI_Image(str);
+				GUI_Image img = new GUI_Image(str, loginUser);
 				dest.setText(str);
 			}
 		});
@@ -102,7 +103,7 @@ public class GUI_Selection {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				String str = "울산";
-				GUI_Image img = new GUI_Image(str);
+				GUI_Image img = new GUI_Image(str, loginUser);
 				dest.setText(str);
 			}
 		});
@@ -115,7 +116,7 @@ public class GUI_Selection {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				String str = "대구";
-				GUI_Image img = new GUI_Image(str);
+				GUI_Image img = new GUI_Image(str, loginUser);
 				dest.setText(str);
 			}
 		});
@@ -128,7 +129,7 @@ public class GUI_Selection {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				String str = "광주";
-				GUI_Image img = new GUI_Image(str);
+				GUI_Image img = new GUI_Image(str, loginUser);
 				dest.setText(str);
 			}
 		});
@@ -141,7 +142,7 @@ public class GUI_Selection {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				String str = "부산";
-				GUI_Image img = new GUI_Image(str);
+				GUI_Image img = new GUI_Image(str, loginUser);
 				dest.setText(str);
 			}
 		});
@@ -155,7 +156,7 @@ public class GUI_Selection {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				String str = "인천";
-				GUI_Image img = new GUI_Image(str);
+				GUI_Image img = new GUI_Image(str, loginUser);
 				dest.setText(str);
 			}
 		});
@@ -237,7 +238,6 @@ public class GUI_Selection {
 			comboBox.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
 			comboBox.setBounds(43, 39, 97, 21);
 			panel1.add(comboBox);
-			comboBox.setSelectedIndex(6);
 			
 			JSeparator separator = new JSeparator();
 			separator.setBounds(0, 0, 184, 99);
@@ -273,6 +273,22 @@ public class GUI_Selection {
 					btnNewButton_2_1.setBounds(194, 419, 145, 33);
 					panel_1.add(btnNewButton_2_1);
 					btnNewButton_2_1.setFont(new Font("맑은 고딕 Semilight", Font.PLAIN, 12));
+					
+			
+					 String imgPath2 = this.getClass().getResource(".").getPath()+"..//..//img//map.png";
+						ImageIcon icon2 = new ImageIcon(imgPath2);
+						panel_2 = new JPanel() {
+							protected void paintComponent(Graphics g) {
+								g.drawImage(icon2.getImage(),0,0,panel_2.getWidth(),panel_2.getHeight(), null);
+								setOpaque(false);
+								super.paintComponent(g);
+							}
+							};
+					
+					
+					
+					panel_2.setBounds(512, 10, 408, 474);
+					panel_1.add(panel_2);
 					btnNewButton_2_1.addMouseListener(new MouseAdapter() {
 					
 
