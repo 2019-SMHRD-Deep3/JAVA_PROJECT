@@ -43,7 +43,6 @@ public class GUI_Selection {
 	String input_depart;
 	private JPanel panel_1;
 	private JButton btnNewButton_2;
-	private JPanel panel_2;
 
 	/**
 	 * Launch the application.
@@ -164,7 +163,7 @@ public class GUI_Selection {
 		frame.getContentPane().add(btnNewButton_1);
 		
 //		JPanel panel_1 = new JPanel();
-		 String imgPath = this.getClass().getResource(".").getPath()+"..//..//img//gaboja.png";
+		 String imgPath = this.getClass().getResource(".").getPath()+"..//..//img//selection_map.png";
 			ImageIcon icon = new ImageIcon(imgPath);
 			panel_1 = new JPanel() {
 				protected void paintComponent(Graphics g) {
@@ -273,22 +272,6 @@ public class GUI_Selection {
 					btnNewButton_2_1.setBounds(194, 419, 145, 33);
 					panel_1.add(btnNewButton_2_1);
 					btnNewButton_2_1.setFont(new Font("맑은 고딕 Semilight", Font.PLAIN, 12));
-					
-			
-					 String imgPath2 = this.getClass().getResource(".").getPath()+"..//..//img//map.png";
-						ImageIcon icon2 = new ImageIcon(imgPath2);
-						panel_2 = new JPanel() {
-							protected void paintComponent(Graphics g) {
-								g.drawImage(icon2.getImage(),0,0,panel_2.getWidth(),panel_2.getHeight(), null);
-								setOpaque(false);
-								super.paintComponent(g);
-							}
-							};
-					
-					
-					
-					panel_2.setBounds(512, 10, 408, 474);
-					panel_1.add(panel_2);
 					
 					JButton btnNewButton = new JButton("");
 					  btnNewButton.setFocusPainted(false);

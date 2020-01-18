@@ -15,6 +15,9 @@ import javax.swing.JTextField;
 import controller.MemberManagementService;
 import model.Member;
 import model.TransInfo;
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.SwingConstants;
 
 public class GUI_Pay2 {
 
@@ -43,11 +46,14 @@ public class GUI_Pay2 {
 	 */
 	private void initialize(Member loginUser, TransInfo selTransInfo,String input_depart,String input_dest,int booknom) {
 		frame = new JFrame();
+		frame.getContentPane().setFont(new Font("굴림", Font.PLAIN, 12));
+		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setBounds(100, 100, 465, 460);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("카드 선택");
+		lblNewLabel.setFont(new Font("굴림", Font.PLAIN, 12));
 		lblNewLabel.setBounds(55, 85, 57, 15);
 		frame.getContentPane().add(lblNewLabel);
 		
@@ -57,6 +63,7 @@ public class GUI_Pay2 {
 		frame.getContentPane().add(comboBox);
 		
 		JLabel lblNewLabel_1 = new JLabel("카드 번호");
+		lblNewLabel_1.setFont(new Font("굴림", Font.PLAIN, 12));
 		lblNewLabel_1.setBounds(55, 150, 57, 15);
 		frame.getContentPane().add(lblNewLabel_1);
 		
@@ -66,6 +73,8 @@ public class GUI_Pay2 {
 		textField.setColumns(10);
 		
 		JCheckBox chckbxNewCheckBox = new JCheckBox("위 상품의 구매조건 확인 및 결제진행 동의");
+		chckbxNewCheckBox.setBackground(Color.WHITE);
+		chckbxNewCheckBox.setFont(new Font("굴림", Font.PLAIN, 12));
 		chckbxNewCheckBox.setBounds(55, 289, 292, 23);
 		frame.getContentPane().add(chckbxNewCheckBox);
 		
@@ -87,7 +96,8 @@ public class GUI_Pay2 {
 		frame.getContentPane().add(btnNewButton);
 		
 		JLabel label_1 = new JLabel("-");
-		label_1.setBounds(202, 150, 16, 15);
+		label_1.setHorizontalAlignment(SwingConstants.CENTER);
+		label_1.setBounds(198, 150, 19, 15);
 		frame.getContentPane().add(label_1);
 		
 		JLabel label_4 = new JLabel("");
@@ -95,6 +105,7 @@ public class GUI_Pay2 {
 		frame.getContentPane().add(label_4);
 		
 		JLabel lblNewLabel_2 = new JLabel("비밀번호");
+		lblNewLabel_2.setFont(new Font("굴림", Font.PLAIN, 12));
 		lblNewLabel_2.setBounds(55, 218, 57, 15);
 		frame.getContentPane().add(lblNewLabel_2);
 		
@@ -104,7 +115,7 @@ public class GUI_Pay2 {
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
-		textField_1.setBounds(214, 147, 57, 21);
+		textField_1.setBounds(216, 147, 57, 21);
 		frame.getContentPane().add(textField_1);
 		
 		textField_2 = new JTextField();
@@ -114,15 +125,17 @@ public class GUI_Pay2 {
 		
 		textField_3 = new JTextField();
 		textField_3.setColumns(10);
-		textField_3.setBounds(371, 147, 57, 21);
+		textField_3.setBounds(367, 147, 57, 21);
 		frame.getContentPane().add(textField_3);
 		
 		JLabel label = new JLabel("-");
-		label.setBounds(275, 150, 16, 15);
+		label.setHorizontalAlignment(SwingConstants.CENTER);
+		label.setBounds(273, 150, 19, 15);
 		frame.getContentPane().add(label);
 		
 		JLabel label_2 = new JLabel("-");
-		label_2.setBounds(355, 150, 16, 15);
+		label_2.setHorizontalAlignment(SwingConstants.CENTER);
+		label_2.setBounds(347, 150, 19, 15);
 		frame.getContentPane().add(label_2);
 	}
 }

@@ -149,6 +149,7 @@ public class GUI_BookingInfo {
 		panel_1.add(scrollPane_1);
 		
 		JButton btnNewButton = new JButton("예매 조회");
+		btnNewButton.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -166,17 +167,18 @@ public class GUI_BookingInfo {
 		
 	}
 	protected void show(ArrayList<Book> bookList) {
-		String[] columnNames = {"예매번호", "출발지", "목적지", "교통편", "출발일", "도착일", "인원수", "가격"};
+		String[] columnNames = {"예매번호", "출발지", "목적지", "운행번호", "출발일", "도착일", "인원수", "가격"};
 		DefaultTableModel tableModel = new DefaultTableModel(columnNames, 0);
 		for (int i = 0; i < bookList.size(); i++) {
-			String bookNum = bookList.get(i).getServnum();
+			String bookNum = bookList.get(i).getBooknum();
 			String depLocation = bookList.get(i).getDep();
 			String arrLocation = bookList.get(i).getArr();
+			String servNum = bookList.get(i).getServnum();
 			String dep_time = bookList.get(i).getDepT();
 			String arr_time = bookList.get(i).getArr();
 			int personNum = bookList.get(i).getPer();
 			String fare = bookList.get(i).getFare();
-			Object [] data = {bookNum,depLocation,arrLocation,dep_time,arr_time,personNum,fare};
+			Object [] data = {bookNum,depLocation,arrLocation,servNum,dep_time,arr_time,personNum,fare};
 			tableModel.addRow(data);
 		}
 		table = new JTable(tableModel);
