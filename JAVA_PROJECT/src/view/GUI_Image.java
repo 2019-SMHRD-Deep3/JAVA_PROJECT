@@ -52,7 +52,7 @@ public class GUI_Image {
 		}else if(str.equals("인천")) {
 			icon = new ImageIcon(this.getClass().getResource(".").getPath() + "..//..//img//캡처5.png");
 		}else if(str.equals("광주")) {
-			icon = new ImageIcon(this.getClass().getResource(".").getPath() + "..//..//img//캡처6.png");
+			icon = new ImageIcon(this.getClass().getResource(".").getPath() + "..//..//img//gwangju.jpg");
 		}else if(str.equals("울산")) {
 			icon = new ImageIcon(this.getClass().getResource(".").getPath() + "..//..//img//캡처7.png");
 		}
@@ -71,6 +71,11 @@ public class GUI_Image {
 				
 			}
 		};
+		
+				springLayout.putConstraint(SpringLayout.NORTH, panel, 0, SpringLayout.NORTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.WEST, panel, 0, SpringLayout.WEST, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.SOUTH, panel, 0, SpringLayout.SOUTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.EAST, panel, 0, SpringLayout.EAST, frame.getContentPane());
 		panel.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -80,11 +85,6 @@ public class GUI_Image {
 				
 			}
 		});
-
-		springLayout.putConstraint(SpringLayout.NORTH, panel, 44, SpringLayout.NORTH, frame.getContentPane());
-		springLayout.putConstraint(SpringLayout.WEST, panel, 86, SpringLayout.WEST, frame.getContentPane());
-		springLayout.putConstraint(SpringLayout.SOUTH, panel, -42, SpringLayout.SOUTH, frame.getContentPane());
-		springLayout.putConstraint(SpringLayout.EAST, panel, -82, SpringLayout.EAST, frame.getContentPane());
 		frame.getContentPane().add(panel);
 	}
 }

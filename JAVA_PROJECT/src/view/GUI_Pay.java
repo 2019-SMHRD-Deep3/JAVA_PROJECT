@@ -86,14 +86,14 @@ public class GUI_Pay {
 		panel.setLayout(null);
 
 		JLabel lblNewLabel = new JLabel("출발");
-		lblNewLabel.setForeground(Color.WHITE);
+		lblNewLabel.setForeground(Color.BLACK);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
 		lblNewLabel.setBounds(317, 130, 50, 23);
 		panel.add(lblNewLabel);
 
 		JLabel lblNewLabel_1 = new JLabel("도착");
-		lblNewLabel_1.setForeground(Color.WHITE);
+		lblNewLabel_1.setForeground(Color.BLACK);
 		lblNewLabel_1.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setBounds(317, 164, 50, 23);
@@ -101,29 +101,29 @@ public class GUI_Pay {
 
 		JLabel per = new JLabel("인원수");
 		per.setHorizontalAlignment(SwingConstants.CENTER);
-		per.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
-		per.setForeground(Color.WHITE);
+		per.setFont(new Font("맑은 고딕", Font.BOLD, 15));
+		per.setForeground(Color.BLACK);
 		per.setBounds(151, 322, 80, 25);
 		panel.add(per);
 
 		JLabel lblNewLabel_4 = new JLabel("교통수단");
 		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
-		lblNewLabel_4.setForeground(Color.WHITE);
+		lblNewLabel_4.setFont(new Font("맑은 고딕", Font.BOLD, 15));
+		lblNewLabel_4.setForeground(Color.BLACK);
 		lblNewLabel_4.setBounds(151, 229, 80, 25);
 		panel.add(lblNewLabel_4);
 
 		JLabel lblNewLabel_6 = new JLabel("총 금액");
 		lblNewLabel_6.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_6.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
-		lblNewLabel_6.setForeground(Color.WHITE);
+		lblNewLabel_6.setFont(new Font("맑은 고딕", Font.BOLD, 15));
+		lblNewLabel_6.setForeground(Color.BLACK);
 		lblNewLabel_6.setBounds(558, 322, 80, 25);
 		panel.add(lblNewLabel_6);
 
 		JLabel lblNewLabel_2 = new JLabel("차량등급");
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
-		lblNewLabel_2.setForeground(Color.WHITE);
+		lblNewLabel_2.setFont(new Font("맑은 고딕", Font.BOLD, 15));
+		lblNewLabel_2.setForeground(Color.BLACK);
 		lblNewLabel_2.setBackground(Color.WHITE);
 		lblNewLabel_2.setBounds(151, 272, 80, 25);
 		panel.add(lblNewLabel_2);
@@ -143,7 +143,7 @@ public class GUI_Pay {
 		JLabel money = new JLabel("0");
 		money.setHorizontalAlignment(SwingConstants.CENTER);
 		money.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
-		money.setForeground(Color.WHITE);
+		money.setForeground(Color.BLACK);
 		money.setBounds(641, 326, 122, 21);
 		panel.add(money);
 
@@ -173,7 +173,7 @@ public class GUI_Pay {
 			public void mouseClicked(MouseEvent e) {
 				int booknom = book_nom;
 				GUI_Pay2 p2 = new GUI_Pay2(loginUser, selTransInfo, input_depart, input_dest, booknom);
-				frame.dispose();
+				
 			}
 		});
 		btnNewButton.setBounds(483, 424, 109, 37);
@@ -203,39 +203,46 @@ public class GUI_Pay {
 		panel.add(btnNewButton_1);
 		btnNewButton_1.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		btnNewButton_1.setBackground(Color.WHITE);
-										
-										JPanel panel_1 = new JPanel();
-										panel_1.setBounds(407, 130, 397, 70);
-										panel.add(panel_1);
-										panel_1.setLayout(new GridLayout(2, 2, 0, 0));
-												
-														arr = new JLabel(input_dest);
-														panel_1.add(arr);
-														arr.setHorizontalAlignment(SwingConstants.CENTER);
-														arr.setFont(new Font("맑은 고딕", Font.BOLD, 20));
-														arr.setForeground(Color.BLACK);
-												
-														depT = new JLabel(selTransInfo.getDep_time());
-														panel_1.add(depT);
-														depT.setHorizontalAlignment(SwingConstants.CENTER);
-														depT.setFont(new Font("맑은 고딕", Font.PLAIN, 16));
-														depT.setForeground(Color.BLACK);
-										
-												dep = new JLabel(input_depart);
-												panel_1.add(dep);
-												dep.setHorizontalAlignment(SwingConstants.CENTER);
-												dep.setFont(new Font("맑은 고딕", Font.BOLD, 20));
-												dep.setForeground(Color.BLACK);
-												
-														arrT = new JLabel(selTransInfo.getArr_time());
-														panel_1.add(arrT);
-														arrT.setHorizontalAlignment(SwingConstants.CENTER);
-														arrT.setFont(new Font("맑은 고딕", Font.PLAIN, 16));
-														arrT.setForeground(Color.BLACK);
+
+
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(Color.WHITE);
+		panel_1.setBounds(416, 130, 292, 62);
+		panel.add(panel_1);
+				panel_1.setLayout(null);
+		
+				dep = new JLabel(input_depart);
+				dep.setBounds(0, 0, 85, 31);
+				panel_1.add(dep);
+				dep.setHorizontalAlignment(SwingConstants.CENTER);
+				dep.setFont(new Font("맑은 고딕", Font.BOLD, 20));
+				dep.setForeground(Color.BLACK);
+
+		depT = new JLabel(selTransInfo.getDep_time());
+		depT.setBounds(97, 2, 192, 31);
+		panel_1.add(depT);
+		depT.setHorizontalAlignment(SwingConstants.CENTER);
+		depT.setFont(new Font("맑은 고딕", Font.PLAIN, 16));
+		depT.setForeground(Color.BLACK);
+		
+				arr = new JLabel(input_dest);
+				arr.setBounds(0, 31, 85, 31);
+				panel_1.add(arr);
+				arr.setHorizontalAlignment(SwingConstants.CENTER);
+				arr.setFont(new Font("맑은 고딕", Font.BOLD, 20));
+				arr.setForeground(Color.BLACK);
+
+		arrT = new JLabel(selTransInfo.getArr_time());
+		arrT.setBounds(97, 33, 192, 31);
+		panel_1.add(arrT);
+		arrT.setHorizontalAlignment(SwingConstants.CENTER);
+		arrT.setFont(new Font("맑은 고딕", Font.PLAIN, 16));
+		arrT.setForeground(Color.BLACK);
+
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				GUI_Booking booking = new GUI_Booking(loginUser, input_dest, input_dest);
+				GUI_Booking booking = new GUI_Booking(loginUser, input_depart, input_dest);
 				frame.dispose();
 			}
 		});
