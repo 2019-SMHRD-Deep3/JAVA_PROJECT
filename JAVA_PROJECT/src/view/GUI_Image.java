@@ -40,21 +40,19 @@ public class GUI_Image {
 	private void initialize(String str, Member loginUser) {
 		if(str.equals("서울")) {
 			
-			icon = new ImageIcon(this.getClass().getResource(".").getPath() + "..//..//img//캡처.png");
-		}else if(str.equals("서울")) {
-			icon = new ImageIcon(this.getClass().getResource(".").getPath() + "..//..//img//캡처1.png");
+			icon = new ImageIcon(this.getClass().getResource(".").getPath() + "..//..//img//seoul.jpg");
 		}else if(str.equals("부산")) {
-			icon = new ImageIcon(this.getClass().getResource(".").getPath() + "..//..//img//캡처2.png");
+			icon = new ImageIcon(this.getClass().getResource(".").getPath() + "..//..//img//busan.jpg");
 		}else if(str.equals("대구")) {
-			icon = new ImageIcon(this.getClass().getResource(".").getPath() + "..//..//img//캡처3.png");
+			icon = new ImageIcon(this.getClass().getResource(".").getPath() + "..//..//img//daegu.jpg");
 		}else if(str.equals("대전")) {
-			icon = new ImageIcon(this.getClass().getResource(".").getPath() + "..//..//img//캡처4.png");
+			icon = new ImageIcon(this.getClass().getResource(".").getPath() + "..//..//img//준비.jpg");
 		}else if(str.equals("인천")) {
-			icon = new ImageIcon(this.getClass().getResource(".").getPath() + "..//..//img//캡처5.png");
+			icon = new ImageIcon(this.getClass().getResource(".").getPath() + "..//..//img//incheon.jpg");
 		}else if(str.equals("광주")) {
 			icon = new ImageIcon(this.getClass().getResource(".").getPath() + "..//..//img//gwangju.jpg");
 		}else if(str.equals("울산")) {
-			icon = new ImageIcon(this.getClass().getResource(".").getPath() + "..//..//img//캡처7.png");
+			icon = new ImageIcon(this.getClass().getResource(".").getPath() + "..//..//img//준비.jpg");
 		}else if(str.equals(" ")) {
 			icon = new ImageIcon(this.getClass().getResource(".").getPath()+"..//..//img//울산빛축제.png");
 		}
