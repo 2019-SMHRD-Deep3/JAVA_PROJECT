@@ -25,12 +25,12 @@ public class BookingPayment implements I_BookingPayment {
 
 	@Override
 	// 결제하는 기능
-	public int bookingPayment(Member loginUser,TransInfo selTransInfo, String input_depart, String input_dest,int booknom) {
+	public int bookingPayment(Member loginUser,TransInfo selTransInfo, String input_depart, String input_dest,int book_nom1, int book_nom2) {
 
 		int rows=0;
 		try {
 			int money=Integer.parseInt(selTransInfo.getFare());
-			int fare=booknom*money;
+			int fare=(int)((book_nom1*money)+(book_nom2*0.5*money));
 			
 
 			if(input_depart.equals("서울")) {
@@ -89,7 +89,7 @@ public class BookingPayment implements I_BookingPayment {
 			psmt.setInt(5, selTransInfo.getServ_num());
 			psmt.setString(6, selTransInfo.getDep_time());
 			psmt.setString(7, selTransInfo.getArr_time());
-			psmt.setInt(8, booknom);
+			psmt.setInt(8, book_nom1+book_nom2);
 			psmt.setInt(9, fare);
 			
 			rows = psmt.executeUpdate();

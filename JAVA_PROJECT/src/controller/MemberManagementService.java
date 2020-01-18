@@ -60,8 +60,8 @@ public class MemberManagementService {
 
 
 
-	public int bookingPayment(Member loginUser, TransInfo selTransInfo, String input_depart, String input_dest,int booknom) {
-		dao.bookingpayment(loginUser, selTransInfo, input_depart, input_dest,booknom);
+	public int bookingPayment(Member loginUser, TransInfo selTransInfo, String input_depart, String input_dest,int book_nom1, int book_nom2) {
+		dao.bookingpayment(loginUser, selTransInfo, input_depart, input_dest,book_nom1, book_nom2);
 		return 0;
 	}
 
