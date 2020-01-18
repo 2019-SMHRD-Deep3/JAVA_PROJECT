@@ -136,8 +136,14 @@ public class GUI_Pay {
 		num.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		num.setBounds(233, 274, 161, 19);
 		panel.add(num);
-
-		type = new JLabel(selTransInfo.getType());
+		
+		String transtype = null;
+		if(selTransInfo.getType().equals("Trans1")) {
+			transtype = "버스";
+		}else {
+			transtype = "기차";
+		}
+		type = new JLabel(transtype);
 		type.setHorizontalAlignment(SwingConstants.CENTER);
 		type.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		type.setBounds(233, 234, 161, 15);
