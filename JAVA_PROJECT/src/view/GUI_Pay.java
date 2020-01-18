@@ -133,11 +133,11 @@ public class GUI_Pay {
 		num.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		num.setBounds(233, 274, 161, 19);
 		panel.add(num);
-		
+
 		String transtype = null;
-		if(selTransInfo.getType().equals("Trans1")) {
+		if (selTransInfo.getType().equals("Trans1")) {
 			transtype = "버스";
-		}else {
+		} else {
 			transtype = "기차";
 		}
 		type = new JLabel(transtype);
@@ -179,7 +179,7 @@ public class GUI_Pay {
 			public void mouseClicked(MouseEvent e) {
 				int booknom = book_nom;
 				GUI_Pay2 p2 = new GUI_Pay2(loginUser, selTransInfo, input_depart, input_dest, booknom);
-				
+
 			}
 		});
 		btnNewButton.setBounds(483, 424, 109, 37);
@@ -210,35 +210,37 @@ public class GUI_Pay {
 		btnNewButton_1.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		btnNewButton_1.setBackground(Color.WHITE);
 
-
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(Color.WHITE);
 		panel_1.setBounds(416, 130, 292, 62);
 		panel.add(panel_1);
-				panel_1.setLayout(null);
-		
-				dep = new JLabel(input_depart);
-				dep.setBounds(0, 0, 85, 31);
-				panel_1.add(dep);
-				dep.setHorizontalAlignment(SwingConstants.CENTER);
-				dep.setFont(new Font("맑은 고딕", Font.BOLD, 20));
-				dep.setForeground(Color.BLACK);
+		panel_1.setLayout(null);
 
-		depT = new JLabel(selTransInfo.getDep_time());
+		dep = new JLabel(input_depart);
+		dep.setBounds(0, 0, 85, 31);
+		panel_1.add(dep);
+		dep.setHorizontalAlignment(SwingConstants.CENTER);
+		dep.setFont(new Font("맑은 고딕", Font.BOLD, 20));
+		dep.setForeground(Color.BLACK);
+		
+		String dep_time = selTransInfo.getDep_time().substring(0, 16);
+		
+		depT = new JLabel(dep_time);
 		depT.setBounds(97, 2, 192, 31);
 		panel_1.add(depT);
 		depT.setHorizontalAlignment(SwingConstants.CENTER);
 		depT.setFont(new Font("맑은 고딕", Font.PLAIN, 16));
 		depT.setForeground(Color.BLACK);
-		
-				arr = new JLabel(input_dest);
-				arr.setBounds(0, 31, 85, 31);
-				panel_1.add(arr);
-				arr.setHorizontalAlignment(SwingConstants.CENTER);
-				arr.setFont(new Font("맑은 고딕", Font.BOLD, 20));
-				arr.setForeground(Color.BLACK);
 
-		arrT = new JLabel(selTransInfo.getArr_time());
+		arr = new JLabel(input_dest);
+		arr.setBounds(0, 31, 85, 31);
+		panel_1.add(arr);
+		arr.setHorizontalAlignment(SwingConstants.CENTER);
+		arr.setFont(new Font("맑은 고딕", Font.BOLD, 20));
+		arr.setForeground(Color.BLACK);
+
+		String arr_time = selTransInfo.getArr_time().substring(0, 16);
+		arrT = new JLabel(arr_time);
 		arrT.setBounds(97, 33, 192, 31);
 		panel_1.add(arrT);
 		arrT.setHorizontalAlignment(SwingConstants.CENTER);

@@ -55,6 +55,8 @@ public class GUI_Image {
 			icon = new ImageIcon(this.getClass().getResource(".").getPath() + "..//..//img//gwangju.jpg");
 		}else if(str.equals("울산")) {
 			icon = new ImageIcon(this.getClass().getResource(".").getPath() + "..//..//img//캡처7.png");
+		}else if(str.equals(" ")) {
+			icon = new ImageIcon(this.getClass().getResource(".").getPath()+"..//..//img//울산빛축제.png");
 		}
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1028, 631);
