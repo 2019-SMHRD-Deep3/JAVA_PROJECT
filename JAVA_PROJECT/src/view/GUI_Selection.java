@@ -289,6 +289,23 @@ public class GUI_Selection {
 					
 					panel_2.setBounds(512, 10, 408, 474);
 					panel_1.add(panel_2);
+					
+					JButton btnNewButton = new JButton("");
+					  btnNewButton.setFocusPainted(false);
+				      btnNewButton.setContentAreaFilled(false);
+				      btnNewButton.setBorderPainted(false);
+				
+					btnNewButton.addMouseListener(new MouseAdapter() {
+						@Override
+						public void mouseClicked(MouseEvent e) {
+						GUI_MainMenu main = new GUI_MainMenu(loginUser);
+						frame.dispose();
+							
+							
+						}
+					});
+					btnNewButton.setBounds(12, 10, 163, 41);
+					panel_1.add(btnNewButton);
 					btnNewButton_2_1.addMouseListener(new MouseAdapter() {
 					
 
