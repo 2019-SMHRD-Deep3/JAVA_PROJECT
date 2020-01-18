@@ -77,6 +77,8 @@ public class GUI_MainMenu {
 		tb_reservation.setBackground(Color.WHITE);
 		tb_reservation.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
 		
+		
+		// 회원정보수정, 회원 탈퇴 기능, 회원정보확인 
 		JButton btnNewButton = new JButton("내정보");
 		btnNewButton.setFont(new Font("굴림", Font.PLAIN, 14));
 		btnNewButton.setBackground(Color.WHITE);
