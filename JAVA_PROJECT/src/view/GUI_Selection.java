@@ -259,7 +259,7 @@ public class GUI_Selection {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				String str = "대구";
-				GUI_Image img = new GUI_Image(str, loginUser);
+				GUI_Image img = new GUI_Image(str);
 				dest.setText(str);
 			}
 		});
@@ -267,7 +267,7 @@ public class GUI_Selection {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				String str = "부산";
-				GUI_Image img = new GUI_Image(str, loginUser);
+				GUI_Image img = new GUI_Image(str);
 				dest.setText(str);
 			}
 		});
@@ -275,7 +275,7 @@ public class GUI_Selection {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				String str = "광주";
-				GUI_Image img = new GUI_Image(str, loginUser);
+				GUI_Image img = new GUI_Image(str);
 				dest.setText(str);
 			}
 		});
@@ -283,7 +283,7 @@ public class GUI_Selection {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				String str = "울산";
-				GUI_Image img = new GUI_Image(str, loginUser);
+				GUI_Image img = new GUI_Image(str);
 				dest.setText(str);
 			}
 		});
@@ -291,7 +291,7 @@ public class GUI_Selection {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				String str = "대전";
-				GUI_Image img = new GUI_Image(str, loginUser);
+				GUI_Image img = new GUI_Image(str);
 				dest.setText(str);
 			}
 		});
@@ -299,7 +299,7 @@ public class GUI_Selection {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				String str = "인천";
-				GUI_Image img = new GUI_Image(str, loginUser);
+				GUI_Image img = new GUI_Image(str);
 				dest.setText(str);
 			}
 		});
@@ -307,7 +307,7 @@ public class GUI_Selection {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				String str = "서울";
-				GUI_Image img = new GUI_Image(str, loginUser);
+				GUI_Image img = new GUI_Image(str);
 				dest.setText(str);
 
 			}

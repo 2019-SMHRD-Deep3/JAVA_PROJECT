@@ -27,9 +27,9 @@ public class GUI_Image {
 	 * Create the application.
 	 * @param str 
 	 */
-	public GUI_Image(String str, Member loginUser) {
+	public GUI_Image(String str) {
 		
-		initialize(str, loginUser);
+		initialize(str);
 		
 		frame.setVisible(true);
 	}
@@ -37,7 +37,7 @@ public class GUI_Image {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize(String str, Member loginUser) {
+	private void initialize(String str) {
 		if(str.equals("서울")) {
 			
 			icon = new ImageIcon(this.getClass().getResource(".").getPath() + "..//..//img//캡처.png");
