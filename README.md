@@ -12,9 +12,14 @@
 
 Development Environment
 -----------------------
+Windows 10 64bit
+jdk 1.8
+Oracle xe 11g 
 
 Implementation details
 ----------------------
+프로젝트 계획서
+[프로젝트 계획서]https://github.com/2019-SMHRD-Deep3/JAVA_PROJECT/blob/master/DOCUMENT/gaboja_Project%20Introduction.hwp
 
 Reference
 ---------
